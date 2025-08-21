@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScriptHadder</title>
+    <link rel="stylesheet" href="src/css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <!-- ✅ Favicon (.ico para o navegador) -->
+    <link rel="shortcut icon" href="src/ico/icone_site.ico" type="image/x-icon">
+
+    <!-- ✅ Open Graph (preview ao compartilhar link) -->
+    <meta property="og:title" content="ScriptHadder">
+    <meta property="og:description" content="Conheça nosso catálogo de produtos!">
+    <meta property="og:image" content="https://renanmestre.github.io/scripthadder/src/img/icone.png">
+    <meta property="og:url" content="https://renanmestre.github.io/scripthadder/">
+    <meta property="og:type" content="website">
+
+    <!-- ✅ Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ScriptHadder">
+    <meta name="twitter:description" content="Conheça nosso catálogo de produtos!">
+    <meta name="twitter:image" content="https://renanmestre.github.io/scripthadder/src/img/icone.png">
+
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo">
+                    <h2>Script<span>Hadder</span></h2>
+                    <img src="src/img/icone-sem-fundo.png" alt="Ícone">
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#hero">Sobre nós</a></li>
+                    <li><a href="src/portfólio.html">Nosso portfólio</a></li>
+                    <li><a href="#services">Serviços</a></li>
+                    <li><a href="#team">Equipe</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+                <div class="hamburguer" id="hamburguer">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-split" id="hero">
+            <div class="hero-text">
+                <h1>Use a <span class="highlight">ScriptHadder</span> para desenvolver suas soluções digitais</h1>
+                <p>Gerencie projetos, conecte clientes e desenvolva sistemas sob medida em um único ambiente. Disponível para web, desktop e mobile.</p>
+
+                <div class="hero-buttons">
+                    <a href="#services" class="btn primary">Ver serviços</a>
+                    <a href="#" class="btn outline">Fale conosco</a>
+                </div>
+
+                <a href="#pricing" class="hero-link">
+                    <span>&#10140;</span> Confira os planos e preços
+                </a>
+            </div>
+
+            <div class="hero-image">
+                <img src="src/img/Ilustração.png" alt="Demonstração do sistema" />
+            </div>
+        </section>
+        
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Sobre a empresa</h2>
+                    <p>Conheça mais sobre a ScriptHadder</p>
+                </div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>Quem Somos</h3>
+                        <p>A ScriptHadder é uma empresa especializada em desenvolvimento de software, focada em criar soluções inovadoras e personalizadas para nossos clientes. Com uma equipe experiente e apaixonada por tecnologia, transformamos ideias em realidade digital.</p>
+                        
+                        <h3>Nossa Missão</h3>
+                        <p>Fornecer soluções tecnológicas de alta qualidade que impulsionem o crescimento dos nossos clientes, sempre priorizando a inovação, eficiência e satisfação do cliente.</p>
+                        
+                        <div class="stats">
+                            <div class="stat-item">
+                                <h4>50+</h4>
+                                <p>Projetos Concluídos</p>
+                            </div>
+                            <div class="stat-item">
+                                <h4>2+</h4>
+                                <p>Anos de Experiência</p>
+                            </div>
+                            <div class="stat-item">
+                                <h4>100%</h4>
+                                <p>Clientes Satisfeitos</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-image">
+                        <img src="src/img/Ícone com fundo.png" alt="ScriptHadder">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="services">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Nossos Serviços</h2>
+                    <p>Oferecemos soluções completas em desenvolvimento</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3>Desenvolvimento Web</h3>
+                        <p>Criamos sites responsivos, modernos e otimizados para pequenas, médias e grandes empresas, utilizando as mais recentes tecdnologias web.</p>
+                        <ul>
+                            <li>Sites de vitrine</li>
+                            <li>E-commerce</li>
+                            <li>Sistemas Web</li>
+                            <li>Landing Pages</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-desktop"></i>
+                        </div>
+                        <h3>Desenvolvimento Desktop</h3>
+                        <p>Aplicativos nativos e híbridos para iOS e Android, com foco na experiência do usuário.</p>
+                        <ul>
+                            <li>Apps Nativos</li>
+                            <li>Apps Híbridos</li>
+                            <li>PWA</li>
+                            <li>Manutenção</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3>Backend & APIs</h3>
+                        <p>Desenvolvimento de APIs robustas e sistemas backend escaláveis para suas aplicações.</p>
+                        <ul>
+                            <li>APIs RESTful</li>
+                            <li>Backend SQL, MySQL, Node.js, Python</li>
+                            <li>Integração de Sistemas</li>
+                            <li>Cloud Computing (Oracle, Google Cloud, Azure)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>Desenvolvimento de IAs</h3>
+                        <p>Consultoria técnica e suporte contínuo para seus projetos digitais.</p>
+                        <ul>
+                            <li>APIs ChatGpt</li>
+                            <li>ChatBots</li>
+                            <li>Machine Learning</li>
+                            <li>Desenvolvimento de imagens</li>
+                            <li>Engenharia de prompt</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h3>Cloud Computing</h3>
+                        <p>Consultoria técnica e suporte contínuo para seus projetos digitais.</p>
+                        <ul>
+                            <li>Azure</li>
+                            <li>Google Cloud</li>
+                            <li>ORACLE</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-shield"></i>
+                        </div>
+                        <h3>Segurança cibernética</h3>
+                        <p>Segurança cibernética aplicada a sistemas e a suporte.</p>
+                        <ul>
+                            <li>DevSecOps</li>
+                            <li>AppSec</li>
+                            <li>Pentest</li>
+                            <li>Análise de vulnerabilidades</li>
+                            <li>Ofuscação de código e criptografia</li>
+                            <li>Consutoria - Análise de sistemas</li>
+                            <li>Boas práticas de segurança em codificações</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h3>Consultoria & Suporte</h3>
+                        <p>Consultoria técnica e suporte contínuo para seus projetos digitais.</p>
+                        <ul>
+                            <li>Consultoria Técnica</li>
+                            <li>Code Review</li>
+                            <li>Otimização</li>
+                            <li>Suporte 24/7</li>
+                        </ul>
+                    </div>
+
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3>Sucesso do usuário</h3>
+                        <p>Acompanhamento de sucesso ao cliente.</p>
+                        <ul>
+                            <li>Estretégias das redes sociais</li>
+                            <li>Investimento com retorno alto</li>
+                            <li>Monitoramento dos sistemas respondendo a incidentes</li>
+                            <li>Análise de vulnerabilidades</li>
+                            <li>Ofuscação de código e criptografia</li>
+                            <li>Consutoria - Análise de sistemas</li>
+                            <li>Boas práticas de segurança em codificações</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section com carrossel 3D -->
+        <section id="team" class="team">
+            <div class="container">
+                <div class="section-header">
+                <h2>Quem são os <span>Hadders</span>?</h2>
+                <p>Conheça os desenvolvedores por trás dos projetos</p>
+                </div>
+
+                <!-- Swiper -->
+                <div class="swiper teamSwiper">
+                    <div class="swiper-wrapper">
+
+                        <div class="swiper-slide team-card">
+                            <div class="team-photo">
+                                <img src="src/img/#.png" alt="Gabriel" class="imagem-clicavel" data-descricao="Gabriel - Dev em treinamento">
+                                <div class="overlay"><span>Gabriel <br><br>Desenvolvedor web aprendiz <br><br>(Em treinamento)</span></div>
+                            </div>
+                            <h3>Maria Santos</h3>
+                        </div>
+
+
+                        <div class="swiper-slide team-card">
+                            <div class="team-photo">
+                                <img src="src/img/Kauã.png" alt="Kauã" class="imagem-clicavel" data-descricao="Kauã - Dev Frontend">
+                                <div class="overlay"><span>Kauã <br><br>Líder em desenvolvimento Frontend<br><br>. Responsividade <br>. HTML <br>. CSS <br>. JS</span></div>
+                            </div>
+                            <h3>Maria Santos</h3>
+                        </div>
+
+                        <div class="swiper-slide team-card">
+                        <div class="team-photo">
+                            <img src="src/img/Renan.png" alt="Hadder1">
+                            <div class="overlay"><span>Renan Mestre <br><br>Segurança Cibernético<br><br>. DevSecOps<br>. Pentest<br>. Ofuscação de script <br>. Criptografia <br>. Desenvolvedor Full Stack</span></div>
+                        </div>
+                        <h3>João Silva</h3>
+                        </div>
+
+                        <div class="swiper-slide team-card">
+                        <div class="team-photo">
+                            <img src="src/img/Arthur.png" alt="Hadder3">
+                            <div class="overlay"><span>Arthur Lima<br><br>Desenvolvedor Frontend <br><br>. HTML <br>. CSS <br>. JS <br>. Figma <br>. React <br>. Automações em Python</span></div>
+                        </div>
+                            <h3>Carlos Silva</h3>
+                        </div>
+
+                        <div class="swiper-slide team-card">
+                        <div class="team-photo">
+                            <img src="src/img/Mateus.jpg" alt="Hadder3">
+                            <div class="overlay"><span>Mateus Benzi<br><br>Líder de mídias sociais <br><br>. Canva <br>. Facebook <br>. Instagram <br>. Tráfego <br>. Aprendiz python</span></div>
+                        </div>
+                            <h3>Carlos Silva</h3>
+                        </div>
+
+                    <!-- Navegação -->
+                    <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+
+            <!-- Janela de Descrição -->
+            <div id="janela-descricao" class="janela-descricao">
+            <div class="descricao-conteudo">
+                <p id="descricao-texto"></p>
+                <button onclick="fecharDescricao()">Fechar</button>
+            </div>
+            </div>
+
+        </section>
+
+        <!-- Etapas do desenvolvimento de software -->
+        <section id="processo" class="process vertical">
+            <div class="container">
+                <div class="section-header">
+                <h2>Etapas do <span>Desenvolvimento de Software</span></h2>
+                <p>Veja como transformamos ideias em soluções digitais</p>
+                </div>
+
+                <div class="vertical-steps">
+                    <!-- Etapa 1 -->
+                    <div class="step-vertical">
+                        <div class="image-container">
+                        <img src="src/img/Planejamento.png" alt="Planejamento">
+                        <div class="text-overlay">
+                            <h3>1. Planejamento</h3>
+                            <p>Reunimos requisitos, entendemos o problema e traçamos a melhor solução com o cliente.</p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <!-- Etapa 2 -->
+                    <div class="step-vertical">
+                        <div class="image-container">
+                        <img src="src/img/Figma.png" alt="Design UI/UX">
+                        <div class="text-overlay">
+                            <h3>2. Design UI/UX</h3>
+                            <p>Criamos protótipos e interfaces intuitivas, focando na experiência do usuário.</p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <!-- Etapa 3 -->
+                    <div class="step-vertical">
+                        <div class="image-container">
+                        <img src="src/img/Dev.png" alt="Desenvolvimento">
+                        <div class="text-overlay">
+                            <h3>3. Desenvolvimento</h3>
+                            <p>Codificamos o sistema utilizando tecnologias modernas com qualidade e performance.</p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <!-- Etapa 4 -->
+                    <div class="step-vertical">
+                        <div class="image-container">
+                        <img src="src/img/Testes.png" alt="Testes">
+                        <div class="text-overlay">
+                            <h3>4. Testes</h3>
+                            <p>Garantimos que tudo funcione como esperado com testes manuais e automatizados.</p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <!-- Etapa 5-->
+                    <div class="step-vertical">
+                        <div class="image-container">
+                        <img src="src/img/Segurança.png" alt="Testes">
+                        <div class="text-overlay">
+                            <h3>5. Segurança</h3>
+                            <p>Passamos o sistema pelas pipelines de segurança afim de garantir que não possua brechas de segurança diminuindo sua vida útil.</p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <!-- Etapa 6 -->
+                    <div class="step-vertical">
+                        <div class="image-container">
+                        <img src="src/img/Deploy.png" alt="Deploy">
+                        <div class="text-overlay">
+                            <h3>6. Deploy</h3>
+                            <p>Publicamos o software em ambiente de produção e fazemos os ajustes finais.</p>
+                        </div>
+                        </div>
+                    </div>
+
+                    <!-- Etapa 6 -->
+                    <div class="step-vertical">
+                        <div class="image-container">
+                        <img src="src/img/Suporte.png" alt="Suporte">
+                        <div class="text-overlay">
+                            <h3>7. Suporte</h3>
+                            <p>Monitoramos, corrigimos e melhoramos continuamente a aplicação.</p>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="diferenciais">
+        <div class="container">
+            <div class="section-header">
+                <h2>Nossos diferenciais</h2>
+                <p>O que nos torna únicos no mercado de tecnologia.</p>
+                </div>
+                <div class="diferenciais-grid">
+                <div class="diferencial-box">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Agilidade</h3>
+                    <p>Desenvolvimento rápido sem comprometer a qualidade.</p>
+                </div>
+                <div class="diferencial-box">
+                    <i class="fas fa-lock"></i>
+                    <h3>Segurança</h3>
+                    <p>Soluções seguras para proteger seus dados e negócios.</p>
+                </div>
+                <div class="diferencial-box">
+                    <i class="fas fa-user-friends"></i>
+                    <h3>Atendimento</h3>
+                    <p>Suporte humano, próximo e atencioso sempre que precisar.</p>
+                </div>
+            </div>
+        </div>
+        </section>
+
+        <!-- Avaliação de clientes -->
+        <section class="avaliacoes">
+            <div class="container">
+                <div class="section-header">
+                <h2>Avaliação de clientes</h2>
+                <p>Veja o que nossos clientes dizem sobre nossos serviços.</p>
+                </div>
+                <div class="avaliacoes-grid">
+                <div class="avaliacao-card">
+                    <p>"Simplesmente fantástico! Superaram minhas expectativas em todos os aspectos."</p>
+                    <span>— João Silva</span>
+                </div>
+                <div class="avaliacao-card">
+                    <p>"Profissionalismo e entrega rápida. Recomendo a todos."</p>
+                    <span>— Carla Andrade</span>
+                </div>
+                <div class="avaliacao-card">
+                    <p>"Sistema fácil de usar, suporte excelente. Nota 10!"</p>
+                    <span>— Marcos Teles</span>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ofertas -->
+        <section class="ofertas" id="pricing">
+            <div class="container">
+                <div class="section-header">
+                <h2>Oferta semana da inalguração!</h2>
+                <p>Aproveite as promoções especiais por tempo limitado.</p>
+                </div>
+                <div class="ofertas-grid">
+                    <div class="oferta-card">
+                        <h3>Sistema web simples</h3>
+                        <p>Website frontend apenas</p>
+                        <strong>R$800,00</strong>
+                    </div>
+                    <div class="oferta-card destaque">
+                        <h3>Sistema completo</h3>
+                        <p>Website completo + Segurança</p>
+                        <strong>R$1.100</strong>
+                    </div>
+                </div>
+                <div class="contato-promo">
+                    <p>Para ter acesso a essas e outras ofertas, entre em contato com a nosso equipe e venha garantir o seu sistema pela metade do preço!</p>
+                    <a href="#"><button>Entrar em  contato!</button></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="catalogo">
+            <div class="container">
+                <div class="catalogo-content">
+                <div class="catalogo-image">
+                    <img src="src/img/Ilustração templates.png" alt="Catálogo de Sistemas">
+                </div>
+                <div class="catalogo-text">
+                    <h2>Catálogo</h2>
+                    <p>Conheça mais sobre nossos sistemas desenvolvidos — alguns pagos, outros gratuitos para toda a comunidade!</p>
+                    <a href="src/portfólio.html"><button class="btn primary">Conferir!</button></a>
+                </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <div class="footer-logo">
+                            <h3>Script<span>Hadder</span></h3>
+                            <img src="src/img/icone-sem-fundo.png" alt="Logo">
+                        </div>
+                        <p>Transformando ideias em soluções digitais inovadoras. Sua parceira em tecnologia.</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h4>Serviços</h4>
+                        <ul>
+                            <li><a href="#services">Desenvolvimento Web</a></li>
+                            <li><a href="#services">Desenvolvimento Mobile</a></li>
+                            <li><a href="#services">Backend & APIs</a></li>
+                            <li><a href="#services">Consultoria</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h4>Empresa</h4>
+                        <ul>
+                            <li><a href="#about">Sobre Nós</a></li>
+                            <li><a href="#team">Nossa Equipe</a></li>
+                            <li><a href="#contact">Contato</a></li>
+                            <li><a href="#">Portfólio</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-section">
+                        <h4>Contato</h4>
+                        <div class="contact-info">
+                            <p><i class="fas fa-phone"></i> (11) 99999-9999</p>
+                            <p><i class="fas fa-envelope"></i> contato@devcodesolutions.com</p>
+                            <p><i class="fas fa-map-marker-alt"></i> São Paulo, SP</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p>&copy; 2025 Dev. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+    
+    <script src="src/js/script.js"></script>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+    <script>
+        // Ativar animação ao rolar para o Hero
+        const hero = document.querySelector(".hero-split");
+        const observer = new IntersectionObserver(([entry]) => {
+            if (entry.isIntersecting) {
+                hero.classList.add("reveal");
+            }
+        }, { threshold: 0.3 });
+
+        observer.observe(hero);
+
+        // Swiper do carrossel de equipe
+        var swiper = new Swiper(".teamSwiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            initialSlide: 2,
+            coverflowEffect: {
+                rotate: 15,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: false,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
+</body>
+</html>
