@@ -2,7 +2,7 @@
 
 **ScriptHadder** é uma plataforma digital moderna e responsiva que conecta talentos da área de tecnologia com clientes de forma prática, rápida e segura. Criado por uma equipe multidisciplinar focada em usabilidade, performance e segurança.
 
-![scripthadder-banner](img/icone.png)
+![scripthadder-logo](src/img/icone.png)
 
 ---
 
