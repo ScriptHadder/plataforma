@@ -8,13 +8,15 @@
     <link rel="stylesheet" href="src/css/styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <!-- ✅ Favicon (.ico para o navegador) -->
     <link rel="shortcut icon" href="src/ico/icone_site.ico" type="image/x-icon">
 
     <!-- ✅ Open Graph (preview ao compartilhar link) -->
     <meta property="og:title" content="ScriptHadder">
-    <meta property="og:description" content="Conheça nosso catálogo de produtos!">
+    <meta property="og:description" content="Equipe especializada em soluções tecnológicas">
     <meta property="og:image" content="https://renanmestre.github.io/scripthadder/src/img/icone.png">
     <meta property="og:url" content="https://renanmestre.github.io/scripthadder/">
     <meta property="og:type" content="website">
@@ -22,7 +24,7 @@
     <!-- ✅ Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="ScriptHadder">
-    <meta name="twitter:description" content="Conheça nosso catálogo de produtos!">
+    <meta name="twitter:description" content="Equipe especializada em soluções tecnológicas">
     <meta name="twitter:image" content="https://renanmestre.github.io/scripthadder/src/img/icone.png">
 
 </head>
@@ -41,6 +43,7 @@
                     <li><a href="#services">Serviços</a></li>
                     <li><a href="#team">Equipe</a></li>
                     <li><a href="#">Contato</a></li>
+                    <li><a href="src/inovacao.html">Soluções inovadoras</a></li>
                 </ul>
                 <div class="hamburguer" id="hamburguer">
                     <span></span>
@@ -52,6 +55,7 @@
     </header>
 
     <main>
+        <!-- Hero -->
         <section class="hero-split" id="hero">
             <div class="hero-text">
                 <h1>Use a <span class="highlight">ScriptHadder</span> para desenvolver suas soluções digitais</h1>
@@ -68,7 +72,7 @@
             </div>
 
             <div class="hero-image">
-                <img src="src/img/Ilustração.png" alt="Demonstração do sistema" />
+                <img src="src/img/Ilustração.png" alt="Imagem-3D" class="imagem-3D"/>
             </div>
         </section>
         
@@ -255,7 +259,6 @@
                                 <img src="src/img/#.png" alt="Gabriel" class="imagem-clicavel" data-descricao="Gabriel - Dev em treinamento">
                                 <div class="overlay"><span>Gabriel <br><br>Desenvolvedor web aprendiz <br><br>(Em treinamento)</span></div>
                             </div>
-                            <h3>Maria Santos</h3>
                         </div>
 
 
@@ -264,36 +267,32 @@
                                 <img src="src/img/Kauã.png" alt="Kauã" class="imagem-clicavel" data-descricao="Kauã - Dev Frontend">
                                 <div class="overlay"><span>Kauã <br><br>Líder em desenvolvimento Frontend<br><br>. Responsividade <br>. HTML <br>. CSS <br>. JS</span></div>
                             </div>
-                            <h3>Maria Santos</h3>
                         </div>
 
                         <div class="swiper-slide team-card">
-                        <div class="team-photo">
-                            <img src="src/img/Renan.png" alt="Hadder1">
-                            <div class="overlay"><span>Renan Mestre <br><br>Segurança Cibernético<br><br>. DevSecOps<br>. Pentest<br>. Ofuscação de script <br>. Criptografia <br>. Desenvolvedor Full Stack</span></div>
-                        </div>
-                        <h3>João Silva</h3>
-                        </div>
-
-                        <div class="swiper-slide team-card">
-                        <div class="team-photo">
-                            <img src="src/img/Arthur.png" alt="Hadder3">
-                            <div class="overlay"><span>Arthur Lima<br><br>Desenvolvedor Frontend <br><br>. HTML <br>. CSS <br>. JS <br>. Figma <br>. React <br>. Automações em Python</span></div>
-                        </div>
-                            <h3>Carlos Silva</h3>
+                            <div class="team-photo">
+                                <img src="src/img/Renan.png" alt="Hadder1">
+                                <div class="overlay"><span>Renan Mestre <br><br>Segurança Cibernético<br><br>. DevSecOps<br>. Pentest<br>. Ofuscação de script <br>. Criptografia <br>. Desenvolvedor Full Stack</span></div>
+                            </div>
                         </div>
 
                         <div class="swiper-slide team-card">
-                        <div class="team-photo">
-                            <img src="src/img/Mateus.jpg" alt="Hadder3">
-                            <div class="overlay"><span>Mateus Benzi<br><br>Líder de mídias sociais <br><br>. Canva <br>. Facebook <br>. Instagram <br>. Tráfego <br>. Aprendiz python</span></div>
-                        </div>
-                            <h3>Carlos Silva</h3>
+                            <div class="team-photo">
+                                <img src="src/img/Arthur.png" alt="Hadder3">
+                                <div class="overlay"><span>Arthur Lima<br><br>Desenvolvedor Frontend <br><br>. HTML <br>. CSS <br>. JS <br>. Figma <br>. React <br>. Automações em Python</span></div>
+                            </div>
                         </div>
 
+                        <div class="swiper-slide team-card">
+                            <div class="team-photo">
+                                <img src="src/img/Mateus.png" alt="Hadder3">
+                                <div class="overlay"><span>Mateus Benzi<br><br>Líder de mídias sociais <br><br>. Canva <br>. Facebook <br>. Instagram <br>. Tráfego <br>. Aprendiz python</span></div>
+                            </div>
+                        </div>
+                    </div>
                     <!-- Navegação -->
                     <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-prev"></div>
                 </div>
             </div>
 
@@ -465,9 +464,9 @@
                         <strong>R$1.100</strong>
                     </div>
                 </div>
-                <div class="contato-promo">
+                <div class="contact-info">
                     <p>Para ter acesso a essas e outras ofertas, entre em contato com a nosso equipe e venha garantir o seu sistema pela metade do preço!</p>
-                    <a href="#"><button>Entrar em  contato!</button></a>
+                    <a href="#"><button>Entrar em contato!</button></a>
                 </div>
             </div>
         </section>
@@ -541,11 +540,16 @@
             </div>
         </footer>
     </main>
+
+    <!-- Botão de Voltar ao Topo -->
+    <div class="topo">
+        <button id="scrollToTopBtn" >
+            <i class="fas fa-arrow-up" style="font-size: 1.5rem;"></i>
+        </button>
+    </div>
     
     <script src="src/js/script.js"></script>
-    <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-
     <script>
         // Ativar animação ao rolar para o Hero
         const hero = document.querySelector(".hero-split");
@@ -575,6 +579,19 @@
                 nextEl: ".swiper-button-next",
                 prevEl: ".swiper-button-prev",
             },
+        });
+
+        // Mostrar/ocultar botão dinamicamente
+        const scrollBtn = document.getElementById('scrollToTopBtn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollBtn.style.display = 'block';
+            } else {
+                scrollBtn.style.display = 'none';
+            }
+        });
+        scrollBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     </script>
 </body>

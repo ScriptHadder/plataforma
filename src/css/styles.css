@@ -109,8 +109,7 @@
   background: linear-gradient(120deg, #9eb9e0, #ffffff);
   flex-wrap: wrap;
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  margin: auto;
   }
 
   .hero-split.reveal {
@@ -811,12 +810,41 @@
   }
 
   .oferta-card button:hover {
-  background: #3ccdd4;
+  background: #b03cd4;
   }
 
   .oferta-card.destaque {
   border: 2px solid #fff;
-  background: #005e70;
+  background: #560070;
+  }
+
+  .contact-info {
+    display: grid;
+    justify-content: center;
+    position: relative;
+  }
+
+  .contact-info p {
+    margin: 15px 0;
+    font-size: 20px;
+  }
+
+  .contact-info button {
+    background: #be56e7;
+    border: none;
+    align-items: center;
+    padding: 12px 24px;
+    color: #000;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    color: white;
+    font-size: 20px;
+  }
+
+  .contact-info button:hover {
+    background: #3ccdd4;
   }
 
   /* Catálogo */
@@ -990,6 +1018,27 @@
   margin-top: 40px;
   color: #777;
   font-size: 0.9rem;
+  }
+
+  /* Botão para subir a tela */
+  .topo button {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    background: #2297c5;
+    color: #fff;
+    padding: 16px;
+    border-radius: 50%;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    z-index: 999;
+    display: none;
+  }
+
+  .topo button:hover{
+    background-color: aqua;
   }
 
   /* === RESPONSIVIDADE === */
