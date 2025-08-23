@@ -810,12 +810,12 @@
   }
 
   .oferta-card button:hover {
-  background: #b03cd4;
+  background: #3cbdd4;
   }
 
   .oferta-card.destaque {
   border: 2px solid #fff;
-  background: #560070;
+  background: #006c70;
   }
 
   .contact-info {
@@ -830,7 +830,7 @@
   }
 
   .contact-info button {
-    background: #be56e7;
+    background: #56e7e7;
     border: none;
     align-items: center;
     padding: 12px 24px;
