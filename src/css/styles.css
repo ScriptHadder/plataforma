@@ -106,7 +106,7 @@
   justify-content: space-between;
   gap: 60px;
   padding: 80px 10%;
-  background: linear-gradient(120deg, #9eb9e0, #ffffff);
+  background: linear-gradient(120deg, #9ed3e0, #ffffff);
   flex-wrap: wrap;
   opacity: 0;
   margin: auto;
@@ -135,7 +135,7 @@
   }
 
   .hero-text .highlight {
-  color: #0078d4;
+  color: #067d8d;
   }
 
   .hero-text p {
@@ -180,23 +180,23 @@
   }
 
   .primary {
-  background: #0078d4;
+  background: #067d8d;
   color: #fff;
   border: none;
   }
 
   .primary:hover {
-  background: #005fa3;
+  background: #067d8d;
   }
 
   .outline {
-  border: 2px solid #0078d4;
-  color: #0078d4;
+  border: 2px solid #067d8d;
+  color: #067d8d;
   background: transparent;
   }
 
   .outline:hover {
-  background: #0078d4;
+  background: #067d8d;
   color: #fff;
   }
 
@@ -205,7 +205,7 @@
   align-items: center;
   font-weight: 500;
   font-size: 1rem;
-  color: #0078d4;
+  color: #067d8d;
   text-decoration: none;
   transition: color 0.3s;
   }
@@ -216,7 +216,7 @@
   }
 
   .hero-link:hover {
-  color: #005fa3;
+  color: #09afc5;
   }
 
   .hero-image {
@@ -346,7 +346,7 @@
 
   /* ---------- SERVICES ---------- */
   .services {
-  background-color: #121212;
+  background: linear-gradient(to top, rgb(3, 97, 92), black);
   padding: 4rem 2rem;
   color: #eee;
   }
@@ -363,7 +363,6 @@
 
   .services .section-header h2 {
   font-size: 2.8rem;
-  color: #56e2e7;
   font-weight: 700;
   }
 
@@ -381,12 +380,14 @@
 
   /* Card individual */
   .service-card {
-  background: #1a1a1a;
   border-radius: 12px;
   padding: 30px;
   text-align: center;
+  border: 2px solid transparent;
+  background-image: linear-gradient(to left, rgba(35, 36, 36, 0.521), rgb(0, 0, 0));
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
   transition: 0.3s ease;
-  border: 1px solid #002f3d;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -633,6 +634,20 @@
   margin: 15px;
   }
 
+  .section-header h2{
+    font-size: 3rem;
+    color: #fff;
+    margin-bottom: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .section-header  span {
+    color: #56e2e7;
+    font-weight: 900;
+  }
+
   .desenvolvimento-etapa {
   display: flex;
   justify-content: center;
@@ -782,13 +797,13 @@
   }
 
   .oferta-card h3 {
-  font-size: 1.6rem;
+  font-size: 1.2rem;
   color: #56e2e7;
   }
 
   .oferta-card p {
   margin: 10px 0;
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: #ccc;
   }
 
@@ -815,7 +830,7 @@
 
   .oferta-card.destaque {
   border: 2px solid #fff;
-  background: #006c70;
+  background: #0d8494;
   }
 
   .contact-info {
@@ -830,7 +845,7 @@
   }
 
   .contact-info button {
-    background: #56e7e7;
+    background: #109daf;
     border: none;
     align-items: center;
     padding: 12px 24px;
