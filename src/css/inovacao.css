@@ -250,10 +250,6 @@ text-decoration: none;
     text-align: center;
 }
 
-.container span {
-    color: aqua;
-}
-
 .container > p { 
     font-size: 1.1em;
     text-align: center;
