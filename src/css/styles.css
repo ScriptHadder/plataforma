@@ -1232,6 +1232,9 @@
   .section-header h2 {
     font-size: 2rem;
   }
+  .hero-text h1 {
+    font-size: 2em;
+  }
 
   .section-header p {
     font-size: 1rem;
