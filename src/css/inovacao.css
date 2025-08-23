@@ -123,14 +123,14 @@ text-decoration: none;
   }
 
   .hero-text {
-  flex: 1;
-  min-width: 300px;
-  .hero-text {
-    background: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(6px);
-    padding: 20px;
-    border-radius: 10px;
-  }
+    flex: 1;
+    min-width: 300px;
+    .hero-text {
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(6px);
+      padding: 20px;
+      border-radius: 10px;
+    }
   }
 
   .hero-text h1 {
@@ -140,7 +140,9 @@ text-decoration: none;
   }
 
   .hero-text .highlight {
-  color: #787679;
+    color: #1f1d88;
+    font-style: italic;
+    font-size: 3.0rem;
   }
 
   .hero-text p {
@@ -148,6 +150,12 @@ text-decoration: none;
   color: #333;
   margin-bottom: 30px;
   max-width: 600px;
+  }
+
+  .hero-text span {
+    font-size: 1.1rem;
+    color: #1f1d88;
+    font-style: italic;
   }
 
   .hero-buttons {
@@ -185,23 +193,23 @@ text-decoration: none;
   }
 
   .primary {
-  background: #787679;
+  background: #172781;
   color: #fff;
   border: none;
   }
 
   .primary:hover {
-  background: #494949;
+  background: #172781;
   }
 
   .outline {
-  border: 2px solid #787679;
-  color: #787679;
+  border: 2px solid #211f94;
+  color: #000000;
   background: transparent;
   }
 
   .outline:hover {
-  background: #5a585a;
+  background: #0f0d96;
   color: #fff;
   }
 
@@ -274,6 +282,7 @@ text-decoration: none;
     z-index: 1;
 }
 
+/* Seção ABOUT */
 .parallelograms {
     position: absolute;
     top: 0;
@@ -315,29 +324,47 @@ text-decoration: none;
     }
 }
 
-.hero-text {
+.about {
     flex: 1;
     padding: 30px;
 }
 
-.hero-text h3 {
+.about h3 {
     font-size: 2em;
     color: #ffffff;
 }
 
-.hero-text p {
+.about p {
     margin: 15px 0;
     line-height: 1.6;
     color: white;
+    font-size: 20px;
 }
 
-.hero-text span { 
+.container .destaque-1 { 
     font-weight: bold;
-    color: #059123;
+    color: #20bcc2;
     margin-top: 10px;
 }
 
-.hero-text button {
+.destaque-2 {
+    font-size: 2rem;
+    color: #20b427;
+}
+
+.destaque-3 {
+  font-weight: bold;
+  color: #20b427;
+  margin-top: 10px;
+}
+
+.destaque-4 {
+  font-weight: bold;
+  color: #20b427;
+  margin-top: 10px;
+}
+
+.link-site {
     margin-top: 20px;
     padding: 10px 20px;
     background-color: #059123;
@@ -348,8 +375,38 @@ text-decoration: none;
     transition: background 0.3s;
 }
 
-.hero-text button:hover {
+.link-site button:hover {
     background-color: #0cd638;
+}
+
+.link-money {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #053191;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.link-money button:hover {
+    background-color: #0a44c2;
+}
+
+.link-solution {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #7c9105;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;;
+}
+
+.link-solution button:hover {
+    background-color: #b3d10c;
 }
 
 /* Parâmetros variados para os 10 paralelogramos */
@@ -503,6 +560,15 @@ text-decoration: none;
     width: 100%;
   }
 
+  .hero-text .highlight {
+    font-size: 2.3rem;
+  }
+
+  .hero-text span {
+    font-size: 1rem;
+  }
+
+  /* ABOUT */
   .parallelograms {
     width: 100%;
   }
@@ -726,7 +792,7 @@ text-decoration: none;
     animation-play-state: paused;
     transform: rotateY(0deg);
   }
-  
+
   /* Footer */
   .footer-logo h3 {
     font-size: 1.8rem;
@@ -863,10 +929,7 @@ text-decoration: none;
     from { opacity: 0; transform: translateY(-10px);}
     to { opacity: 1; transform: translateY(0);}
   }
-}
 
-  /* Garante que cards ocupem toda a largura em telas pequenas */
-@media (max-width: 600px) {
   .service-card,
   .diferencial-box,
   .oferta-card,
@@ -876,5 +939,13 @@ text-decoration: none;
     width: 100%;
     margin: 0 auto;
     padding: 20px 10px;
+  }
+
+  .hero-image img {
+    transform: rotatey(-15deg);
+    transform-style: preserve-3d;
+    transition: transform 1s ease;
+    animation: oscilacao 25s ease-in-out infinite;
+    transform-origin: center;   
   }
 }
