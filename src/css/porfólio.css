@@ -66,15 +66,20 @@ section {
 }
 
 .logo img {
-    height: 50px;
-    width: 50px;
-    position: absolute;
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  top: 15px;
 }
 
 .logo h2 {
-    position: relative;
-    left: 40%;
-    color: white;
+  color: white;
+  position: relative;
+  left: 40%;
+}
+
+.logo a {
+  text-decoration: none;
 }
 
 .logo span {
