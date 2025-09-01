@@ -38,49 +38,141 @@
         <div class="hero-text">
             <h1>Grandes <span class="highlight" style="font-style: italic">ideias</span> merecem um grande <span class="highlight" style="font-style: italic">site</span>!</h1>
             <p>Você quer se tornar nosso <strong style="font-style: italic;">parceiro</strong>, ou <strong style="font-style: italic;">encomendar</strong>?</p>
-
-            <div class="hero-buttons">
-                <a href="#services" class="btn primary">Ver serviços</a>
-                <a href="#" class="btn outline">Fale conosco</a>
-            </div>
-
-            <a href="#pricing" class="hero-link">
-                <span>&#10140;</span> Confira os planos e preços
-            </a>
         </div>
     </section>
 
     <!-- Seção de contato -->
-    <section class="contact-section" style="padding: 60px 0; background: linear-gradient(135deg, #1e293b 0%, #3b82f6 100%); position: relative; overflow: hidden;">
+    <section class="contact-section">
         <!-- Luzes decorativas -->
-        <div style="position: absolute; top: 10%; left: 5%; width: 200px; height: 200px; background: radial-gradient(circle, #60a5fa55 0%, transparent 70%); filter: blur(40px); z-index: 0;"></div>
-        <div style="position: absolute; bottom: 10%; right: 10%; width: 150px; height: 150px; background: radial-gradient(circle, #f472b655 0%, transparent 70%); filter: blur(30px); z-index: 0;"></div>
-        <h1 style="text-align: center; color: #fff; font-size: 2.5rem; font-weight: 700; margin-bottom: 40px; letter-spacing: 1px; z-index: 1; position: relative;">Entrar em Contato</h1>
-        <div class="card-container" style="display: flex; flex-direction: column; gap: 40px; max-width: 900px; margin: 0 auto; z-index: 1; position: relative;">
+        <div class="light-blue"></div>
+        <div class="light-pink"></div>
+
+        <h1 class="contact-title">Entrar em Contato</h1>
+
+        <div class="card-container">
             <!-- Card Parceria -->
-            <div class="card" style="display: flex; background: rgba(30,41,59,0.85); border-radius: 32px; box-shadow: 0 8px 32px 0 #3b82f655; overflow: hidden; align-items: center;">
-                <img src="src/img/Parceria.png" alt="Parceria com empresas" style="width: 320px; height: 220px; object-fit: cover; border-radius: 32px 0 0 32px; box-shadow: 0 0 40px #60a5fa55;">
-                <div style="padding: 32px; flex: 1;">
-                    <h2 style="color: #3b82f6; font-size: 2rem; font-weight: 700; margin-bottom: 16px;">Parceria</h2>
-                    <p style="color: #e5e7eb; font-size: 1.1rem; margin-bottom: 24px;">Se você é empreendedor e deseja ter um apoio nos seus negócios, ofertas exclusivas de baixo preço e uma equipe de profissionais, faça uma parceria com a ScriptHadder e se torne nossa empresa parceira!</p>
-                    <a href="parceria.html">
-                        <button style="background: linear-gradient(90deg, #3b82f6 0%, #60a5fa 100%); color: #fff; border: none; border-radius: 8px; padding: 12px 32px; font-size: 1rem; font-weight: 600; box-shadow: 0 4px 16px #3b82f655; cursor: pointer; transition: background 0.3s;">
-                            Apoiar
-                        </button>
+            <div class="card card-blue">
+                <img src="src/img/Parceria.png" alt="Parceria com empresas" class="card-image">
+                <div class="card-content">
+                    <h2 class="card-title card-title-blue">Parceria</h2>
+                    <p class="card-text">Se você é empreendedor e deseja ter um apoio nos seus negócios, ofertas exclusivas de baixo preço e uma equipe de profissionais, faça uma parceria com a ScriptHadder e se torne nossa empresa parceira!</p>
+                    <a href="#contact">
+                        <button class="card-button card-button-blue">Apoiar</button>
                     </a>
                 </div>
             </div>
+
             <!-- Card Formulário -->
-            <div class="card" style="display: flex; background: rgba(30,41,59,0.85); border-radius: 32px; box-shadow: 0 8px 32px 0 #f472b655; overflow: hidden; align-items: center;">
-                <img src="src/img/Encomenda.png" alt="Formulário de contato" style="width: 320px; height: 220px; object-fit: cover; border-radius: 32px 0 0 32px; box-shadow: 0 0 40px #f472b655;">
-                <div style="padding: 32px; flex: 1;">
-                    <h2 style="color: #f472b6; font-size: 2rem; font-weight: 700; margin-bottom: 16px;">Formulário de Contato</h2>
-                    <p style="color: #e5e7eb; font-size: 1.1rem; margin-bottom: 24px;">Quer encomendar seu sistema, tirar dúvidas ou realizar uma consulta? Preencha nosso formulário e entraremos em contato!</p>
-                    <a href="contato.html">
-                        <button style="background: linear-gradient(90deg, #f472b6 0%, #fbbf24 100%); color: #fff; border: none; border-radius: 8px; padding: 12px 32px; font-size: 1rem; font-weight: 600; box-shadow: 0 4px 16px #f472b655; cursor: pointer; transition: background 0.3s;">
-                            Preencher
-                        </button>
+            <div class="card card-pink">
+                <img src="src/img/Encomenda.png" alt="Formulário de contato" class="card-image">
+                <div class="card-content">
+                    <h2 class="card-title card-title-pink">Formulário de Contato</h2>
+                    <p class="card-text">Quer encomendar seu sistema, tirar dúvidas ou realizar uma consulta? Preencha nosso formulário e entraremos em contato!</p>
+                    <a href="#contact">
+                        <button class="card-button card-button-pink">Preencher</button>
                     </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Entre em Contato</h2>
+                <p>Vamos conversar sobre seu próximo projeto</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Fale Conosco</h3>
+                    <p>Estamos prontos para transformar suas ideias em realidade. Entre em contato e vamos discutir como podemos ajudar seu negócio.</p>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Telefone</h4>
+                            <p>(11) 99999-9999</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>contato@dev.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Localização</h4>
+                            <p>São Paulo, SP - Brasil</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="first-name">Nome</label>
+                            <input type="text" id="first-name" name="firstName" placeholder="Seu primeiro nome" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="last-name">Sobrenome</label>
+                            <input type="text" id="last-name" name="lastName" placeholder="Seu sobrenome" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Seu melhor email</label>
+                            <input type="email" id="email" name="email" placeholder="ex: email@dominio.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Celular</label>
+                            <input type="tel" id="phone" name="phone" placeholder="(11) 99999-9999" maxlength="15" required oninput="formatPhone(this)">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Serviço</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="service" value="sistemas" required> Desenvolvimento de sistemas</label>
+                                <label><input type="radio" name="service" value="seguranca"> Segurança cibernética</label>
+                                <label><input type="radio" name="service" value="consultoria"> Consultoria</label>
+                                <label><input type="radio" name="service" value="devsecops"> DevSec / AppSec / DevSecOps</label>
+                                <label><input type="radio" name="service" value="parceria"> Parceria</label>
+                                <label><input type="radio" name="service" value="beneficios"> Meus benefícios</label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Sobre o contato conosco</label>
+                            <textarea id="subject" name="subject" rows="5" placeholder="Fale mais sobre o seu requerimento..." required></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Como nos conheceu?</label>
+                            <div class="checkbox-group">
+                                <label><input type="checkbox" name="referral[]" value="instagram"> Instagram</label>
+                                <label><input type="checkbox" name="referral[]" value="google"> Pesquisa no Google</label>
+                                <label><input type="checkbox" name="referral[]" value="indication"> Indicação de alguém</label>
+                                <label><input type="checkbox" name="referral[]" value="linkedin"> LinkedIn</label>
+                                <label><input type="checkbox" name="referral[]" value="portfolio"> Portfólio online</label>
+                                <label><input type="checkbox" name="referral[]" value="outros"> Outros</label>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i> Enviar
+                            </button>
+                            <button type="reset" class="btn btn-secondary">
+                                <i class="fas fa-broom"></i> Redefinir
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -192,6 +284,17 @@
         scrollBtn.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
+            function formatPhone(input) {
+        let value = input.value.replace(/\D/g, "");
+        if (value.length > 11) value = value.slice(0, 11);
+
+        if (value.length > 0) {
+            value = "(" + value;
+            if (value.length > 3) value = value.slice(0, 3) + ") " + value.slice(3);
+            if (value.length > 10) value = value.slice(0, 10) + "-" + value.slice(10);
+        }
+        input.value = value;
+    }
     </script>
 </body>
 </html>
