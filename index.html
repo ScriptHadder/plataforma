@@ -38,7 +38,7 @@
                     <img src="src/img/icone-sem-fundo.png" alt="Ícone"></a>
                 </div>
                 <ul class="nav-menu">
-                    <li><a href="#hero">Sobre nós</a></li>
+                    <li><a href="#sobre">Sobre nós</a></li>
                     <li><a href="portfólio.html">Templates</a></li>
                     <li><a href="#services">Serviços</a></li>
                     <li><a href="#team">Equipe</a></li>
@@ -436,30 +436,60 @@
             </div>
         </section>
 
-        <section class="diferenciais">
-        <div class="container">
+        <!-- Tecnologias usadas -->
+        <section class="tecnology">
             <div class="section-header">
-                <h2>Nossos <span>diferenciais</span></h2>
-                <p>O que nos torna únicos no mercado de tecnologia.</p>
-                </div>
-                <div class="diferenciais-grid">
-                <div class="diferencial-box">
-                    <i class="fas fa-bolt"></i>
-                    <h3>Agilidade</h3>
-                    <p>Desenvolvimento rápido sem comprometer a qualidade.</p>
-                </div>
-                <div class="diferencial-box">
-                    <i class="fas fa-lock"></i>
-                    <h3>Segurança</h3>
-                    <p>Soluções seguras para proteger seus dados e negócios.</p>
-                </div>
-                <div class="diferencial-box">
-                    <i class="fas fa-user-friends"></i>
-                    <h3>Atendimento</h3>
-                    <p>Suporte humano, próximo e atencioso sempre que precisar.</p>
+                <h2>Tecnologias que <span>Usamos</span></h2>
+                <div class="carousel">
+                    <div class="carousel-track">
+                        <i class="fab fa-linux" title="Linux"></i>
+                        <i class="fab fa-python" title="Python"></i>
+                        <i class="fab fa-java" title="Java"></i>
+                        <i class="fab fa-js-square" title="JavaScript"></i>
+                        <i class="fab fa-node" title="Node.js"></i>
+                        <i class="fab fa-react" title="React"></i>
+                        <i class="fab fa-angular" title="Angular"></i>
+                        <i class="fab fa-docker" title="Docker"></i>
+                        <i class="fab fa-git-alt" title="Git"></i>
+                        <!-- Duplicando para loop infinito -->
+                        <i class="fa-solid fa-database" title="database"></i>
+                        <i class="fa-brands fa-html5" title="HTML5"></i>
+                        <i class="fa-brands fa-css3" title="CSS3"></i>
+                        <i class="fa-brands fa-github" title="GitHub"></i>
+                        <i class="fa-brands fa-gitlab" title="GitLab"></i>
+                        <i class="fa-brands fa-figma" title="Figma"></i>
+                        <i class="fa-brands fa-windows" title="Windows"></i>
+                        <i class="fa-solid fa-cloud" title="Nuvem"></i>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
+
+        <!-- Diferenciais -->
+        <section class="diferenciais">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Nossos <span>diferenciais</span></h2>
+                    <p>O que nos torna únicos no mercado de tecnologia.</p>
+                    </div>
+                    <div class="diferenciais-grid">
+                    <div class="diferencial-box">
+                        <i class="fas fa-bolt"></i>
+                        <h3>Agilidade</h3>
+                        <p>Desenvolvimento rápido sem comprometer a qualidade.</p>
+                    </div>
+                    <div class="diferencial-box">
+                        <i class="fas fa-lock"></i>
+                        <h3>Segurança</h3>
+                        <p>Soluções seguras para proteger seus dados e negócios.</p>
+                    </div>
+                    <div class="diferencial-box">
+                        <i class="fas fa-user-friends"></i>
+                        <h3>Atendimento</h3>
+                        <p>Suporte humano, próximo e atencioso sempre que precisar.</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <!-- Avaliação de clientes -->
@@ -633,6 +663,30 @@
         });
         scrollBtn.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        window.addEventListener('load', () => {
+        const track = document.getElementById('carouselTrack');
+        const itemsCount = track.children.length / 2; // metade dos ícones
+        const item = track.children[0];
+        const style = window.getComputedStyle(item);
+        const width = item.offsetWidth;
+        const gap = parseInt(style.marginRight || 0) || 0;
+
+        // Cálculo total do deslocamento = (largura item + gap) * qtd de itens
+        const distance = (width + gap) * itemsCount;
+
+        // Cria a animação CSS dinamicamente
+        track.style.animation = `scrollRight 40s linear infinite`;
+
+        // Cria a keyframe dinamicamente para o deslocamento correto
+        const styleSheet = document.styleSheets[0];
+        styleSheet.insertRule(`
+        @keyframes scrollRight {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-${distance}px); }
+        }
+        `, styleSheet.cssRules.length);
         });
     </script>
 </body>

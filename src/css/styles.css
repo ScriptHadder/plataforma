@@ -696,6 +696,80 @@
   color: #ccc;
   }
 
+  /* Tecnologias usadas */
+.tecnology {
+  background-color: #0a0a0a;
+  padding: 2rem 1rem;
+  color: #29d9d9;
+  user-select: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.tecnology h2 {
+  font-weight: 700;
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  color: #ffffff;
+  text-shadow: 0 0 6px #00b8b8aa;
+}
+
+.carousel {
+  overflow: hidden;
+  position: relative;
+  padding: 3%;
+  border-radius: 12px;
+  box-shadow: inset 0 0 10px #00575750;
+  background: linear-gradient(90deg, #111111 10%, #0a0a0a 50%, #111111 90%);
+}
+
+.carousel-track {
+  display: flex;
+  gap: 3rem;
+  width: max-content;
+  animation: scrollRight 40s linear infinite;
+}
+
+.carousel i {
+  font-size: 7rem;
+  color: #ffffff;
+  filter: drop-shadow(0 0 4px #2ed9d9cc);
+  cursor: pointer;
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    color 0.35s ease,
+    filter 0.35s ease;
+}
+
+.carousel i:hover {
+  color: #00ffff;
+  transform: scale(1.3) rotate(12deg);
+  filter: drop-shadow(0 0 10px #00ffffcc);
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Desloca exatamente a metade do total (todos os itens originais) */
+    transform: translateX(calc(-35%));
+  }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .carousel i {
+    font-size: 6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel i {
+    font-size: 5rem;
+  }
+}
+
+
   /* Diferenciais */
 
   .diferenciais {
