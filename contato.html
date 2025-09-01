@@ -4,8 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contato</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="shortcut icon" href="img/Ícone sem fundo.png" type="image/x-icon">
+    <link rel="stylesheet" href="src/css/contato.css">
+    <link rel="shortcut icon" href="src/img/icone-sem-fundo.png" type="image/x-icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <!-- Header -->
@@ -13,15 +17,12 @@
         <nav class="navbar">
             <div class="nav-container">
                 <div class="logo">
-                    <h2>Script<span>Hatter</span></h2>
-                    <img src="/img/Ícone sem fundo.png" alt="Ícone">
+                    <a href="index.html"><img src="src/img/Logo.png" alt="Ícone"></a>
                 </div>
                 <ul class="nav-menu">
-                    <li><a href="index.html">Sobre nós</a></li>
-                    <li><a href="portfólio.html">Nosso portfólio</a></li>
-                    <li><a href="#services">Serviços</a></li>
-                    <li><a href="#team">Equipe</a></li>
-                    <li><a href="contato.html">Contato</a></li>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="portfólio.html">Templates</a></li>
+                    <li><a href="inovacao.html">Soluções</a></li>
                 </ul>
                 <div class="hamburger">
                     <span></span>
@@ -32,11 +33,165 @@
         </nav>
     </header>
 
-    <h1>Entrar em contato</h1>
-    <div class="container">
-        <div class="card">
-            <h2></h2>
+    <!-- Hero -->
+    <section class="hero-split" id="hero">
+        <div class="hero-text">
+            <h1>Grandes <span class="highlight" style="font-style: italic">ideias</span> merecem um grande <span class="highlight" style="font-style: italic">site</span>!</h1>
+            <p>Você quer se tornar nosso <strong style="font-style: italic;">parceiro</strong>, ou <strong style="font-style: italic;">encomendar</strong>?</p>
+
+            <div class="hero-buttons">
+                <a href="#services" class="btn primary">Ver serviços</a>
+                <a href="#" class="btn outline">Fale conosco</a>
+            </div>
+
+            <a href="#pricing" class="hero-link">
+                <span>&#10140;</span> Confira os planos e preços
+            </a>
         </div>
+    </section>
+
+    <!-- Seção de contato -->
+    <section class="contact-section" style="padding: 60px 0; background: linear-gradient(135deg, #1e293b 0%, #3b82f6 100%); position: relative; overflow: hidden;">
+        <!-- Luzes decorativas -->
+        <div style="position: absolute; top: 10%; left: 5%; width: 200px; height: 200px; background: radial-gradient(circle, #60a5fa55 0%, transparent 70%); filter: blur(40px); z-index: 0;"></div>
+        <div style="position: absolute; bottom: 10%; right: 10%; width: 150px; height: 150px; background: radial-gradient(circle, #f472b655 0%, transparent 70%); filter: blur(30px); z-index: 0;"></div>
+        <h1 style="text-align: center; color: #fff; font-size: 2.5rem; font-weight: 700; margin-bottom: 40px; letter-spacing: 1px; z-index: 1; position: relative;">Entrar em Contato</h1>
+        <div class="card-container" style="display: flex; flex-direction: column; gap: 40px; max-width: 900px; margin: 0 auto; z-index: 1; position: relative;">
+            <!-- Card Parceria -->
+            <div class="card" style="display: flex; background: rgba(30,41,59,0.85); border-radius: 32px; box-shadow: 0 8px 32px 0 #3b82f655; overflow: hidden; align-items: center;">
+                <img src="src/img/Parceria.png" alt="Parceria com empresas" style="width: 320px; height: 220px; object-fit: cover; border-radius: 32px 0 0 32px; box-shadow: 0 0 40px #60a5fa55;">
+                <div style="padding: 32px; flex: 1;">
+                    <h2 style="color: #3b82f6; font-size: 2rem; font-weight: 700; margin-bottom: 16px;">Parceria</h2>
+                    <p style="color: #e5e7eb; font-size: 1.1rem; margin-bottom: 24px;">Se você é empreendedor e deseja ter um apoio nos seus negócios, ofertas exclusivas de baixo preço e uma equipe de profissionais, faça uma parceria com a ScriptHadder e se torne nossa empresa parceira!</p>
+                    <a href="parceria.html">
+                        <button style="background: linear-gradient(90deg, #3b82f6 0%, #60a5fa 100%); color: #fff; border: none; border-radius: 8px; padding: 12px 32px; font-size: 1rem; font-weight: 600; box-shadow: 0 4px 16px #3b82f655; cursor: pointer; transition: background 0.3s;">
+                            Apoiar
+                        </button>
+                    </a>
+                </div>
+            </div>
+            <!-- Card Formulário -->
+            <div class="card" style="display: flex; background: rgba(30,41,59,0.85); border-radius: 32px; box-shadow: 0 8px 32px 0 #f472b655; overflow: hidden; align-items: center;">
+                <img src="src/img/Encomenda.png" alt="Formulário de contato" style="width: 320px; height: 220px; object-fit: cover; border-radius: 32px 0 0 32px; box-shadow: 0 0 40px #f472b655;">
+                <div style="padding: 32px; flex: 1;">
+                    <h2 style="color: #f472b6; font-size: 2rem; font-weight: 700; margin-bottom: 16px;">Formulário de Contato</h2>
+                    <p style="color: #e5e7eb; font-size: 1.1rem; margin-bottom: 24px;">Quer encomendar seu sistema, tirar dúvidas ou realizar uma consulta? Preencha nosso formulário e entraremos em contato!</p>
+                    <a href="contato.html">
+                        <button style="background: linear-gradient(90deg, #f472b6 0%, #fbbf24 100%); color: #fff; border: none; border-radius: 8px; padding: 12px 32px; font-size: 1rem; font-weight: 600; box-shadow: 0 4px 16px #f472b655; cursor: pointer; transition: background 0.3s;">
+                            Preencher
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <h3>Script<span>Hadder</span></h3>
+                        <img src="src/img/icone-sem-fundo.png" alt="Logo">
+                    </div>
+                    <p>Transformando ideias em soluções digitais inovadoras. Sua parceira em tecnologia.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Serviços</h4>
+                    <ul>
+                        <li><a href="#services">Desenvolvimento Web</a></li>
+                        <li><a href="#services">Desenvolvimento Mobile</a></li>
+                        <li><a href="#services">Backend & APIs</a></li>
+                        <li><a href="#services">Consultoria</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Empresa</h4>
+                    <ul>
+                        <li><a href="#about">Sobre Nós</a></li>
+                        <li><a href="#team">Nossa Equipe</a></li>
+                        <li><a href="#contact">Contato</a></li>
+                        <li><a href="#">Portfólio</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> (11) 99999-9999</p>
+                        <p><i class="fas fa-envelope"></i> scripthadder@gmail.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> São Paulo, SP</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 ScriptHadder. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão de Voltar ao Topo -->
+    <div class="topo">
+        <button id="scrollToTopBtn" >
+            <i class="fas fa-arrow-up" style="font-size: 1.5rem;"></i>
+        </button>
     </div>
+
+    <script src="src/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+        // Ativar animação ao rolar para o Hero
+        const hero = document.querySelector(".hero-split");
+        const observer = new IntersectionObserver(([entry]) => {
+            if (entry.isIntersecting) {
+                hero.classList.add("reveal");
+            }
+        }, { threshold: 0.3 });
+
+        observer.observe(hero);
+
+        // Swiper do carrossel de equipe
+        var swiper = new Swiper(".teamSwiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            initialSlide: 3,
+            coverflowEffect: {
+                rotate: 15,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: false,
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+
+        // Mostrar/ocultar botão dinamicamente
+        const scrollBtn = document.getElementById('scrollToTopBtn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollBtn.style.display = 'block';
+            } else {
+                scrollBtn.style.display = 'none';
+            }
+        });
+        scrollBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 </body>
 </html>
