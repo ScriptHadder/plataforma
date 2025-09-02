@@ -125,40 +125,49 @@
       font-weight: 600;
       text-shadow: 0 0 6px #00e6db;
     }
+      
+    @media (max-width: 800px) {
+      #3d-container {
+        width: 100%;
+        min-height: 60vh;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        flex-direction: column;
+      }
 
-    /* Responsividade */
-    @media (max-width: 768px) {
-      .info-container, .info-container-right {
-        width: 90vw;
-        font-size: 14px;
-        padding: 14px 18px;
-        border-radius: 12px;
-      }
-      .info-container {
-        left: 50%;
-        transform: translateX(-50%);
-        top: 10px;
-        margin-bottom: 10px;
-      }
+      .info-container,
       .info-container-right {
-        right: 50%;
-        transform: translateX(50%);
-        top: 70px;
+        position: static;
+        width: 90%;
+        max-width: 500px;
+        margin: 10px auto;
+        transform: none !important;
+        box-shadow: 0 0 15px #00e6db;
       }
+
       #loading-screen {
         max-width: 90vw;
-        font-size: 1.2rem;
+        font-size: 1rem;
         padding: 15px;
+        transform: translate(-50%, -50%);
+      }
+
+      canvas {
+        margin: -250px auto;
       }
     }
 
-    /* Cursor styling */
-    body {
-      cursor: grab;
-    }
-    body:active {
-      cursor: grabbing;
-    }
+      /* Cursor styling */
+      body {
+        cursor: grab;
+      }
+      body:active {
+        cursor: grabbing;
+      }
 
   </style>
 
@@ -208,7 +217,7 @@
     );
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setClearColor(0x121212, 1);
+    renderer.setClearColor(0x000000, 0);
     document.getElementById('3d-container').appendChild(renderer.domElement);
 
     // Luzes
