@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Modelo 3D - ScriptHadder</title>
+
+  <!-- Fonte moderna -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* Reset */
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+
+    body, html {
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #121212, #1a1a1a);
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+      color: #e0e0e0;
+      user-select: none;
+    }
+
+    #3d-container {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Tela de carregamento */
+    #loading-screen {
+      position: absolute;
+      inset: 0;
+      background: rgba(18, 18, 18, 0.95);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 20;
+      font-weight: 600;
+      font-size: 1.5rem;
+      color: #00e6db;
+      letter-spacing: 0.05em;
+      backdrop-filter: blur(6px);
+      box-shadow: inset 0 0 50px #00e6db;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      max-width: 350px;
+      margin: auto;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    #loading-bar {
+      margin-top: 20px;
+      width: 100%;
+      height: 14px;
+      border-radius: 14px;
+      background: #333;
+      overflow: hidden;
+      box-shadow: 0 0 8px #00e6db inset;
+    }
+
+    #loading-progress {
+      height: 100%;
+      background: linear-gradient(90deg, #27afa8, #00e6db);
+      width: 0;
+      transition: width 0.3s ease;
+      box-shadow: 0 0 12px #00e6db;
+    }
+
+    /* Info Boxes */
+    .info-container, .info-container-right {
+      position: absolute;
+      top: 25px;
+      background: rgba(0, 0, 0, 0.7);
+      padding: 18px 22px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px #00e6db;
+      width: 280px;
+      max-width: 90vw;
+      transition: transform 0.3s ease;
+      user-select: text;
+    }
+
+    .info-container {
+      left: 25px;
+      border: 2px solid #00e6db;
+    }
+
+    .info-container-right {
+      right: 25px;
+      border: 2px solid #00e6db;
+    }
+
+    .info-container h3,
+    .info-container-right h3 {
+      margin-bottom: 10px;
+      font-weight: 700;
+      font-size: 1.3rem;
+      color: #00e6db;
+      text-shadow: 0 0 10px #00e6db;
+    }
+
+    .info-container p,
+    .info-container-right p {
+      font-weight: 400;
+      line-height: 1.4;
+      color: #cdeccc;
+      margin-bottom: 6px;
+    }
+
+    .info-container span,
+    .info-container-right span {
+      color: #00e6db;
+      font-weight: 600;
+      text-shadow: 0 0 6px #00e6db;
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .info-container, .info-container-right {
+        width: 90vw;
+        font-size: 14px;
+        padding: 14px 18px;
+        border-radius: 12px;
+      }
+      .info-container {
+        left: 50%;
+        transform: translateX(-50%);
+        top: 10px;
+        margin-bottom: 10px;
+      }
+      .info-container-right {
+        right: 50%;
+        transform: translateX(50%);
+        top: 70px;
+      }
+      #loading-screen {
+        max-width: 90vw;
+        font-size: 1.2rem;
+        padding: 15px;
+      }
+    }
+
+    /* Cursor styling */
+    body {
+      cursor: grab;
+    }
+    body:active {
+      cursor: grabbing;
+    }
+
+  </style>
+
+</head>
+<body>
+
+  <!-- Tela de Carregamento -->
+  <div id="loading-screen" aria-live="polite" role="alert">
+    <div>Carregando Modelo 3D...</div>
+    <div id="loading-bar">
+      <div id="loading-progress"></div>
+    </div>
+  </div>
+
+  <!-- Container para o modelo 3D -->
+  <div id="3d-container" aria-label="Visualizador 3D">
+
+    <div class="info-container" aria-label="Status do projeto">
+      <h3>Funcionamento normal da ScriptHadder</h3>
+      <p>Status: <span>Em desenvolvimento</span></p>
+    </div>
+
+    <div class="info-container-right" aria-label="Informações técnicas do modelo">
+      <h3>Profissionais:</h3>
+      <p>Renan: <span>Segurança cibernético e Hacker ético</span></p>
+      <p>Wesley: <span>Investidor e prompt enginner</span></p>
+      <p>Arthur: <span>Arquiteto de softwares</span></p>
+      <p>Mateus: <span>Líder em mídias e marketing</span></p>
+      <p>Kauã: <span>Líder em desenvolvimento web</span></p>
+      <p>Gabriel: <span>Aprendiz de desenvolvimento web</span></p>
+    </div>
+  </div>
+
+  <!-- Scripts three.js -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/OBJLoader.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+  <script>
+    // Setup básico da cena
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(
+      75,
+      window.innerWidth / window.innerHeight,
+      0.1,
+      1000
+    );
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setClearColor(0x121212, 1);
+    document.getElementById('3d-container').appendChild(renderer.domElement);
+
+    // Luzes
+    const ambientLight = new THREE.AmbientLight(0xffffff, 0.45);
+    scene.add(ambientLight);
+
+    const directionalLight = new THREE.DirectionalLight(0x00e676, 1.2);
+    directionalLight.position.set(10, 15, 10);
+    directionalLight.castShadow = true;
+    scene.add(directionalLight);
+
+    // Controle Orbit
+    const controls = new THREE.OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.3;
+    controls.screenSpacePanning = false;
+    controls.minDistance = 2;
+    controls.maxDistance = 12;
+
+    // Carregador do modelo
+    let loadedObject = null;
+    const loader = new THREE.OBJLoader();
+
+    loader.load(
+      'base.obj',
+      (object) => {
+        if (loadedObject) scene.remove(loadedObject);
+
+        object.scale.set(1.3, 1.3, 1.3);
+        object.position.set(0, -1.2, 0);
+        object.rotation.y = Math.PI; // gira 180 graus para melhor visual
+
+        // Material estilizado
+        object.traverse((child) => {
+          if (child.isMesh) {
+            child.material.metalness = 0.6;
+            child.material.roughness = 0.4;
+            child.material.color.set(0x00ffff);
+            child.material.emissive = new THREE.Color(0x006666);
+            child.material.emissiveIntensity = 0.5;
+            child.material.needsUpdate = true;
+          }
+        });
+
+        scene.add(object);
+        loadedObject = object;
+        document.getElementById('loading-screen').style.opacity = 0;
+        setTimeout(() => {
+          document.getElementById('loading-screen').style.display = 'none';
+        }, 800);
+      },
+      (xhr) => {
+        const progress = (xhr.loaded / xhr.total) * 100;
+        document.getElementById('loading-progress').style.width = progress + '%';
+      },
+      (error) => {
+        console.error('Erro ao carregar o modelo:', error);
+      }
+    );
+
+    // Posiciona a câmera
+    camera.position.set(0, 1.2, 5);
+
+    // Responsividade
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+
+    // Loop de animação
+    function animate() {
+      requestAnimationFrame(animate);
+
+      if (loadedObject) {
+        loadedObject.rotation.y += 0.008;
+      }
+
+      controls.update();
+      renderer.render(scene, camera);
+    }
+
+    animate();
+  </script>
+</body>
+</html>

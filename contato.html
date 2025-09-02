@@ -17,7 +17,7 @@
         <nav class="navbar">
             <div class="nav-container">
                 <div class="logo">
-                    <a href="index.html"><img src="src/img/Logo.png" alt="Ícone"></a>
+                    <a href="index.html"><img src="src/img/Letreiro.png" alt="Ícone"></a>
                 </div>
                 <ul class="nav-menu">
                     <li><a href="index.html">Início</a></li>
@@ -117,52 +117,52 @@
                 </div>
                 
                 <div class="contact-form">
-                    <form id="contactForm">
+                    <form id="contactForm" action="https://api.staticforms.xyz/submit" method="post">
                         <div class="form-group">
                             <label for="first-name">Nome</label>
-                            <input type="text" id="first-name" name="firstName" placeholder="Seu primeiro nome" required>
+                            <input type="text" id="first-name" name="$primeiro_nome" placeholder="Seu primeiro nome" required>
                         </div>
 
                         <div class="form-group">
                             <label for="last-name">Sobrenome</label>
-                            <input type="text" id="last-name" name="lastName" placeholder="Seu sobrenome" required>
+                            <input type="text" id="last-name" name="$sobrenome" placeholder="Seu sobrenome" required>
                         </div>
 
                         <div class="form-group">
                             <label for="email">Seu melhor email</label>
-                            <input type="email" id="email" name="email" placeholder="ex: email@dominio.com" required>
+                            <input type="email" id="email" name="$email" placeholder="ex: email@dominio.com" required>
                         </div>
 
                         <div class="form-group">
                             <label for="phone">Celular</label>
-                            <input type="tel" id="phone" name="phone" placeholder="(11) 99999-9999" maxlength="15" required oninput="formatPhone(this)">
+                            <input type="tel" id="phone" name="$phone" placeholder="(11) 99999-9999" maxlength="15" required oninput="formatPhone(this)">
                         </div>
 
                         <div class="form-group">
                             <label>Serviço</label>
                             <div class="radio-group">
-                                <label><input type="radio" name="service" value="sistemas" required> Desenvolvimento de sistemas</label>
-                                <label><input type="radio" name="service" value="seguranca"> Segurança cibernética</label>
-                                <label><input type="radio" name="service" value="consultoria"> Consultoria</label>
-                                <label><input type="radio" name="service" value="devsecops"> DevSec / AppSec / DevSecOps</label>
-                                <label><input type="radio" name="service" value="parceria"> Parceria</label>
+                                <label><input type="radio" name="$servico" value="sistemas" required> Desenvolvimento de sistemas</label>
+                                <label><input type="radio" name="$servico" value="seguranca"> Segurança cibernética</label>
+                                <label><input type="radio" name="$servico" value="consultoria"> Consultoria</label>
+                                <label><input type="radio" name="$servico" value="devsecops"> DevSec / AppSec / DevSecOps</label>
+                                <label><input type="radio" name="$servico" value="parceria"> Parceria</label>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="subject">Sobre o contato conosco</label>
-                            <textarea id="subject" name="subject" rows="5" placeholder="Fale mais sobre o seu requerimento..." required></textarea>
+                            <textarea id="subject" name="$sobre" rows="5" placeholder="Fale mais sobre o seu requerimento..." required></textarea>
                         </div>
 
                         <div class="form-group">
                             <label>Como nos conheceu?</label>
                             <div class="checkbox-group">
-                                <label><input type="checkbox" name="referral[]" value="instagram"> Instagram</label>
-                                <label><input type="checkbox" name="referral[]" value="google"> Pesquisa no Google</label>
-                                <label><input type="checkbox" name="referral[]" value="indication"> Indicação de alguém</label>
-                                <label><input type="checkbox" name="referral[]" value="linkedin"> LinkedIn</label>
-                                <label><input type="checkbox" name="referral[]" value="portfolio"> Portfólio online</label>
-                                <label><input type="checkbox" name="referral[]" value="outros"> Outros</label>
+                                <label><input type="checkbox" name="$conheceu" value="instagram"> Instagram</label>
+                                <label><input type="checkbox" name="$conheceu" value="google"> Pesquisa no Google</label>
+                                <label><input type="checkbox" name="$conheceu" value="indication"> Indicação de alguém</label>
+                                <label><input type="checkbox" name="$conheceu" value="linkedin"> LinkedIn</label>
+                                <label><input type="checkbox" name="$conheceu" value="portfolio"> Portfólio online</label>
+                                <label><input type="checkbox" name="$conheceu" value="outros"> Outros</label>
                             </div>
                         </div>
 
@@ -173,6 +173,9 @@
                             <button type="reset" class="btn btn-secondary">
                                 <i class="fas fa-broom"></i> Redefinir
                             </button>
+
+                            <input type="hidden" name="accessKey" value="sf_d5al7bk3edi620aj9ai6hanf">
+                            <input type="hidden" name="redirectTo" value="https://renanmestre.github.io/Site_pessoal/agradecimento.html">
                         </div>
                     </form>
                 </div>
@@ -186,8 +189,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <h3>Script<span>Hadder</span></h3>
-                        <img src="src/img/icone-sem-fundo.png" alt="Logo">
+                        <img src="src/img/ScriptHadder letreiro.png" alt="Letreiro">
                     </div>
                     <p>Transformando ideias em soluções digitais inovadoras. Sua parceira em tecnologia.</p>
                     <div class="social-links">
@@ -201,35 +203,40 @@
                 <div class="footer-section">
                     <h4>Serviços</h4>
                     <ul>
-                        <li><a href="#services">Desenvolvimento Web</a></li>
-                        <li><a href="#services">Desenvolvimento Mobile</a></li>
+                        <li><a href="index">Desenvolvimento Web</a></li>
+                        <li><a href="#services">Desenvolvimento Desktop</a></li>
                         <li><a href="#services">Backend & APIs</a></li>
                         <li><a href="#services">Consultoria</a></li>
+                        <li><a href="#services">Hacker ético</a></li>
+                        <li><a href="#services">DevSec</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
                     <h4>Empresa</h4>
                     <ul>
-                        <li><a href="#about">Sobre Nós</a></li>
-                        <li><a href="#team">Nossa Equipe</a></li>
-                        <li><a href="#contact">Contato</a></li>
-                        <li><a href="#">Portfólio</a></li>
+                        <li><a href="index.html">Sobre Nós</a></li>
+                        <li><a href="portfólio.html">Templates</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                        <li><a href="inovacao.html">Soluções</a></li>
                     </ul>
                 </div>
+
+                <div class=""></div>
                 
                 <div class="footer-section">
                     <h4>Contato</h4>
                     <div class="contact-info">
-                        <p><i class="fas fa-phone"></i> (11) 99999-9999</p>
+                        <p><i class="fas fa-phone"></i> (16) 99308-8055</p>
                         <p><i class="fas fa-envelope"></i> scripthadder@gmail.com</p>
                         <p><i class="fas fa-map-marker-alt"></i> São Paulo, SP</p>
                     </div>
                 </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 ScriptHadder. Todos os direitos reservados.</p>
+                <div class="footer-separator"></div>
+
+                <div class="footer-bottom">
+                    <p>&copy; 2025 ScriptHadder. Todos os direitos reservados.</p>
+                </div>
             </div>
         </div>
     </footer>

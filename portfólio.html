@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Templates</title>
     <link rel="stylesheet" href="src/css/porfólio.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <!-- ✅ Favicon (.ico para o navegador) -->
     <link rel="shortcut icon" href="ico/icone_site.ico" type="image/x-icon">
@@ -29,8 +33,8 @@
         <nav class="navbar">
             <div class="nav-container">
                 <div class="logo">
-                    <a href="index.html"><h2>Script<span>Hadder</span></h2>
-                    <img src="src/img/icone-sem-fundo.png" alt="Ícone"></a>
+                    <a href="index.html">
+                    <img src="src/img/Letreiro.png" alt="Letreiro"></a>
                 </div>
                 <ul class="nav-menu">
                     <li><a href="index.html">Sobre nós</a></li>
@@ -122,59 +126,86 @@
 
     </main>
 
-            <!-- Footer -->
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-section">
-                        <div class="footer-logo">
-                            <h3>Script<span>Hadder</span></h3>
-                            <img src="src/img/icone-sem-fundo.png" alt="Logo">
-                        </div>
-                        <p>Transformando ideias em soluções digitais inovadoras. Sua parceira em tecnologia.</p>
-                        <div class="social-links">
-                            <a href="#"><i class="fab fa-facebook"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-linkedin"></i></a>
-                            <a href="#"><i class="fab fa-github"></i></a>
-                        </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="src/img/ScriptHadder letreiro.png" alt="Logo">
                     </div>
-                    
-                    <div class="footer-section">
-                        <h4>Serviços</h4>
-                        <ul>
-                            <li><a href="#services">Desenvolvimento Web</a></li>
-                            <li><a href="#services">Desenvolvimento Mobile</a></li>
-                            <li><a href="#services">Backend & APIs</a></li>
-                            <li><a href="#services">Consultoria</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="footer-section">
-                        <h4>Empresa</h4>
-                        <ul>
-                            <li><a href="#about">Sobre Nós</a></li>
-                            <li><a href="#team">Nossa Equipe</a></li>
-                            <li><a href="#contact">Contato</a></li>
-                            <li><a href="#">Portfólio</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="footer-section">
-                        <h4>Contato</h4>
-                        <div class="contact-info">
-                            <p><i class="fas fa-phone"></i> (11) 99999-9999</p>
-                            <p><i class="fas fa-envelope"></i> contato@devcodesolutions.com</p>
-                            <p><i class="fas fa-map-marker-alt"></i> São Paulo, SP</p>
-                        </div>
+                    <p>Transformando ideias em soluções digitais inovadoras. Sua parceira em tecnologia.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
                 
+                <div class="footer-section">
+                    <h4>Serviços</h4>
+                    <ul>
+                        <li><a href="#services">Desenvolvimento Web</a></li>
+                        <li><a href="#services">Desenvolvimento Mobile</a></li>
+                        <li><a href="#services">Backend & APIs</a></li>
+                        <li><a href="#services">Consultoria</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Empresa</h4>
+                    <ul>
+                        <li><a href="#about">Sobre Nós</a></li>
+                        <li><a href="#team">Nossa Equipe</a></li>
+                        <li><a href="#contact">Contato</a></li>
+                        <li><a href="#">Portfólio</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> (11) 99999-9999</p>
+                        <p><i class="fas fa-envelope"></i> contato@devcodesolutions.com</p>
+                        <p><i class="fas fa-map-marker-alt"></i> São Paulo, SP</p>
+                    </div>
+                </div>
+
+                <div class="footer-separator"></div>
+
                 <div class="footer-bottom">
                     <p>&copy; 2025 Dev. Todos os direitos reservados.</p>
                 </div>
             </div>
-        </footer>
+        </div>
+    </footer>
+
     <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+        // Ativar animação ao rolar para o Hero
+        const hero = document.querySelector(".hero-split");
+        const observer = new IntersectionObserver(([entry]) => {
+            if (entry.isIntersecting) {
+                hero.classList.add("reveal");
+            }
+        }, { threshold: 0.3 });
+
+        observer.observe(hero);
+
+        // Mostrar/ocultar botão dinamicamente
+        const scrollBtn = document.getElementById('scrollToTopBtn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollBtn.style.display = 'block';
+            } else {
+                scrollBtn.style.display = 'none';
+            }
+        });
+        scrollBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        </script>
 </body>
 </html>
