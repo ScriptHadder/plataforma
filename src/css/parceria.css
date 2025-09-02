@@ -1,0 +1,118 @@
+/* === GLOBAL === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #0f0f0f;
+  color: #f0f0f0;
+  line-height: 1.6;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* === HERO SECTION === */
+.hero {
+  background: linear-gradient(135deg, #0d1b2a, #1b263b);
+  padding: 80px 0;
+  text-align: center;
+  color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  color: #56e2e7;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  color: #ccc;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* === BENEFITS SECTION === */
+.benefits {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  padding: 60px 0;
+}
+
+.benefit-card {
+  background: #1a1a1a;
+  border-radius: 12px;
+  padding: 30px;
+  border: 1px solid #2c2c2c;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 30px rgba(0, 255, 255, 0.05);
+}
+
+.benefit-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(86, 226, 231, 0.1);
+}
+
+.benefit-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: #56e2e7;
+}
+
+.benefit-card p {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+/* === CTA SECTION === */
+.cta {
+  background: linear-gradient(to right, #3b82f6, #06b6d4);
+  padding: 60px 0;
+  text-align: center;
+  color: white;
+}
+
+.cta h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.cta-btn {
+  display: inline-block;
+  padding: 14px 32px;
+  background: #0f172a;
+  color: #56e2e7;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(0, 255, 255, 0.1);
+}
+
+.cta-btn:hover {
+  background: #1e293b;
+  color: #00f7ff;
+  box-shadow: 0 4px 25px rgba(0, 255, 255, 0.2);
+}
+
+/* === RESPONSIVO === */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .cta h2 {
+    font-size: 1.5rem;
+  }
+}
+    
