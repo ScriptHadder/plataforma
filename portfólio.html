@@ -182,31 +182,34 @@
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script>
-        // Ativar animação ao rolar para o Hero
-        const hero = document.querySelector(".hero-split");
-        const observer = new IntersectionObserver(([entry]) => {
-            if (entry.isIntersecting) {
-                hero.classList.add("reveal");
-            }
-        }, { threshold: 0.3 });
+        // Menu mobile
+        const hamburguer = document.getElementById('hamburguer');
+        const navMenu = document.querySelector('.nav-menu');
 
-        observer.observe(hero);
+        if (hamburguer && navMenu) {
+            hamburguer.addEventListener('click', () => {
+                hamburguer.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
 
-        // Mostrar/ocultar botão dinamicamente
-        const scrollBtn = document.getElementById('scrollToTopBtn');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                scrollBtn.style.display = 'block';
-            } else {
-                scrollBtn.style.display = 'none';
-            }
-        });
-        scrollBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-        </script>
+            // Fechar menu ao clicar em qualquer link
+            navMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburguer.classList.remove('active');
+                    navMenu.classList.remove('active');
+                });
+            });
+
+            // Fechar menu ao clicar fora dele
+            document.addEventListener('click', (e) => {
+                if (!hamburguer.contains(e.target) && !navMenu.contains(e.target)) {
+                    hamburguer.classList.remove('active');
+                    navMenu.classList.remove('active');
+                }
+            });
+        }
+    </script>
 </body>
 </html>

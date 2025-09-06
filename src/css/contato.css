@@ -919,12 +919,78 @@ input[type="checkbox"] {
     padding: 60px 20px;
   }
 
+  /* Header responsivo */
+  .navbar .nav-container {
+    padding: 15px 20px;
+    position: relative;
+  }
+
+  /* Barra de fundo mobile */
+  .navbar::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(20, 20, 20, 0.95));
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid rgba(86, 226, 231, 0.2);
+    z-index: 1100;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .logo {
+    position: fixed;
+    top: 15px;
+    left: 20px;
+    z-index: 1100;
+  }
+
+  .logo img {
+    height: 60px;
+    width: auto;
+    position: relative;
+    top: 0;
+    border-radius: 12px;
+  }
+
+  .hamburguer {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1100;
+  }
+
+  /* Esconder menu desktop */
+  .nav-menu {
+    display: none;
+  }
+
   .section-header h2 {
     font-size: 2.2rem;
   }
 
   .hero-text h1 {
     font-size: 2.2rem;
+    margin-top: 80px; /* Para dar espaço do header fixo */
+  }
+
+  .hero-split {
+    padding: 100px 20px 60px;
+    min-height: 60vh;
+  }
+
+  /* Cards responsivos */
+  .card-container {
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 10px;
+  }
+
+  .card {
+    width: 100%;
+    max-width: none;
   }
 
   .card-title {
@@ -933,19 +999,47 @@ input[type="checkbox"] {
 
   .card-text {
     font-size: 1rem;
+    line-height: 1.5;
   }
 
   .contact-title {
     font-size: 2rem;
+    margin-top: 20px;
   }
 
-  .oferta-card p,
-  .catalogo-text p {
-    font-size: 1rem;
+  /* Formulário responsivo */
+  .contact-content {
+    flex-direction: column;
+    gap: 30px;
   }
 
-  .catalogo-text h2 {
-    font-size: 2rem;
+  .contact-form, .contact-info {
+    width: 100%;
+  }
+
+  .form-group input,
+  .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px; /* Evita zoom no iOS */
+  }
+
+  .form-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .form-actions .btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+  }
+
+  /* Footer responsivo */
+  .footer-content {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
   }
 
   .footer-logo h3 {
@@ -968,37 +1062,207 @@ input[type="checkbox"] {
 
 /* Telas menores que 480px (celulares pequenos) */
 @media (max-width: 480px) {
-  .nav-menu {
-    flex-direction: column;
-    gap: 15px;
+  /* Barra de fundo mais compacta */
+  .navbar::before {
+    height: 70px;
   }
 
-  .hero-buttons .btn {
-    width: 100%;
-    text-align: center;
+  /* Header ainda mais compacto */
+  .logo {
+    top: 10px;
+    left: 15px;
   }
 
-  .btn {
-    padding: 10px 20px;
+  .logo img {
+    height: 50px;
+  }
+
+  .hamburguer {
+    top: 15px;
+    right: 15px;
+    width: 28px;
+    height: 28px;
+  }
+
+  /* Textos menores */
+  .hero-text h1 {
+    font-size: 1.8rem;
+    margin-top: 70px;
   }
 
   .hero-text p {
     font-size: 1rem;
+    padding: 0 10px;
   }
 
-  .catalogo-text h2,
   .contact-title,
   .section-header h2 {
     font-size: 1.6rem;
   }
 
+  .card-title {
+    font-size: 1.4rem;
+  }
+
+  .card-text {
+    font-size: 0.9rem;
+  }
+
+  /* Formulário compacto */
+  .form-group input,
+  .form-group textarea {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .form-group label {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  .radio-group label,
+  .checkbox-group label {
+    font-size: 13px;
+  }
+
+  .form-actions .btn {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  /* Cards ainda mais compactos */
+  .card {
+    padding: 15px;
+  }
+
+  .card-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  /* Footer compacto */
   .footer-section ul li {
     font-size: 0.9rem;
   }
 
+  .footer-section h4 {
+    font-size: 1.1rem;
+  }
+
+  /* Botão topo */
   .topo button {
     bottom: 20px;
     right: 20px;
-    padding: 12px;
+    padding: 10px;
+    width: 45px;
+    height: 45px;
+  }
+
+  .topo button i {
+    font-size: 1.2rem;
+  }
+
+}
+
+/* Menu mobile hamburguer - Para todas as telas mobile */
+@media (max-width: 768px) {
+  .hamburguer {
+    display: block;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    padding: 4px;
+    border-radius: 8px;
+    transition: background 0.2s;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1100;
+  }
+
+  .hamburguer span {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #56e2e7 0%, #0078d4 100%);
+    margin: 3px 0;
+    border-radius: 4px;
+    transition: 0.25s;
+    position: relative;
+  }
+
+  /* Hamburger para X quando ativo */
+  .hamburguer.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .hamburguer.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburguer.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -6px);
+  }
+
+  /* Menu mobile */
+  .nav-menu.active {
+    display: flex !important;
+    flex-direction: column;
+    background: rgba(10, 30, 40, 0.98);
+    position: fixed;
+    top: 70px;
+    right: 20px;
+    width: 90vw;
+    max-width: 280px;
+    box-shadow: 0 8px 24px rgba(86, 226, 231, 0.18);
+    border-radius: 16px;
+    z-index: 1000;
+    padding: 20px;
+    gap: 15px;
+    animation: fadeInMenu 0.3s ease forwards;
+  }
+
+  .nav-menu.active a {
+    color: #56e2e7 !important;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 12px 15px;
+    border-radius: 8px;
+    transition: all 0.2s;
+    text-align: left;
+    text-decoration: none;
+  }
+
+  .nav-menu.active a:hover {
+    background: rgba(86, 226, 231, 0.1);
+    color: #fff !important;
+    transform: translateX(5px);
+  }
+
+  @keyframes fadeInMenu {
+    from { opacity: 0; transform: translateY(-10px) scale(0.95);}
+    to { opacity: 1; transform: translateY(0) scale(1);}
+  }
+}
+
+/* Ajustes para celulares pequenos */
+@media (max-width: 480px) {
+  .hamburguer {
+    width: 28px;
+    height: 28px;
+    top: 15px;
+    right: 15px;
+  }
+
+  .nav-menu.active {
+    top: 60px;
+    right: 15px;
+    max-width: 250px;
+    padding: 15px;
+  }
+
+  .nav-menu.active a {
+    font-size: 0.9rem;
+    padding: 10px 12px;
   }
 }

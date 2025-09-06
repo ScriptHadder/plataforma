@@ -24,7 +24,7 @@
                     <li><a href="portfólio.html">Templates</a></li>
                     <li><a href="inovacao.html">Soluções</a></li>
                 </ul>
-                <div class="hamburger">
+                <div class="hamburguer" id="hamburguer">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -248,62 +248,62 @@
         </button>
     </div>
 
-    <script src="src/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script>
-        // Ativar animação ao rolar para o Hero
-        const hero = document.querySelector(".hero-split");
-        const observer = new IntersectionObserver(([entry]) => {
-            if (entry.isIntersecting) {
-                hero.classList.add("reveal");
-            }
-        }, { threshold: 0.3 });
+        // Menu mobile
+        const hamburguer = document.getElementById('hamburguer');
+        const navMenu = document.querySelector('.nav-menu');
 
-        observer.observe(hero);
+        if (hamburguer && navMenu) {
+            hamburguer.addEventListener('click', () => {
+                hamburguer.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
 
-        // Swiper do carrossel de equipe
-        var swiper = new Swiper(".teamSwiper", {
-            effect: "coverflow",
-            grabCursor: true,
-            centeredSlides: true,
-            slidesPerView: "auto",
-            initialSlide: 3,
-            coverflowEffect: {
-                rotate: 15,
-                stretch: 0,
-                depth: 100,
-                modifier: 1,
-                slideShadows: false,
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-        });
+            // Fechar menu ao clicar em qualquer link
+            navMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburguer.classList.remove('active');
+                    navMenu.classList.remove('active');
+                });
+            });
+
+            // Fechar menu ao clicar fora dele
+            document.addEventListener('click', (e) => {
+                if (!hamburguer.contains(e.target) && !navMenu.contains(e.target)) {
+                    hamburguer.classList.remove('active');
+                    navMenu.classList.remove('active');
+                }
+            });
+        }
 
         // Mostrar/ocultar botão dinamicamente
         const scrollBtn = document.getElementById('scrollToTopBtn');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                scrollBtn.style.display = 'block';
-            } else {
-                scrollBtn.style.display = 'none';
-            }
-        });
-        scrollBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-            function formatPhone(input) {
-        let value = input.value.replace(/\D/g, "");
-        if (value.length > 11) value = value.slice(0, 11);
-
-        if (value.length > 0) {
-            value = "(" + value;
-            if (value.length > 3) value = value.slice(0, 3) + ") " + value.slice(3);
-            if (value.length > 10) value = value.slice(0, 10) + "-" + value.slice(10);
+        if (scrollBtn) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    scrollBtn.style.display = 'block';
+                } else {
+                    scrollBtn.style.display = 'none';
+                }
+            });
+            scrollBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
         }
-        input.value = value;
-    }
+
+        // Função para formatar telefone
+        function formatPhone(input) {
+            let value = input.value.replace(/\D/g, "");
+            if (value.length > 11) value = value.slice(0, 11);
+
+            if (value.length > 0) {
+                value = "(" + value;
+                if (value.length > 3) value = value.slice(0, 3) + ") " + value.slice(3);
+                if (value.length > 10) value = value.slice(0, 10) + "-" + value.slice(10);
+            }
+            input.value = value;
+        }
     </script>
 </body>
 </html>
