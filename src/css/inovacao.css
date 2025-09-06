@@ -269,10 +269,13 @@ text-decoration: none;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     overflow: hidden;
     position: relative;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .hero img {
-    width: 650px;
+    width: 100%;
+    max-width: 650px;
     height: auto;
     position: relative;
     z-index: 1;
@@ -694,6 +697,46 @@ text-decoration: none;
   }
 }
 @media (max-width: 768px) {
+  /* Hero section mobile improvements */
+  .hero {
+    flex-direction: column;
+    padding: 20px;
+    gap: 30px;
+  }
+
+  .hero img {
+    max-width: 100%;
+  }
+
+  .about {
+    text-align: center;
+    padding: 20px;
+  }
+
+  .about h3 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+
+  .about p {
+    font-size: 18px;
+  }
+
+  .link-site, .link-money, .link-solution {
+    display: block;
+    margin: 10px auto;
+    width: 80%;
+    max-width: 250px;
+  }
+
+  /* Logo mobile fix */
+  .logo img {
+    height: 60px;
+    width: auto;
+    position: relative;
+    top: 0;
+  }
+
   /* Navbar mobile refinada */
   .nav-menu {
     display: none;
@@ -822,6 +865,28 @@ text-decoration: none;
 
   .section-header p {
     font-size: 1rem;
+  }
+
+  /* Hero section mobile small screens */
+  .hero {
+    margin: 20px 10px;
+  }
+
+  .about h3 {
+    font-size: 1.3em;
+  }
+
+  .about p {
+    font-size: 16px;
+  }
+
+  /* Improved logo responsiveness */
+  .logo img {
+    height: 50px;
+    width: auto;
+    position: relative;
+    top: 0;
+    border-radius: 10px;
   }
 
   /* Navbar */

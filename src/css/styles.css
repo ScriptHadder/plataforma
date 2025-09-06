@@ -69,9 +69,13 @@
   .logo img {
     height: 100px;
     width: auto;
-    position: absolute;
-    top: -10%;
+    object-fit: contain;
     border-radius: 15px;
+    transition: transform 0.3s ease;
+  }
+
+  .logo img:hover {
+    transform: scale(1.05);
   }
 
   .logo a {
@@ -1121,6 +1125,99 @@
   }
 }
 
+/* Botões estilizados para Soluções Inovadoras */
+.btn-inovacao {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 30px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  border: 2px solid transparent;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn-3d {
+  background: linear-gradient(135deg, #00d4aa, #56e2e7);
+  color: #000;
+}
+
+.btn-3d:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 35px rgba(0, 212, 170, 0.4);
+  border: 2px solid #00d4aa;
+}
+
+.btn-hacker {
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  color: #fff;
+}
+
+.btn-hacker:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 15px 35px rgba(255, 107, 107, 0.4);
+  border: 2px solid #ff6b6b;
+}
+
+.btn-glow {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.btn-inovacao:hover .btn-glow {
+  left: 100%;
+}
+
+.btn-inovacao i {
+  font-size: 1.3rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.btn-inovacao span {
+  font-family: 'Inter', sans-serif;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Animação de pulsação para o botão 3D */
+.btn-3d {
+  animation: pulse3D 3s infinite;
+}
+
+@keyframes pulse3D {
+  0%, 100% {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 8px 30px rgba(0, 212, 170, 0.6);
+  }
+}
+
+/* Animação de pulsação para o botão Hacker */
+.btn-hacker {
+  animation: pulseHacker 3s infinite;
+}
+
+@keyframes pulseHacker {
+  0%, 100% {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 8px 30px rgba(255, 107, 107, 0.6);
+  }
+}
+
 
 /* ---------- FOOTER ---------- */
 .footer {
@@ -1310,9 +1407,10 @@
   }
 
   .logo img {
-    height: 100px;
+    height: 80px;
     width: auto;
-    position: absolute;
+    object-fit: contain;
+    border-radius: 12px;
   }
 
   .navbar .nav-container {
@@ -1497,9 +1595,25 @@
     grid-template-columns: 1fr;
     gap: 40px;
     text-align: center;
+    padding: 0 20px;
   }
   .novidades-text h2 {
     justify-content: center;
+    font-size: 2rem;
+  }
+  .novidades-image {
+    order: 1;
+  }
+  .novidades-text {
+    order: 2;
+    text-align: center;
+    padding: 20px 0;
+  }
+  .novidades-desc {
+    font-size: 1rem;
+  }
+  .novidades-list li {
+    font-size: 0.9rem;
   }
 }
   /* Smartphones e telas pequenas (max-width: 600px) */
@@ -1517,10 +1631,11 @@
   }
 
   .logo img {
-    height: 70px;
-    top: 8%;
+    height: 60px;
     width: auto;
+    object-fit: contain;
     margin-right: 8px;
+    border-radius: 10px;
   }
 
   /* Navbar */
@@ -1629,6 +1744,24 @@
     font-size: 0.9rem;
     padding: 10px 12px;
   }
+
+  /* Botões inovação para telas muito pequenas */
+  .btn-inovacao {
+    padding: 12px 20px;
+    font-size: 0.85rem;
+    max-width: 240px;
+    gap: 8px;
+    border-radius: 25px;
+  }
+
+  .btn-inovacao i {
+    font-size: 1rem;
+  }
+
+  .btn-inovacao span {
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
   .footer-logo h3 {
     font-size: 1.1rem;
   }
@@ -1687,6 +1820,112 @@
     flex-direction: column !important;
     gap: 20px !important;
     align-items: stretch !important;
+  }
+
+  /* Novidades mobile improvements */
+  .novidades {
+    padding: 40px 0;
+  }
+
+  .novidades-wrapper {
+    padding: 0 15px;
+    gap: 30px;
+  }
+
+  .novidades-text h2 {
+    font-size: 1.8rem;
+  }
+
+  .gradient-title {
+    font-size: 1.8rem;
+  }
+
+  .novidades-desc {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+  }
+
+  .novidades-list {
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+
+  .novidades-list li {
+    font-size: 0.85rem;
+    padding: 8px 0;
+  }
+
+  .novidades-list i {
+    font-size: 16px;
+    margin-right: 10px;
+  }
+
+  .badge-novidade {
+    top: 15px;
+    left: 15px;
+    padding: 6px 12px;
+    font-size: 10px;
+  }
+
+  .novidades-image {
+    border-radius: 16px;
+  }
+
+  .novidades-image img {
+    border-radius: 16px;
+  }
+
+  /* Responsividade dos botões inovação para mobile */
+  .btn-inovacao {
+    padding: 14px 28px;
+    font-size: 0.95rem;
+    gap: 10px;
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+    margin: 20px auto;
+    border-radius: 30px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+  }
+
+  .btn-inovacao:hover {
+    transform: translateY(-3px) scale(1.02);
+  }
+
+  .btn-inovacao i {
+    font-size: 1.2rem;
+  }
+
+  .btn-inovacao span {
+    font-weight: 600;
+    letter-spacing: 0.5px;
+  }
+
+  /* Animações mais sutis para mobile */
+  .btn-3d {
+    animation: pulse3DMobile 4s infinite;
+  }
+
+  .btn-hacker {
+    animation: pulseHackerMobile 4s infinite;
+  }
+
+  @keyframes pulse3DMobile {
+    0%, 100% {
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    }
+    50% {
+      box-shadow: 0 8px 25px rgba(0, 212, 170, 0.5);
+    }
+  }
+
+  @keyframes pulseHackerMobile {
+    0%, 100% {
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    }
+    50% {
+      box-shadow: 0 8px 25px rgba(255, 107, 107, 0.5);
+    }
   }
   .nav-menu.mobile-active {
     display: flex !important;
