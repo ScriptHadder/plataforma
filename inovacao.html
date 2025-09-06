@@ -167,6 +167,33 @@
         }, { threshold: 0.3 });
 
         observer.observe(hero);
+
+        // Menu mobile
+        const hamburguer = document.getElementById('hamburguer');
+        const navMenu = document.querySelector('.nav-menu');
+
+        if (hamburguer && navMenu) {
+            hamburguer.addEventListener('click', () => {
+                hamburguer.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+
+            // Fechar menu ao clicar em qualquer link
+            navMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburguer.classList.remove('active');
+                    navMenu.classList.remove('active');
+                });
+            });
+
+            // Fechar menu ao clicar fora dele
+            document.addEventListener('click', (e) => {
+                if (!hamburguer.contains(e.target) && !navMenu.contains(e.target)) {
+                    hamburguer.classList.remove('active');
+                    navMenu.classList.remove('active');
+                }
+            });
+        }
     </script>
 </body>
 </html>

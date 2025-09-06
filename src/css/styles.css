@@ -54,7 +54,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 25px 40px;
+  padding: 0 40px;
   }
 
   .hamburguer{
@@ -1411,10 +1411,6 @@
     width: auto;
     object-fit: contain;
     border-radius: 12px;
-  }
-
-  .navbar .nav-container {
-    padding: 15px 20px;
   }
 
   .nav-menu {

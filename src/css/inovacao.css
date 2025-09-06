@@ -605,7 +605,7 @@ text-decoration: none;
   }
 
   .navbar .nav-container {
-    padding: 15px 20px;
+    padding: 30px 20px;
   }
 
   .nav-menu {
@@ -698,6 +698,10 @@ text-decoration: none;
 }
 @media (max-width: 768px) {
   /* Hero section mobile improvements */
+  .navbar .nav-container {
+    padding: 10px 20px;
+  }
+
   .hero {
     flex-direction: column;
     padding: 20px;
@@ -1030,8 +1034,8 @@ text-decoration: none;
 @media (max-width: 600px) {
   .logo img {
     position: static;
-    height: 35px;
-    width: 35px;
+    height: 50px;
+    width: auto;
     margin-right: 8px;
   }
   .logo h2 {
