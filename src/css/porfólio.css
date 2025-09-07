@@ -357,6 +357,10 @@ section {
     padding: 0 20px;
   }
 
+  .navbar .nav-container {
+    padding: 30px 20px;
+  }
+
   .navbar {
     padding: 1px;
   }
@@ -514,6 +518,19 @@ section {
     background: #1a3a4a;
     color: #fff;
   }
+
+  /* Hero section mobile improvements */
+  .navbar .nav-container {
+    padding: 10px 20px;
+  }
+
+  .logo img{
+    height: 60px;
+    width: auto;
+    position: relative;
+    top: 0;
+  }
+
   /* Hamburger refinado */
   .hamburguer {
     display: block;

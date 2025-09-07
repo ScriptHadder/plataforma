@@ -1403,7 +1403,7 @@
   }
   
   .navbar {
-    padding: 10px;
+    padding: 1px;
   }
 
   .logo img {
@@ -1484,6 +1484,18 @@
   }
 }
 @media (max-width: 768px) {
+  /* Hero section mobile improvements */
+  .navbar .nav-container {
+    padding: 10px 20px;
+  }
+  
+  .logo img{
+    height: 60px;
+    width: auto;
+    position: relative;
+    top: 0;
+  }
+
   /* Team */
   .team .section-header h2 {
     font-size: 2.2rem;
