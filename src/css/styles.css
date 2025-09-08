@@ -444,6 +444,40 @@
   line-height: 1;
   }
 
+  .btn-servicos-destaque {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6em;
+    padding: 0.9em 2.2em;
+    background: linear-gradient(90deg, #3b82f6 0%, #06b6d4 100%);
+    color: #fff;
+    font-size: 1.15rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 2em;
+    box-shadow: 0 4px 16px rgba(59,130,246,0.12);
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    letter-spacing: 0.03em;
+    position: relative;
+    overflow: hidden;
+  }
+  .btn-servicos-destaque:hover, .btn-servicos-destaque:focus {
+    background: linear-gradient(90deg, #2563eb 0%, #0ea5e9 100%);
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 8px 24px rgba(59,130,246,0.18);
+    color: #fff;
+    text-decoration: none;
+  }
+  .btn-servicos-destaque i {
+    font-size: 1.2em;
+    transition: transform 0.2s;
+  }
+  .btn-servicos-destaque:hover i {
+    transform: translateX(4px) scale(1.1);
+  }
+
   /* === TEAM SECTION COM CARROSSEL 3D ESTILO COVERFLOW === */
   .team {
   background: radial-gradient(ellipse at center, #000f13 0%, #000 100%);

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Serviços</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8f9fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    header.hero {
+      background: linear-gradient(135deg, #2c3e50, #4ca1af);
+      color: white;
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+
+    header.hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    header.hero p {
+      font-size: 1.2rem;
+    }
+
+    .benefits {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .benefit-card {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    }
+
+    .benefit-card h3 {
+      font-size: 1.2rem;
+      color: #2c3e50;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .benefit-card i {
+      font-size: 1.2rem;
+      color: #4ca1af;
+    }
+
+    .benefit-card p {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .cta {
+      background-color: #2c3e50;
+      color: white;
+      text-align: center;
+      padding: 3rem 2rem;
+      margin-top: 4rem;
+    }
+
+    .cta h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background-color: #4ca1af;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .cta-btn:hover {
+      background-color: #357a85;
+    }
+
+    @media (max-width: 600px) {
+      header.hero h1 {
+        font-size: 2rem;
+      }
+      .cta h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="container">
+      <h1>Nossas Especialidades e Soluções</h1>
+      <p>Inovação tecnológica com foco em segurança e resultados reais.</p>
+    </div>
+  </header>
+
+  <section class="benefits container">
+    <div class="benefit-card">
+      <h3><i class="fas fa-user-shield"></i> Segurança Cibernética & Hacker Ético</h3>
+      <p>
+        Avaliamos e reforçamos a segurança digital de indivíduos e empresas:<br>
+        • Análise de vulnerabilidades e identidade digital<br>
+        • Recuperação e blindagem de contas<br>
+        • Pentest em aplicações e redes domésticas<br>
+        • Consultoria em DevSecOps<br>
+        • Rastreamento de vazamentos na Dark Web
+      </p>
+    </div>
+
+    <div class="benefit-card">
+      <h3><i class="fas fa-shield-alt"></i> Desenvolvimento de Sistemas Seguros</h3>
+      <p>
+        Projetamos soluções com foco em segurança desde a concepção:<br>
+        • Aplicação da metodologia DevSecOps<br>
+        • Análises SAST e DAST automatizadas<br>
+        • Monitoramento contínuo e mitigação de riscos
+      </p>
+    </div>
+
+    <div class="benefit-card">
+      <h3><i class="fas fa-cloud-upload-alt"></i> Escalabilidade em Nuvem</h3>
+      <p>
+        Expansão tecnológica segura e eficiente com soluções em nuvem:<br>
+        • Implementações em Google Cloud, Azure e Oracle Cloud<br>
+        • Arquiteturas escaláveis com alta disponibilidade<br>
+        • Otimização de custos e segurança de dados
+      </p>
+    </div>
+
+    <div class="benefit-card">
+      <h3><i class="fas fa-cogs"></i> DevOps & Integração Contínua</h3>
+      <p>
+        Automatizamos processos para aumentar agilidade e qualidade:<br>
+        • Integração contínua com GitLab CI/CD e GitHub Actions<br>
+        • Containers Docker e orquestração<br>
+        • Gestão ágil com Scrum, Sprint Planning e Trello<br>
+        • Documentação técnica padronizada
+      </p>
+    </div>
+
+    <div class="benefit-card">
+      <h3><i class="fas fa-code"></i> Desenvolvimento de Soluções Digitais</h3>
+      <p>
+        Criamos sistemas personalizados, robustos e responsivos:<br>
+        • Backend com Python, Java, Spring Boot e APIs REST<br>
+        • Frontend com HTML, CSS, JavaScript, React e Angular<br>
+        • Integração com OpenAI para soluções baseadas em IA<br>
+        • Banco de dados relacionais e NoSQL<br>
+        • Aplicações Web e Desktop com responsividade garantida
+      </p>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <h2>Vamos elevar sua tecnologia para o próximo nível?</h2>
+      <a href="index.html" class="cta-btn">Voltar</a>
+      <a href="contato.html" class="cta-btn">Entrar em contato!</a>
+    </div>
+  </section>
+
+</body>
+</html>
