@@ -455,7 +455,8 @@ section {
   .footer-logo {
     justify-content: center;
   }
-    .image-container {
+  
+  .image-container {
     width: 90%;
     height: auto;
   }
