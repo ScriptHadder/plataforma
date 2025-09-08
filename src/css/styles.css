@@ -1494,7 +1494,8 @@
   .footer-logo {
     justify-content: center;
   }
-    .image-container {
+
+  .image-container {
     width: 90%;
     height: auto;
   }
@@ -1516,6 +1517,10 @@
 
   .text-overlay p {
     font-size: 0.9rem;
+  }
+
+  .contact-info {
+    justify-content: start;
   }
 }
 @media (max-width: 768px) {
@@ -1750,7 +1755,7 @@
   }
 
   .footer-logo img {
-    width: 35px;
+    width: 150px;
   }
 
   .image-container {
