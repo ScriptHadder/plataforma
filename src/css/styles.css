@@ -449,7 +449,7 @@
     align-items: center;
     gap: 0.6em;
     padding: 0.9em 2.2em;
-    background: linear-gradient(90deg, #3b82f6 0%, #06b6d4 100%);
+    background: linear-gradient(90deg, #084658 0%, #06c6d4 100%);
     color: #fff;
     font-size: 1.15rem;
     font-weight: 700;
@@ -463,8 +463,9 @@
     position: relative;
     overflow: hidden;
   }
+
   .btn-servicos-destaque:hover, .btn-servicos-destaque:focus {
-    background: linear-gradient(90deg, #2563eb 0%, #0ea5e9 100%);
+    background: linear-gradient(90deg, #0e7491 0%, #06c6d4 100%);
     transform: translateY(-2px) scale(1.04);
     box-shadow: 0 8px 24px rgba(59,130,246,0.18);
     color: #fff;
