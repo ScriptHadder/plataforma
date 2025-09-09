@@ -855,6 +855,7 @@ input[type="checkbox"] {
 /* === RESPONSIVIDADE === */
 @media (max-width: 992px) {
   .container {
+    display: flex;
     padding: 0 20px;
   }
 
@@ -945,16 +946,20 @@ input[type="checkbox"] {
     transform: rotate(-45deg) translate(6px, -6px);
   }
 
-    /* Footer */
   .footer-content {
+    display: flex;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
     gap: 30px;
+    padding: 20px;
   }
 
   .footer-logo {
     justify-content: center;
   }
-    .image-container {
+
+  .image-container {
     width: 90%;
     height: auto;
   }
