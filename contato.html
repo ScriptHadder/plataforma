@@ -162,7 +162,7 @@
                                 <label><input type="radio" name="$servico" value="consultoria"> Consultoria</label>
                                 <label><input type="radio" name="$servico" value="devsecops"> DevSec / AppSec / DevSecOps</label>
                                 <label><input type="radio" name="$servico" value="parceria"> Parceria</label>
-                                <label><input type="radio" name="$servico" value="parceria"> Dúvida</label>
+                                <label><input type="radio" name="$servico" value="duvida"> Dúvida</label>
                             </div>
                         </div>
 
@@ -190,10 +190,22 @@
                             <button type="reset" class="btn btn-secondary">
                                 <i class="fas fa-broom"></i> Redefinir
                             </button>
-
                             <input type="hidden" name="accessKey" value="sf_d5al7bk3edi620aj9ai6hanf">
-                            <input type="hidden" name="redirectTo" value="https://scripthadder.github.io/plataforma/agradecimento.html">
                         </div>
+
+                        <!-- Modal de sucesso -->
+                        <div id="successModal" class="modal-success">
+                        <div class="modal-content">
+                            <div class="checkmark-wrapper">
+                            <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                                <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+                                <path class="checkmark-check" fill="none" d="M14 27l7 7 16-16"/>
+                            </svg>
+                            </div>
+                            <p>Formulário enviado com sucesso!</p>
+                        </div>
+                        </div>
+
                     </form>
                 </div>
             </div>
@@ -220,21 +232,22 @@
                 <div class="footer-section">
                     <h4>Serviços</h4>
                     <ul>
-                        <li><a href="index">Desenvolvimento Web</a></li>
-                        <li><a href="#services">Desenvolvimento Desktop</a></li>
-                        <li><a href="#services">Backend & APIs</a></li>
-                        <li><a href="#services">Consultoria</a></li>
-                        <li><a href="#services">Hacker ético</a></li>
-                        <li><a href="#services">DevSec</a></li>
+                        <li><a href="servicos.html">Desenvolvimento Web</a></li>
+                        <li><a href="servicos.html">Desenvolvimento Desktop</a></li>
+                        <li><a href="servicos.html">Backend & APIs</a></li>
+                        <li><a href="servicos.html">Consultoria</a></li>
+                        <li><a href="servicos.html">Hacker ético</a></li>
+                        <li><a href="servicos.html">DevSec</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
                     <h4>Empresa</h4>
                     <ul>
-                        <li><a href="index.html">Início</a></li>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="sobre.html">Sobre nós</a></li>
+                        <li><a href="servicos.html">Serviços</a></li>
                         <li><a href="portfólio.html">Templates</a></li>
-                        <li><a href="contato.html">Contato</a></li>
                         <li><a href="inovacao.html">Soluções</a></li>
                     </ul>
                 </div>
@@ -321,6 +334,33 @@
             }
             input.value = value;
         }
+
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const form = e.target;
+            const data = new FormData(form);
+
+            try {
+                await fetch(form.action, {
+                    method: form.method,
+                    body: data,
+                });
+
+                form.reset();
+
+                // Mostrar modal
+                const modal = document.getElementById('successModal');
+                modal.style.display = 'flex';
+
+                // Fechar automaticamente após 3 segundos
+                setTimeout(() => {
+                    modal.style.display = 'none';
+                }, 3000);
+
+            } catch (err) {
+                alert('Ocorreu um erro ao enviar. Tente novamente.');
+            }
+        });
     </script>
 </body>
 </html>
