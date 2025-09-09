@@ -948,6 +948,7 @@ input[type="checkbox"] {
   .container {
     display: flex;
     padding: 0 20px;
+    flex-direction: column;
   }
 
   /* Navbar mobile refinada */
