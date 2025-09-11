@@ -3,109 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form - Contato</title>
+    <title>Avaliação</title>
     <link rel="stylesheet" href="src/css/formulario.css">
-    <link rel="shortcut icon" href="src/img/icone-sem-fundo.png" type="image/x-icon">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- ✅ Favicon (.ico para o navegador) -->
+    <link rel="shortcut icon" href="src/ico/Letreiro-aba.ico" type="image/x-icon">
+
+    <!-- ✅ Open Graph (preview ao compartilhar link) -->
+    <meta property="og:title" content="ScriptHadder">
+    <meta property="og:description" content="Avalie nossas soluções!">
+    <meta property="og:image" content="https://renanmestre.github.io/scripthadder/src/img/icone.png">
+    <meta property="og:url" content="https://renanmestre.github.io/scripthadder/">
+    <meta property="og:type" content="website">
+
+    <!-- ✅ Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ScriptHadder">
+    <meta name="twitter:description" content="Avalie nossas soluções!">
+    <meta name="twitter:image" content="https://renanmestre.github.io/scripthadder/src/img/icone.png">
 </head>
 <body>
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-header">
-                <h2>Entre em Contato</h2>
-                <p>Vamos conversar sobre seu próximo projeto</p>
+                <h2>Avaliar soluções</h2>
+                <p>Avalie nossos produtos, valorizamos muito feedbacks!</p>
             </div>
             <div class="contact-content">
                 <div class="contact-info">
-                    <h3>Fale Conosco</h3>
-                    <p>Estamos prontos para transformar suas ideias em realidade. Entre em contato e vamos discutir como podemos ajudar seu negócio.</p>
-                    
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h4>Telefone</h4>
-                            <p>(11) 99999-9999</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <p>contato@dev.com</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Localização</h4>
-                            <p>São Paulo, SP - Brasil</p>
-                        </div>
-                    </div>
+                    <h3>Entre em contato conosco</h3>
+                    <p>Agradecemos pela visita a nossa estante de soluções, e queremos saber mais, o que você achou do nosso serviço e como podemos melhorar.</p>
                 </div>
                 
                 <div class="contact-form">
-                    <form id="contactForm">
+                    <form id="contactForm" action="https://api.staticforms.xyz/submit" method="post">
                         <div class="form-group">
-                            <label for="name">Nome</label>
+                            <label for="name">Nome:</label>
                             <input type="text" id="name" name="name" placeholder="Seu primeiro nome" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="name">Sobrenome</label>
+                            <label for="name">Sobrenome:</label>
                             <input type="text" id="name" name="name" placeholder="Seu sobrenome" required>
                         </div>
                         
                         <div class="form-group">
-                            <label for="email">Seu melhor email</label>
-                            <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" placeholder="example@email.com" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="phone">Celular</label>
-                            <input type="tel" id="phone" name="phone" placeholder="(11) 99999-9999" maxlength="15" required oninput="formatPhone(this)">
-                        </div>
-
-                        <div class="form-group">
-                            <label>Serviço</label>
+                            <label>Produto</label>
                             <div class="radio-group">
                                 <label>
                                     <input type="radio" name="service" value="web" required>
-                                    Desenvolvimento de sistemas
-                                </label>
-                                <label>
-                                    <input type="radio" name="service" value="mobile">
-                                    Segurança cibernética
-                                </label>
-                                <label>
-                                    <input type="radio" name="service" value="consultoria">
-                                    Consultoria
-                                </label>
-                                <label>
-                                    <input type="radio" name="service" value="consultoria">
-                                    DevSec / AppSec / DevSecOps
+                                    Arcenal Hacker
                                 </label>
                             </div>
                         </div>
 
+                        <!-- Avaliação por estrelas -->
                         <div class="form-group">
-                            <label for="subject">Sobre a requisição</label>
-                            <textarea id="subject" name="subject" rows="5" placeholder="Fale mais sobre o seu requerimento..." required></textarea>
+                        <label>Avaliação:</label>
+                        <div class="stars">
+                            <input type="radio" id="star5" name="rating" value="5" required />
+                            <label for="star5" title="5 estrelas">&#9733;</label>
+
+                            <input type="radio" id="star4" name="rating" value="4" />
+                            <label for="star4" title="4 estrelas">&#9733;</label>
+
+                            <input type="radio" id="star3" name="rating" value="3" />
+                            <label for="star3" title="3 estrelas">&#9733;</label>
+
+                            <input type="radio" id="star2" name="rating" value="2" />
+                            <label for="star2" title="2 estrelas">&#9733;</label>
+
+                            <input type="radio" id="star1" name="rating" value="1" />
+                            <label for="star1" title="1 estrela">&#9733;</label>
+                        </div>
+        
+                        <div class="form-group">
+                            <label for="subject">O que podemos melhorar?</label>
+                            <textarea id="subject" name="subject" rows="5" placeholder="Melhorias..." required></textarea>
                         </div>
                         
-                        <button type="submit" class="btn btn-primary">
-                            <i class="fas fa-paper-plane"></i>
-                            Enviar
-                        </button>
-                        <button type="reset" class="btn btn-secundary">
-                            <i class="fa fa-broom"></i>
-                            Redefinir
-                        </button>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i> Enviar
+                            </button>
+                            <input type="hidden" name="accessKey" value="sf_d5al7bk3edi620aj9ai6hanf">
+                        </div>
+
+                        <!-- Modal de sucesso -->
+                        <div id="successModal" class="modal-success">
+                            <div class="modal-content">
+                                <div class="checkmark-wrapper">
+                                <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                                    <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+                                    <path class="checkmark-check" fill="none" d="M14 27l7 7 16-16"/>
+                                </svg>
+                                </div>
+                                <p>Formulário enviado com sucesso!</p>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -118,15 +123,14 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <h3>Script<span>Hadder</span></h3>
-                        <img src="src/img/icone-sem-fundo.png" alt="Logo">
+                        <img src="src/img/ScriptHadder letreiro.png" alt="Logo">
                     </div>
                     <p>Transformando ideias em soluções digitais inovadoras. Sua parceira em tecnologia.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/share/17AUWjisdX/?mibextid=wwXIfr"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/scripthadder"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="https://github.com/ScriptHadder"><i class="fab fa-github"></i></a>
                     </div>
                 </div>
                 
@@ -134,50 +138,102 @@
                     <h4>Serviços</h4>
                     <ul>
                         <li><a href="#services">Desenvolvimento Web</a></li>
-                        <li><a href="#services">Desenvolvimento Mobile</a></li>
+                        <li><a href="#services">Desenvolvimento Desktop</a></li>
                         <li><a href="#services">Backend & APIs</a></li>
                         <li><a href="#services">Consultoria</a></li>
+                        <li><a href="#services">Hacker Ético</a></li>
+                        <li><a href="#services">DevSec</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
                     <h4>Empresa</h4>
                     <ul>
-                        <li><a href="#about">Sobre Nós</a></li>
-                        <li><a href="#team">Nossa Equipe</a></li>
-                        <li><a href="#contact">Contato</a></li>
-                        <li><a href="#">Portfólio</a></li>
+                        <li><a href="sobre.html">Sobre Nós</a></li>
+                        <li><a href="servicos.html">Serviços</a></li>
+                        <li><a href="#team">Equipe</a></li>
+                        <li><a href="#processo">Etapas</a></li>
+                        <li><a href="#diferenciais">Diferenciais</a></li>
+                        <li><a href="#novidades">Novidades</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                        <li><a href="portfólio.html">Templates</a></li>
+                        <li><a href="inovacao.html">Soluções</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
                     <h4>Contato</h4>
                     <div class="contact-info">
-                        <p><i class="fas fa-phone"></i> (11) 99999-9999</p>
+                        <p><i class="fas fa-phone"></i> (16) 99308-8055</p>
                         <p><i class="fas fa-envelope"></i> scripthadder@gmail.com</p>
                         <p><i class="fas fa-map-marker-alt"></i> São Paulo, SP</p>
                     </div>
                 </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 ScriptHadder. Todos os direitos reservados.</p>
+
+                <div class="footer-separator"></div>
+
+                <div class="footer-bottom">
+                    <p>&copy; 2025 ScriptHadder. Todos os direitos reservados.</p>
+                </div>
             </div>
         </div>
     </footer>
 
     <script>
-    function formatPhone(input) {
-        let value = input.value.replace(/\D/g, "");
-        if (value.length > 11) value = value.slice(0, 11);
+        // Função para formatar telefone
+        function formatPhone(input) {
+            let value = input.value.replace(/\D/g, "");
+            if (value.length > 11) value = value.slice(0, 11);
 
-        if (value.length > 0) {
-            value = "(" + value;
-            if (value.length > 3) value = value.slice(0, 3) + ") " + value.slice(3);
-            if (value.length > 10) value = value.slice(0, 10) + "-" + value.slice(10);
+            if (value.length > 0) {
+                value = "(" + value;
+                if (value.length > 3) value = value.slice(0, 3) + ") " + value.slice(3);
+                if (value.length > 10) value = value.slice(0, 10) + "-" + value.slice(10);
+            }
+            input.value = value;
         }
-        input.value = value;
-    }
+
+        // Mostrar/ocultar botão dinamicamente
+        const scrollBtn = document.getElementById('scrollToTopBtn');
+        if (scrollBtn) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    scrollBtn.style.display = 'block';
+                } else {
+                    scrollBtn.style.display = 'none';
+                }
+            });
+            scrollBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const form = e.target;
+            const data = new FormData(form);
+
+            try {
+                await fetch(form.action, {
+                    method: form.method,
+                    body: data,
+                });
+
+                form.reset();
+
+                // Mostrar modal
+                const modal = document.getElementById('successModal');
+                modal.style.display = 'flex';
+
+                // Fechar automaticamente após 3 segundos
+                setTimeout(() => {
+                    modal.style.display = 'none';
+                }, 3000);
+
+            } catch (err) {
+                alert('Ocorreu um erro ao enviar. Tente novamente.');
+            }
+        });
     </script>
 </body>
 </html>

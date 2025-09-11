@@ -56,7 +56,7 @@
                 <h1>Escrevendo novos <span class="highlight">script </span>para os desafios da humanidade.</h1>
                 <p>Segurança não é uma feature, é nossa <span class="destaque"><strong>Essência</strong>.</span> Inovação não é um extra, é nosso <span destaque><strong>DNA</strong>.</span></p>
                 <div class="hero-buttons">
-                    <a href="#" class="btn primary">Avalie nosso serviço!</a>
+                    <a href="formulário.html" class="btn primary">Avalie nosso serviço!</a>
                     <a href="#" class="btn outline">Enviar um problema para solução</a>
                 </div>
             </div>
@@ -161,42 +161,75 @@
 
     <script src="js/script.js"></script>
     <script>
-        // Ativar animação ao rolar para o Hero
-        const hero = document.querySelector(".hero-split");
-        const observer = new IntersectionObserver(([entry]) => {
-            if (entry.isIntersecting) {
-                hero.classList.add("reveal");
+        /**
+         * Formata um número de telefone no padrão (XX) XXXXX-XXXX
+         */
+        function formatPhone(input) {
+            let value = input.value.replace(/\D/g, ""); // Remove caracteres não numéricos
+
+            if (value.length > 11) value = value.slice(0, 11);
+
+            if (value.length > 0) {
+                value = "(" + value;
+                if (value.length > 3) value = value.slice(0, 3) + ") " + value.slice(3);
+                if (value.length > 10) value = value.slice(0, 10) + "-" + value.slice(10);
             }
-        }, { threshold: 0.3 });
 
-        observer.observe(hero);
+            input.value = value;
+        }
 
-        // Menu mobile
-        const hamburguer = document.getElementById('hamburguer');
-        const navMenu = document.querySelector('.nav-menu');
+        /**
+         * Mostra/oculta botão de "voltar ao topo" com base no scroll
+         */
+        const scrollBtn = document.getElementById('scrollToTopBtn');
 
-        if (hamburguer && navMenu) {
-            hamburguer.addEventListener('click', () => {
-                hamburguer.classList.toggle('active');
-                navMenu.classList.toggle('active');
+        if (scrollBtn) {
+            window.addEventListener('scroll', () => {
+                scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
             });
 
-            // Fechar menu ao clicar em qualquer link
-            navMenu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    hamburguer.classList.remove('active');
-                    navMenu.classList.remove('active');
-                });
-            });
-
-            // Fechar menu ao clicar fora dele
-            document.addEventListener('click', (e) => {
-                if (!hamburguer.contains(e.target) && !navMenu.contains(e.target)) {
-                    hamburguer.classList.remove('active');
-                    navMenu.classList.remove('active');
-                }
+            scrollBtn.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             });
         }
+
+        /**
+         * Lida com o envio do formulário de contato
+         */
+        document.getElementById('contactForm').addEventListener('submit', async function (e) {
+            e.preventDefault();
+
+            const form = e.target;
+            const data = new FormData(form);
+
+            // Verifica se action e method estão definidos (por segurança)
+            const action = form.getAttribute('action') || '/';  // <-- Altere para seu endpoint real
+            const method = form.getAttribute('method') || 'POST';
+
+            try {
+                await fetch(action, {
+                    method: method,
+                    body: data
+                });
+
+                form.reset();
+
+                // Exibe modal de sucesso
+                const modal = document.getElementById('successModal');
+                if (modal) {
+                    modal.style.display = 'flex';
+
+                    // Fecha automaticamente após 3 segundos
+                    setTimeout(() => {
+                        modal.style.display = 'none';
+                    }, 3000);
+                }
+
+            } catch (err) {
+                alert('Ocorreu um erro ao enviar. Tente novamente.');
+                console.error("Erro ao enviar formulário:", err);
+            }
+        });
     </script>
 </body>
 </html>
