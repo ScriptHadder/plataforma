@@ -351,6 +351,37 @@ body::before {
   z-index: -1;
 }
 
+#novidade2_0 {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: var(--space-lg) var(--space-2xl);
+  background-color: #ffffff3d;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-weight: 600;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-normal);
+  cursor: pointer;
+  font-size: var(--font-size-base);
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+#novidade2_0::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: var(--gradient-primary);
+  transition: width 0.3s ease;
+  z-index: -1;
+}
+
 .btn-secondary:hover::before {
   width: 100%;
 }
@@ -1446,6 +1477,90 @@ header {
   color: #f56040; /* Hover suave */
   transform: scale(1.1);
 }
+
+/* ========================================
+   TESTEMUNHOS
+   ======================================== */
+   /* Seção principal */
+.avaliacoes {
+  background-image: linear-gradient(to right, #00e1ff, #001f3f, #000000);
+  padding: 60px 20px;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Título e subtítulo */
+.avaliacoes .section-header h2 {
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+.avaliacoes .section-header p {
+  font-size: 1rem;
+  color: #ffffff;
+  max-width: 600px;
+  margin: 0 auto 40px auto;
+}
+
+/* Grid de avaliações */
+.avaliacoes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Cartão individual */
+.avaliacao-card {
+  background: linear-gradient(145deg, #1c1c1e, #2c2c2e); /* fundo escuro moderno */
+  padding: 25px 20px;
+  border-radius: 16px;
+  box-shadow:
+    0 4px 8px rgba(0, 225, 255, 0.15),
+    0 8px 20px rgba(0, 0, 0, 0.25); /* glow ciano + profundidade */
+  color: #ffffff; /* texto claro azulado */
+  font-family: 'Segoe UI', 'Roboto', sans-serif;
+  backdrop-filter: blur(4px); /* sutil efeito vidro fosco */
+  border: 1px solid rgba(0, 225, 255, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.avaliacao-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow:
+    0 6px 16px rgba(0, 225, 255, 0.3),
+    0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+
+.avaliacao-card p {
+  font-size: 1.1rem;
+  font-style: italic;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #e0f7ff;
+}
+
+.avaliacao-card span {
+  font-weight: 600;
+  color: #00e1ff;
+  font-size: 0.95rem;
+}
+
+.servico-prestado {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 4px 8px;
+  background-color: rgba(0, 225, 255, 0.1);
+  border: 1px solid rgba(0, 225, 255, 0.2);
+  border-radius: 6px;
+  font-size: 0.75rem;
+  color: #00e1ff;
+  font-weight: 600;
+}
+
 
 /* ========================================
    PARCERIAS SECTION (no padrão TEAM)
@@ -2602,13 +2717,32 @@ header {
   }
 }
 
+@media screen and (max-width: 768px) {
+  #decora_com_gabi img {
+    width: 100%; /* Ajuste para telas menores */
+  }
+  #guiatina img {
+    width: 100%; /* Ajuste para telas menores */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #decora_com_gabi img {
+    width: 100%; /* Ajuste para telas muito pequenas */
+  }
+  #guiatina img {
+    width: 100%; /* Ajuste para telas menores */
+  }
+}
+
 @media (max-width: 600px) {
   .section-title, .hero-title {
     font-size: var(--font-size-2xl);
   }
-  .stat-item, .stat-card, .service-card, .team-card, .parceiro-card, .project-card, .solution-card, .contact-option-card {
+  .stat-item, .stat-card, .service-card, .team-card, .project-card, .solution-card, .contact-option-card {
     padding: var(--space-md);
   }
+
   .footer-main, .footer-links {
     gap: var(--space-md);
   }
