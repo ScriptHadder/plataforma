@@ -361,26 +361,6 @@
     50% { transform: translateY(-20px) rotate(180deg); }
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .timeline-nav {
-        display: none;
-    }
-    
-    .timeline-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    
-    .hero-title {
-        font-size: 2.5rem;
-    }
-    
-    .timeline-title {
-        font-size: 2rem;
-    }
-}
-
 /* Scroll Progress */
 .scroll-progress {
     position: fixed;
@@ -391,4 +371,108 @@
     background: var(--current-primary);
     transform-origin: left;
     z-index: 1001;
+}
+
+/* Já tem o básico para max-width: 768px, vou complementar: */
+
+@media (max-width: 1024px) {
+  .timeline-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .timeline-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .hero-content {
+    max-width: 600px;
+    padding: 0 1rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 6vw, 3rem);
+  }
+
+  .timeline-title {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .timeline-nav {
+    display: none; /* já tinha */
+  }
+
+  .timeline-content {
+    grid-template-columns: 1fr;
+    gap: 2rem; /* já tinha */
+  }
+
+  .timeline-section {
+    padding: 2rem 1rem;
+  }
+
+  .hero-title {
+    font-size: 2.5rem; /* já tinha */
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .timeline-title {
+    font-size: 1.75rem;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-about {
+    padding: 1.5rem;
+  }
+
+  .hero-title {
+    font-size: 1.75rem;
+  }
+
+  .hero-description {
+    font-size: 0.9rem;
+  }
+
+  .timeline-section {
+    padding: 1.5rem 1rem;
+  }
+
+  .timeline-title {
+    font-size: 1.5rem;
+  }
+
+  .timeline-date {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.75rem;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-number {
+    font-size: 2.5rem;
+  }
+
+  .stat-item {
+    padding: 1.5rem 1rem;
+  }
 }
