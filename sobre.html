@@ -1,171 +1,445 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sobre nós</title>
-    <link rel="stylesheet" href="src/css/sobre.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nós - ScriptHadder | A Jornada da Inovação</title>
+    
+    <!-- Modern Tech Design System -->
+    <link rel="stylesheet" href="src/css/styles.css">
+    <link rel="stylesheet" href="src/css/sobre.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-        <!-- ✅ Favicon (.ico para o navegador) -->
+    <!-- Favicon -->
     <link rel="shortcut icon" href="src/ico/Letreiro-aba.ico" type="image/x-icon">
 
-    <!-- ✅ Open Graph (preview ao compartilhar link) -->
-    <meta property="og:title" content="ScriptHadder">
-    <meta property="og:description" content="Sobre nós">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Nossa História - ScriptHadder | A Jornada da Inovação">
+    <meta property="og:description" content="Conheça a jornada da ScriptHadder: desde a fundação até as inovações que transformam o futuro digital">
     <meta property="og:image" content="https://renanmestre.github.io/scripthadder/src/img/icone.png">
-    <meta property="og:url" content="https://renanmestre.github.io/scripthadder/portfólio">
+    <meta property="og:url" content="https://renanmestre.github.io/scripthadder/sobre">
     <meta property="og:type" content="website">
 
-    <!-- ✅ Twitter Card -->
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="ScriptHadder">
-    <meta name="twitter:description" content="Sobre nós">
+    <meta name="twitter:title" content="Nossa História - ScriptHadder | A Jornada da Inovação">
+    <meta name="twitter:description" content="Conheça a jornada da ScriptHadder: desde a fundação até as inovações que transformam o futuro digital">
     <meta name="twitter:image" content="https://renanmestre.github.io/scripthadder/src/img/icone.png">
 </head>
 <body>
-  <!-- Barra lateral de datas -->
-  <aside class="sidebar">
-    <ul>
-      <li class="active">25/07/2025</li>
-      <li>09/09/2025</li>
-      <li>08/2025</li>
-      <li>Presente</li>
-    </ul>
-  </aside>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
 
-  <!-- Botão flutuante -->
-  <button class="back-to-top" onclick="scrollToTop()">↑</button>
+    <!-- Timeline Navigation -->
+    <nav class="timeline-nav">
+        <div class="timeline-nav-item active" data-date="25/07/2025" data-theme="foundation"></div>
+        <div class="timeline-nav-item" data-date="09/09/2025" data-theme="launch"></div>
+        <div class="timeline-nav-item" data-date="08/2025" data-theme="growth"></div>
+        <div class="timeline-nav-item" data-date="Presente" data-theme="future"></div>
+    </nav>
 
-    <!-- Cabeçalho Moderno -->
-    <header class="header-modern">
-        <div class="header-hero">
-            <div class="header-content">
-                <img src="src/img/Letreiro_sobre.png" alt="Logo ScriptHadder" class="brand-logo" />
-                <p class="slogan-modern">Tecnologia segura</p>
-                <p class="mission-modern">Nossa missão é desenvolver e promover soluções seguras para pessoas e negócios.</p>
-                <a href="index.html" class="btn-back">
-                    Voltar
-                </a>
+    <!-- Hero Section -->
+    <section class="hero-about dynamic-bg" id="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fas fa-rocket"></i>
+                <span>Nossa Jornada de Inovação</span>
             </div>
-            <div class="header-illustration">
-                <img src="src/img/Inovacao.png" alt="Inovação Digital" />
+            <h1 class="hero-title">A História que Transforma o Futuro</h1>
+            <p class="hero-description">
+                Cada data marca um momento crucial em nossa jornada. 
+                Descubra como três visionários transformaram uma ideia em uma revolução tecnológica.
+            </p>
+        </div>
+        
+        <!-- Floating Elements -->
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+    </section>
+
+    <!-- Timeline Section 1: Foundation -->
+    <section class="timeline-section dynamic-bg" id="foundation" data-theme="foundation">
+        <div class="timeline-content">
+            <div class="timeline-visual">
+                <img src="src/img/Logo.png" alt="Fundação ScriptHadder" class="timeline-image">
+            </div>
+            <div class="timeline-text">
+                <span class="timeline-date">25 de Julho de 2025</span>
+                <h2 class="timeline-title">O Nascimento de uma Revolução</h2>
+                <p class="timeline-description">
+                    Três amigos apaixonados por programação, unidos pela paixão por tecnologia e segurança, 
+                    fundaram a ScriptHadder. Nossa missão: Desenvolver tecnologias inovadoras e seguras afim 
+                    de garantir que os negócios daqueles que confiam na gente permaneçam por anos no espaço cibernético 
+                    dando tranquilidade aos consumidores e fomentando o mercado cibernético.
+                </p>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Fundadores</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">1</div>
+                        <div class="stat-label">Visão</div>
+                    </div>
+                </div>
             </div>
         </div>
-        <section class="team-modern">
-            <h2>Fundadores e Cofundadores</h2>
-            <div class="team-cards">
-                <div class="team-card-modern">
-                    <img src="src/img/Arthur.png" alt="Arthur Lima" class="team-avatar" />
-                    <div class="team-info">
-                        <h3>Arthur Lima</h3>
-                        <p>CTO &amp; Frontend</p>
-                        <a href="https://www.linkedin.com/in/arthur-lima-027581326/" target="_blank" class="team-link-modern">
-                            <i class="fab fa-linkedin"></i> LinkedIn
-                        </a>
+    </section>
+
+    <!-- Timeline Section 2: Launch -->
+    <section class="timeline-section dynamic-bg" id="launch" data-theme="launch">
+        <div class="timeline-content">
+            <div class="timeline-text">
+                <span class="timeline-date">09 de Setembro de 2025</span>
+                <h2 class="timeline-title">O Primeiro Impacto</h2>
+                <p class="timeline-description">
+                    Lançamos nosso primeiro produto: um sistema de IA para proteção contra 
+                    engenharia social. Nascido como TCC, tornou-se uma das ferramentas mais usadas pela SciptHadder 
+                    na detecção de ataques de engenharia social.
+                    Essa ferramenta abriu mais caminhos pra inovação e criatividade, a <strong>IASec</strong> é o próximo passo da ScriptHadder!
+                </p>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">2</div>
+                        <div class="stat-label">Usuários Protegidos</div>
                     </div>
-                </div>
-                <div class="team-card-modern">
-                    <img src="src/img/Renan.png" alt="Renan Mestre" class="team-avatar" />
-                    <div class="team-info">
-                        <h3>Renan Mestre</h3>
-                        <p>CEO &amp; Segurança Cibernética</p>
-                        <a href="https://www.linkedin.com/in/renan-mestre-468549275/" target="_blank" class="team-link-modern">
-                           <i class="fab fa-linkedin"></i> LinkedIn
-                        </a>
-                    </div>
-                </div>
-                <div class="team-card-modern">
-                    <img src="src/img/Wesley.png" alt="Wesley Almeida" class="team-avatar" />
-                    <div class="team-info">
-                        <h3>Wesley Almeida</h3>
-                        <p>Investidor &amp; IA</p>
-                        <a href="https://www.linkedin.com/in/wesley-almeida" target="_blank" class="team-link-modern">
-                            <i class="fab fa-linkedin"></i> LinkedIn
-                        </a>
+                    <div class="stat-item">
+                        <div class="stat-number">95%</div>
+                        <div class="stat-label">Taxa de Detecção</div>
                     </div>
                 </div>
             </div>
-        </section>
-    </header>
-
-  <main>
-    <section class="timeline-section" data-bgcolor="#0f0f1a">
-      <div class="content fade-in">
-        <img src="src/img/Logo.png" alt="Logo ScriptHadder" />
-        <span class="date">25/07/2025</span>
-        <h2>Fundação da ScriptHadder</h2>
-        <p>Três amigos visionários, apaixonados por tecnologia e segurança, fundaram a ScriptHadder para transformar o cenário digital brasileiro. Nosso propósito: unir segurança, inovação e desenvolvimento em um só lugar.</p>
-      </div>
+            <div class="timeline-visual">
+                <img src="src/img/Wallpaper/Sobre/Arsenal Hacker.png" alt="Sistema de Segurança" class="timeline-image">
+            </div>
+        </div>
     </section>
 
-    <section class="timeline-section" data-bgcolor="#151528">
-      <div class="content fade-in">
-        <img src="src/img/Sistema Hacker.png" alt="Sistema de Segurança" />
-        <span class="date">09/09/2025</span>
-        <h2>Lançamento do Primeiro Produto</h2>
-        <p>Desenvolvemos um sistema web inovador, com IA, para proteger pessoas contra ataques de engenharia social. O projeto, nascido como TCC, tornou-se referência em segurança digital e foi lançado publicamente em setembro de 2025.</p>
-      </div>
+    <!-- Timeline Section 3: Growth -->
+    <section class="timeline-section dynamic-bg" id="growth" data-theme="growth">
+        <div class="timeline-content">
+            <div class="timeline-visual">
+                <img src="src/img/Clientes.png" alt="Primeiros Clientes" class="timeline-image">
+            </div>
+            <div class="timeline-text">
+                <span class="timeline-date">Agosto de 2025</span>
+                <h2 class="timeline-title">Crescimento e Impacto</h2>
+                <p class="timeline-description">
+                    Nossos primeiros clientes confiaram em nossa visão. Entregamos projetos 
+                    pra micro empreendedores e todos tiveram uma boa aceitação e aprovaram nossos negócios
+                    e dedicação nas codificações, junto com isso, participamos também de uma entrevista envolvendo um TCC de 
+                    faculdade pra respondermos a perguntas voltado a automação em micro e grandes empresas, os impactos 
+                    e implantação. <br>
+                    Fomos também convidados pra participar de projetos acadêmicos envolvendo tecnologia IoT e desenvolvimento web.
+                </p>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Projetos Desenvolvidos</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">1</div>
+                        <div class="stat-label">Entrevista</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section class="timeline-section" data-bgcolor="#1e1e2f">
-      <div class="content fade-in">
-        <img src="src/img/Clientes.png" alt="Primeiros Clientes" />
-        <span class="date">Agosto/2025</span>
-        <h2>Primeiros Clientes e Resultados</h2>
-        <p>Entregamos nosso primeiro projeto profissional: um site moderno e seguro para uma cliente visionária. Desde então, já impactamos positivamente dezenas de pessoas e empresas.</p>
-      </div>
+    <!-- Timeline Section 4: Growth -->
+    <section class="timeline-section dynamic-bg" id="security" data-theme="security">
+        <div class="timeline-content">
+            <div class="timeline-visual">
+                <img src="src/img/Wallpaper/Sobre/Segurança de clientes.png" alt="Primeiros Clientes" class="timeline-image">
+            </div>
+            <div class="timeline-text">
+                <span class="timeline-date">Setembro e Outubro de 2025</span>
+                <h2 class="timeline-title">Segurança e Tecnologia</h2>
+                <p class="timeline-description">
+                    Ter tecnologia é uma coisa, saber usar é outra. No término do mês de Setembro e começo de 
+                    Outubro pudemos ajudar duas pessoas que estavam sendo atacados por golpistas e criminosos,
+                    um caso foi um site falso usado pra coletar credenciais como CPF, Número de celular, email, e demais 
+                    informações, e o outro foi um senhor idoso que teve seus dados roubados depois de um vishing. <br> <br>
+                    As duas pessoas protegidas avaliaram nossos serviços: <br> <br>
+                    <strong>"Profissional atencioso e disposto, serviço 10/10!"</strong> <br>
+                    <strong>"Atendimento ágil, cuidadoso e essencial num momento crítico."</strong>
+                </p>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">2</div>
+                        <div class="stat-label">Pessoas protegidas</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">Aprovação</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section class="timeline-section" data-bgcolor="#061826">
-      <div class="content fade-in">
-        <img src="src/img/Inovacao_continua.png" alt="Futuro" />
-        <span class="date">Presente e Futuro</span>
-        <h2>Inovação Contínua</h2>
-        <p>Seguimos evoluindo, com foco em segurança, IA, aprendizado constante e soluções que geram impacto social. Junte-se a nós nessa jornada de transformação digital!</p>
-      </div>
+    <!-- Timeline Section 4: Future -->
+    <section class="timeline-section dynamic-bg" id="future" data-theme="future">
+        <div class="timeline-content">
+            <div class="timeline-text">
+                <span class="timeline-date">Presente e Futuro</span>
+                <h2 class="timeline-title">Inovação Contínua</h2>
+                <p class="timeline-description">
+                    Seguimos evoluindo com foco em IA, segurança cibernética e soluções 
+                    que geram impacto social. Nossa jornada continua, e você pode fazer 
+                    parte dessa transformação digital.
+                </p>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number">∞</div>
+                        <div class="stat-label">Possibilidades</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">24/7</div>
+                        <div class="stat-label">Inovação</div>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline-visual">
+                <img src="src/img/Inovacao_continua.png" alt="Futuro da Inovação" class="timeline-image">
+            </div>
+        </div>
     </section>
-  </main>
 
-  <script>
-    // Scroll background change
-    const sections = document.querySelectorAll('.timeline-section');
-    const sidebarItems = document.querySelectorAll('.sidebar li');
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <div class="section-header" style="text-align: center; margin-bottom: 4rem;">
+                <h2 style="font-size: 2.5rem; font-weight: 700; color: var(--current-text); margin-bottom: 1rem;">
+                    Os Entusiastas por Trás da Inovação
+                </h2>
+                <p style="font-size: 1.125rem; color: var(--current-text); opacity: 0.8;">
+                    Conheça os fundadores que transformam ideias em realidade segura
+                </p>
+            </div>
+            
+            <div class="team-grid">
+                <div class="team-card">
+                    <img src="src/img/Hadders/Arthur.png" alt="Arthur L." class="team-avatar">
+                    <h3 class="team-name">Arthur L.</h3>
+                    <p class="team-role">CTO & Dev Frontend</p>
+                    <a href="https://www.linkedin.com/in/arthur-lima-027581326/" target="_blank" class="team-social">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <br>
+                    <a href="https://www.instagram.com/arthurlimma12/" target="_blank" class="team-social">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                </div>
+                
+                <div class="team-card">
+                    <img src="src/img/Hadders/Renan.png" alt="Renan M." class="team-avatar">
+                    <h3 class="team-name">Renan M.</h3>
+                    <p class="team-role">CEO, Segurança cibernético & Hacker ético</p>
+                    <a href="https://www.linkedin.com/in/renan-mestre-468549275/" target="_blank" class="team-social">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn</span> <br>
+                    </a>
+                    <br>
+                    <a href="https://www.instagram.com/remestre_devsec/" target="_blank" class="team-social">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                </div>
+                
+                <div class="team-card">
+                    <img src="src/img/Hadders/Wesley.png" alt="Wesley A." class="team-avatar">
+                    <h3 class="team-name">Wesley A.</h3>
+                    <p class="team-role">Investidor, CEO da Hadder OS & Hacker ético</p>
+                    <a href="https://www.instagram.com/wes_almeida7/" target="_blank" class="team-social">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    window.addEventListener('scroll', () => {
-      let scrollPosition = window.scrollY + window.innerHeight / 2;
+    <!-- CTA Section -->
+    <section class="hero-about dynamic-bg" style="min-height: 60vh;">
+        <div class="hero-content">
+            <h2 style="font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem; color: var(--current-text);">
+                Faça Parte da Nossa História
+            </h2>
+            <p style="font-size: 1.25rem; margin-bottom: 2rem; color: var(--current-text); opacity: 0.9;">
+                Junte-se a nós nessa jornada de transformação digital e inovação
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="contato.html" class="btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                    <i class="fas fa-handshake"></i>
+                    <span>Seja Nosso Parceiro</span>
+                </a>
+                <a href="portfólio.html" class="btn-secondary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Veja Nossos Projetos</span>
+                </a>
+            </div>
+        </div>
+    </section>
 
-      sections.forEach((section, index) => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
+    <script>
+        // Dynamic Color System
+        const themes = {
+            foundation: {
+                primary: '#6366f1',
+                secondary: '#8b5cf6',
+                accent: '#f59e0b',
+                bg: '#0f0f1a',
+                text: '#ffffff',
+                glass: 'rgba(99, 102, 241, 0.1)',
+                gradient: 'radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.2) 0%, transparent 50%)',
+                pattern: 'radial-gradient(circle at 25% 25%, rgba(99, 102, 241, 0.1) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(139, 92, 246, 0.1) 0%, transparent 50%)'
+            },
+            launch: {
+                primary: '#10b981',
+                secondary: '#06b6d4',
+                accent: '#f59e0b',
+                bg: '#151528',
+                text: '#ffffff',
+                glass: 'rgba(16, 185, 129, 0.1)',
+                gradient: 'radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.2) 0%, transparent 50%)',
+                pattern: 'radial-gradient(circle at 25% 25%, rgba(16, 185, 129, 0.1) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(6, 182, 212, 0.1) 0%, transparent 50%)'
+            },
+            growth: {
+                primary: '#f59e0b',
+                secondary: '#ef4444',
+                accent: '#8b5cf6',
+                bg: '#1e1e2f',
+                text: '#ffffff',
+                glass: 'rgba(245, 158, 11, 0.1)',
+                gradient: 'radial-gradient(circle at 20% 80%, rgba(245, 158, 11, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(239, 68, 68, 0.2) 0%, transparent 50%)',
+                pattern: 'radial-gradient(circle at 25% 25%, rgba(245, 158, 11, 0.1) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(239, 68, 68, 0.1) 0%, transparent 50%)'
+            },
+            security: {
+                primary: '#4f46e5',           // Indigo – segurança, tech e seriedade
+                secondary: '#06b6d4',         // Cyan – moderno, digital
+                accent: '#f43f5e',            // Rose – contraste vibrante (estilo Instagram)
+                bg: '#111827',                // Dark navy – fundo elegante e profissional
+                text: '#f9fafb',              // Quase branco – ótimo contraste no escuro
+                glass: 'rgba(79, 70, 229, 0.1)', // Indigo com transparência
+                gradient: `
+                    radial-gradient(circle at 20% 80%, rgba(79, 70, 229, 0.2) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.15) 0%, transparent 50%)
+                `,
+                pattern: `
+                    radial-gradient(circle at 25% 25%, rgba(79, 70, 229, 0.08) 0%, transparent 50%),
+                    radial-gradient(circle at 75% 75%, rgba(244, 63, 94, 0.08) 0%, transparent 50%)
+                `
+            },
+            future: {
+                primary: '#06b6d4',
+                secondary: '#6366f1',
+                accent: '#10b981',
+                bg: '#061826',
+                text: '#ffffff',
+                glass: 'rgba(6, 182, 212, 0.1)',
+                gradient: 'radial-gradient(circle at 20% 80%, rgba(6, 182, 212, 0.3) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(99, 102, 241, 0.2) 0%, transparent 50%)',
+                pattern: 'radial-gradient(circle at 25% 25%, rgba(6, 182, 212, 0.1) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(99, 102, 241, 0.1) 0%, transparent 50%)'
+            }
+        };
 
-        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-          document.body.style.backgroundColor = section.getAttribute('data-bgcolor');
-
-          sidebarItems.forEach(i => i.classList.remove('active'));
-          sidebarItems[index].classList.add('active');
+        function applyTheme(themeName) {
+            const theme = themes[themeName];
+            const root = document.documentElement;
+            
+            root.style.setProperty('--current-primary', theme.primary);
+            root.style.setProperty('--current-secondary', theme.secondary);
+            root.style.setProperty('--current-accent', theme.accent);
+            root.style.setProperty('--current-bg', theme.bg);
+            root.style.setProperty('--current-text', theme.text);
+            root.style.setProperty('--current-glass', theme.glass);
+            root.style.setProperty('--current-gradient', theme.gradient);
+            root.style.setProperty('--current-pattern', theme.pattern);
         }
-      });
 
-      // Ativar animações
-      document.querySelectorAll('.fade-in').forEach(el => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) {
-          el.classList.add('visible');
+        // Scroll-based theme switching
+        const sections = document.querySelectorAll('.timeline-section');
+        const navItems = document.querySelectorAll('.timeline-nav-item');
+        const scrollProgress = document.getElementById('scrollProgress');
+
+        function updateTheme() {
+            const scrollPosition = window.scrollY + window.innerHeight / 2;
+            
+            sections.forEach((section, index) => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    const theme = section.dataset.theme;
+                    applyTheme(theme);
+                    
+                    // Update navigation
+                    navItems.forEach(item => item.classList.remove('active'));
+                    navItems[index].classList.add('active');
+                }
+            });
+
+            // Update scroll progress
+            const scrollTop = window.scrollY;
+            const docHeight = document.body.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            scrollProgress.style.transform = `scaleX(${scrollPercent / 100})`;
         }
-      });
-    });
 
-    // Botão de voltar ao topo
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-  </script>
+        // Navigation click handlers
+        navItems.forEach((item, index) => {
+            item.addEventListener('click', () => {
+                const targetSection = sections[index];
+                targetSection.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Scroll event listener
+        window.addEventListener('scroll', updateTheme);
+
+        // Initialize with first theme
+        applyTheme('foundation');
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all timeline sections
+        sections.forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'all 0.6s ease';
+            observer.observe(section);
+        });
+
+        // Smooth scroll for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>

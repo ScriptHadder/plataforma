@@ -1,359 +1,907 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ScriptHadder</title>
+    <title>ScriptHadder - Soluções Tecnológicas Profissionais</title>
+    
+    <!-- Microsoft Fluent Design System -->
     <link rel="stylesheet" href="src/css/styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- ✅ Favicon (.ico para o navegador) -->
+    <!-- Favicon -->
     <link rel="shortcut icon" href="src/ico/Letreiro-aba.ico" type="image/x-icon">
 
-    <!-- ✅ Open Graph (preview ao compartilhar link) -->
-    <meta property="og:title" content="ScriptHadder">
-    <meta property="og:description" content="Equipe especializada em soluções tecnológicas">
+    <!-- Open Graph -->
+    <meta property="og:title" content="ScriptHadder - Soluções Tecnológicas Profissionais">
+    <meta property="og:description" content="Transformamos ideias em soluções digitais inovadoras com foco em segurança e performance">
     <meta property="og:image" content="https://renanmestre.github.io/scripthadder/src/img/icone.png">
     <meta property="og:url" content="https://renanmestre.github.io/scripthadder/">
     <meta property="og:type" content="website">
 
-    <!-- ✅ Twitter Card -->
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="ScriptHadder">
-    <meta name="twitter:description" content="Equipe especializada em soluções tecnológicas">
+    <meta name="twitter:title" content="ScriptHadder - Soluções Tecnológicas Profissionais">
+    <meta name="twitter:description" content="Transformamos ideias em soluções digitais inovadoras com foco em segurança e performance">
     <meta name="twitter:image" content="https://renanmestre.github.io/scripthadder/src/img/icone.png">
-
 </head>
 <body>
-    <!-- Header -->
+    <!-- Header Microsoft Style -->
     <header class="header">
         <nav class="navbar">
             <div class="nav-container">
                 <div class="logo">
-                    <a href="#hero">
-                    <img src="src/img/Letreiro.png" alt="Letreiro"></a>
+                    <a href="#hero" class="logo-link">
+                        <img src="src/img/Letreiro.png" alt="ScriptHadder" class="logo-img">
+                    </a>
                 </div>
+                
                 <ul class="nav-menu">
-                    <li><a href="sobre.html">Sobre nós</a></li>
-                    <li><a href="#services">Serviços</a></li>
-                    <li><a href="#team">Equipe</a></li>
-                    <li><a href="#pricing">Ofertas</a></li>
-                    <li><a href="#novidades">Novidades</a></li>
-                    <li><a href="portfólio.html">Templates</a></li>
-                    <li><a href="contato.html">Contato</a></li>
-                    <li><a href="inovacao.html">Soluções</a></li>
+                    <li class="nav-item">
+                        <a href="sobre.html" class="nav-link">Sobre nós</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">Serviços <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="#services" class="dropdown-link">Desenvolvimento Web</a>
+                            <a href="#services" class="dropdown-link">Segurança Cibernética</a>
+                            <a href="#services" class="dropdown-link">Desenvolvimento desktop</a>
+                            <a href="#services" class="dropdown-link">Backend</a>
+                            <a href="#services" class="dropdown-link">IA</a>
+                            <a href="#services" class="dropdown-link">Consultoria</a>
+                            <a href="#services" class="dropdown-link">Hacker ético</a>
+                            <a href="#services" class="dropdown-link">OSINT</a>
+                            <a href="#services" class="dropdown-link">Treinamentos</a>
+                            <a href="#services" class="dropdown-link">DevOps</a>
+                            <a href="#services" class="dropdown-link">Open Source</a>
+                            <a href="#services" class="dropdown-link">Segurança de identidade</a>
+                            <a href="l#services" class="dropdown-link">Dark Web</a>
+                            <a href="#services" class="dropdown-link">Roteadores</a>
+                            <a href="#services" class="dropdown-link">IoT</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#team" class="nav-link">Equipe</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="portfólio.html" class="nav-link">Portfólio</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link" >Soluções <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="inovacao.html" class="dropdown-link">Sistemas desenvolvidos</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contato.html" class="nav-link">Contato</a>
+                    </li>
                 </ul>
+                
+                <div class="nav-actions">
+                    <a href="contato.html#contactForm" class="btn-primary-nav">Começar</a>
+                </div>
+                
                 <div class="hamburguer" id="hamburguer">
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
+
+                <!-- Menu que será aberto -->
+                <nav class="menu" id="menu">
+                    <ul style="list-style: none; padding-left: 0;">
+                        <li>
+                            <a href="sobre.html">Sobre nós</a>
+                        </li>
+                        <li>
+                            <a href="#services" class="nav-link">Serviços</a>
+                            <div class="dropdown-menu">
+                                <a href="#services" class="dropdown-link">Desenvolvimento Web</a>
+                                <a href="#services" class="dropdown-link">Segurança Cibernética</a>
+                                <a href="#services" class="dropdown-link">Desenvolvimento desktop</a>
+                                <a href="#services" class="dropdown-link">Backend</a>
+                                <a href="#services" class="dropdown-link">IA</a>
+                                <a href="#services" class="dropdown-link">Consultoria</a>
+                                <a href="#services" class="dropdown-link">Hacker ético</a>
+                                <a href="#services" class="dropdown-link">OSINT</a>
+                                <a href="#services" class="dropdown-link">Treinamentos</a>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#team">Equipe</a>
+                        </li>
+                        <li>
+                            <a href="portfólio.html">Portfólio</a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link" >Soluções</a>
+                            <div class="dropdown-menu">
+                                <a href="inovacao.html" class="dropdown-link">Sistemas desenvolvidos</a>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="contato.html">Contato</a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </nav>
     </header>
 
     <main>
-        <!-- Hero -->
-        <section class="hero-split" id="hero">
-            <div class="hero-text">
-                <h1>Na <span class="highlight" style="font-style: italic">ScriptHadder</span> programar é só o começo, inovar é o <span class="highlight" style="font-style: italic">destino</span>.</h1>
-                <p>Tecnologia que <strong style="font-style: italic;">organiza</strong>, <strong style="font-style: italic;">conecta</strong> e <strong style="font-style: italic;">impulsiona</strong> seu negócio.</p>
+        <!-- Hero Section Microsoft Style -->
+        <section class="hero-section" id="hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <i class="fas fa-rocket"></i>
+                        <span>Transformando ideias em realidade</span>
+                    </div>
+                    
+                    <h1 class="hero-title">
+                        Soluções tecnológicas que 
+                        <span class="gradient-text">impulsionam</span> 
+                        seu negócio
+                    </h1>
+                    
+                    <p class="hero-description">
+                        Desenvolvemos sistemas seguros, escaláveis e inovadores com foco em 
+                        <strong>performance</strong>, <strong>segurança</strong> e 
+                        <strong>experiência do usuário</strong>.
+                    </p>
 
-                <div class="hero-buttons">
-                    <a href="#services" class="btn primary">Ver serviços</a>
-                    <a href="contato.html" class="btn outline">Fale conosco</a>
+                    <div class="hero-actions">
+                        <a href="contato.html" class="btn-primary">
+                            <span>Começar projeto</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                        <a href="#services" class="btn-secondary">
+                            <i class="fas fa-play"></i>
+                            <span>Ver serviços</span>
+                        </a>
+                    </div>
+
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Segurança</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Suporte</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">+50</span>
+                            <span class="stat-label">Projetos treinados e desenvolvidos</span>
+                        </div>
+                    </div>
                 </div>
 
-                <a href="#pricing" class="hero-link">
-                    <span>&#10140;</span> Confira os planos e preços
-                </a>
-            </div>
-
-            <div class="hero-image">
-                <img src="src/img/Ilustração.png" alt="Imagem-3D" class="imagem-3D"/>
+                <div class="hero-visual">
+                    <div class="hero-image-container">
+                        <img src="src/img/Ilustração.jpg" alt="Soluções Tecnológicas" class="hero-image"/>
+                        <div class="floating-elements">
+                            <div class="floating-card card-1">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Segurança</span>
+                            </div>
+                            <div class="floating-card card-2">
+                                <i class="fas fa-rocket"></i>
+                                <span>Performance</span>
+                            </div>
+                            <div class="floating-card card-3">
+                                <i class="fas fa-users"></i>
+                                <span>Suporte</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
         
-        <!-- About Section -->
-        <section id="about" class="about">
+        <!-- About Section Microsoft Style -->
+        <section id="about" class="about-section">
             <div class="container">
                 <div class="section-header">
-                    <h2>Sobre a <span>startup</span></h2>
-                    <p>Conheça mais sobre a ScriptHadder</p>
+                    <span class="section-badge">Sobre nós</span>
+                    <h2 class="section-title">
+                        Transformando o futuro da 
+                        <span class="gradient-text">tecnologia</span>
+                    </h2>
+                    <p class="section-description">
+                        Somos especialistas em criar soluções digitais que combinam inovação, 
+                        segurança e performance para impulsionar seu negócio.
+                    </p>
                 </div>
+
                 <div class="about-content">
                     <div class="about-text">
-                        <h3>Quem Somos</h3>
-                        <p>A ScriptHadder é uma startup focada em cibersegurança, abrangendo o desenvolvimento de software, oferecendo soluções inovadoras e personalizadas para empresas de todos os portes. Atuamos no desenvolvimento de sistemas web, softwares personalizados e com tecnologias modernas, serviços de hacker ético e consultorias, sempre com foco em segurança, inovação e resultados. Nossa equipe é apaixonada por tecnologia e comprometida em transformar desafios em soluções digitais otimizadas, protegendo e impulsionando o crescimento dos nossos clientes.</p>
-                        
-                        <h3>Nossa Missão</h3>
-                        <p>Fornecer soluções tecnológicas seguras e de alta qualidade que impulsionem o crescimento dos clientes, sejam eles empreendedores ou não, fornecendo soluções não só para potecializar os negócios, mas também em garantir uma segurança maior.</p>
-                        
-                        <div class="stats">
-                            <div class="stat-item">
-                                <h4>3</h4>
-                                <p>Projetos Desenvolvidos</p>
+                        <div class="about-card">
+                            <div class="card-icon">
+                                <i class="fas fa-shield-alt"></i>
                             </div>
-                            <div class="stat-item">
-                                <h4>+500</h4>
-                                <p>Horas de prática</p>
+                            <div class="card-content">
+                                <h3>Nossa Missão</h3>
+                                <p>Fornecer soluções tecnológicas seguras e de alta qualidade que impulsionem o crescimento dos nossos clientes, garantindo não apenas a potencialização dos negócios, mas também a máxima segurança digital.</p>
                             </div>
-                            <div class="stat-item">
-                                <h4>100%</h4>
-                                <p>Consultoria e suporte</p>
+                        </div>
+
+                        <div class="about-card">
+                            <div class="card-icon">
+                                <i class="fas fa-eye"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3>Nossa Visão</h3>
+                                <p>Ser referência em desenvolvimento de software seguro e consultoria em cibersegurança, reconhecida pela excelência técnica e compromisso com a inovação.</p>
+                            </div>
+                        </div>
+
+                        <div class="about-card">
+                            <div class="card-icon">
+                                <i class="fas fa-heart"></i>
+                            </div>
+                            <div class="card-content">
+                                <h3>Nossos Valores</h3>
+                                <p>Segurança em primeiro lugar, inovação constante, transparência total e compromisso com a excelência em cada projeto desenvolvido.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="about-image">
-                        <img src="src/img/Ícone com fundo.png" alt="ScriptHadder">
+
+                    <div class="about-visual">
+                        <div class="about-image-container">
+                            <img src="src/img/Tech.jpg" alt="ScriptHadder" class="about-image">
+                            <div class="image-overlay">
+                                <div class="overlay-content">
+                                    <h4>Profissionais em</h4>
+                                    <ul>
+                                        <li><i class="fas fa-check"></i> Cibersegurança</li>
+                                        <li><i class="fas fa-check"></i> Desenvolvimento Web</li>
+                                        <li><i class="fas fa-check"></i> Informática</li>
+                                        <li><i class="fas fa-check"></i> Hacker Ético</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats-section">
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="stat-content">
+                                <span class="stat-number">50+</span>
+                                <span class="stat-label">Projetos Desenvolvidos</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="stat-content">
+                                <span class="stat-number">1000+</span>
+                                <span class="stat-label">Horas de Desenvolvimento</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="stat-content">
+                                <span class="stat-number">100%</span>
+                                <span class="stat-label">Segurança Garantida</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="stat-content">
+                                <span class="stat-number">24/7</span>
+                                <span class="stat-label">Suporte Contínuo</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-button">
+                        <a href="sobre.html"><button>Sobre nós</button></a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Services Section -->
-        <section id="services" class="services">
+        <!-- Services Section Microsoft Style -->
+        <section id="services" class="services-section">
             <div class="container">
                 <div class="section-header">
-                    <h2>Nossos <span>Serviços</span></h2>
-                    <p>Oferecemos soluções completas em desenvolvimento</p>
-                </div>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-globe"></i>
-                        </div>
-                        <h3>Desenvolvimento Web</h3>
-                        <p>Criamos sites responsivos, modernos e otimizados para usuários, pequenas, médias e grandes empresas, utilizando as mais recentes tecdnologias web.</p>
-                        <ul>
-                            <li>Sites de vitrine</li>
-                            <li>E-commerce</li>
-                            <li>Sistemas Web</li>
-                            <li>Landing Pages</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-desktop"></i>
-                        </div>
-                        <h3>Desenvolvimento Desktop</h3>
-                        <p>Aplicativos desenvolvidos sobre encomenda e implantado no pc do usuário.</p>
-                        <ul>
-                            <li>Desenvolvimento em Java</li>
-                            <li>Projetos seguros</li>
-                            <li>Responsividade</li>
-                            <li>Manutenção</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-database"></i>
-                        </div>
-                        <h3>Backend & APIs</h3>
-                        <p>Desenvolvimento de APIs robustas e sistemas backend escaláveis para suas aplicações.</p>
-                        <ul>
-                            <li>APIs RESTful</li>
-                            <li>Backend SQL, MySQL, Python</li>
-                            <li>Integração de Sistemas</li>
-                            <li>Cloud Computing (Oracle, Google Cloud, Azure)</li>
-                            <li>Spring Boot, Spring Security e Spring Web</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-brain"></i>
-                        </div>
-                        <h3>Desenvolvimento de IAs</h3>
-                        <p>Consultoria técnica e suporte contínuo para seus projetos digitais.</p>
-                        <ul>
-                            <li>APIs ChatGpt</li>
-                            <li>ChatBots</li>
-                            <li>Machine Learning</li>
-                            <li>Desenvolvimento de imagens</li>
-                            <li>Engenharia de prompt</li>
-                        </ul>
-                    </div>
-
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-cloud"></i>
-                        </div>
-                        <h3>Cloud Computing</h3>
-                        <p>Escalamento e infraestrutura de sistemas.</p>
-                        <ul>
-                            <li>Azure</li>
-                            <li>Google Cloud</li>
-                            <li>Oracle</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-shield"></i>
-                        </div>
-                        <h3>Segurança cibernética</h3>
-                        <p>Segurança cibernética aplicada a sistemas e projetos.</p>
-                        <ul>
-                            <li>DevSecOps</li>
-                            <li>AppSec</li>
-                            <li>Pentest</li>
-                            <li>Análise de vulnerabilidades</li>
-                            <li>Ofuscação de código e criptografia</li>
-                            <li>Consutoria - Análise de segurança em sistemas</li>
-                            <li>Boas práticas de segurança em codificações</li>
-                            <li>Segurança em transição de dados</li>
-                        </ul>
-                    </div>
-
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-tools"></i>
-                        </div>
-                        <h3>Consultoria & Suporte</h3>
-                        <p>Consultoria técnica e suporte contínuo para seus projetos digitais.</p>
-                        <ul>
-                            <li>Consultoria Técnica</li>
-                            <li>Code Review</li>
-                            <li>Otimização</li>
-                            <li>Suporte</li>
-                        </ul>
-                    </div>
-
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-trophy"></i>
-                        </div>
-                        <h3>Sucesso do usuário</h3>
-                        <p>Acompanhamento de sucesso ao cliente.</p>
-                        <ul>
-                            <li>Estretégias das redes sociais</li>
-                            <li>Investimento com retorno alto</li>
-                            <li>Monitoramento dos sistemas respondendo a incidentes</li>
-                        </ul>
-                    </div>
-                </div>
-                <div style="display: flex; justify-content: center; margin-top: 2rem;">
-                    <a href="servicos.html" class="btn-servicos-destaque">
-                        <i class="fas fa-arrow-right"></i> Saber mais!
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- Team Section com carrossel 3D -->
-        <section id="team" class="team">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Quem são os <span>Hadders</span>?</h2>
-                    <p>Conheça os desenvolvedores por trás dos projetos <br>
-                        <strong>Clique na imagem para saber mais!</strong>
+                    <span class="section-badge">Nossos serviços</span>
+                    <h2 class="section-title">
+                        Soluções completas para seu 
+                        <span class="gradient-text">negócio digital</span>
+                    </h2>
+                    <p class="section-description">
+                        Oferecemos uma gama completa de serviços tecnológicos, desde desenvolvimento 
+                        até segurança cibernética, sempre com foco na excelência e inovação.
                     </p>
+                </div>
+
+                <div class="services-grid">
+                    <!-- Desenvolvimento Web -->
+                    <div class="service-card featured">
+                        <div class="card-header">
+                            <div class="service-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div class="card-badge">Mais Popular</div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Desenvolvimento Web</h3>
+                            <p>Criamos sites responsivos, modernos e otimizados utilizando as mais recentes tecnologias web para empresas de todos os portes.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Sites institucionais</li>
+                                <li><i class="fas fa-check"></i> E-commerce completo</li>
+                                <li><i class="fas fa-check"></i> Sistemas web personalizados</li>
+                                <li><i class="fas fa-check"></i> Landing pages otimizadas</li>
+                                <li><i class="fas fa-check"></i> Segurança aplicada ao ciclo de vida do sistema</li>
+                                <li><i class="fas fa-check"></i> Scanners de código</li>
+                                <li><i class="fas fa-check"></i> Formulário inteligentes e integração com email</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <a href="contato.html#contact-form" class="btn-card">Solicitar orçamento</a>
+                        </div>
                     </div>
 
-                    <!-- Swiper -->
-                    <div class="swiper teamSwiper">
-                        <div class="swiper-wrapper">
-
-                            <div class="swiper-slide team-card">
-                                <div class="team-photo">
-                                    <img src="src/img/Gabriel.png" alt="Gabriel" class="imagem-clicavel" data-descricao="Gabriel - Dev em treinamento">
-                                    <div class="overlay"><span><strong>Gabriel Moraes</strong> <br><br>
-                                        <strong>Desenvolvedor Frontend</strong> <br><br>
-                                        . No code</span>
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="swiper-slide team-card">
-                                <div class="team-photo">
-                                    <img src="src/img/Kauã.png" alt="Kauã" class="imagem-clicavel" data-descricao="Kauã - Dev Frontend">
-                                    <div class="overlay"><span><strong>Kauã Castro</strong> <br><br>
-                                        <strong>Líder em desenvolvimento Frontend</strong><br><br>
-                                        . Responsividade <br>
-                                        . HTML, CSS e JS <br>
-                                        . React<br>
-                                        . Analista de codificações <br>
-                                        . Aprendiz DevSecOps</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="swiper-slide team-card">
-                                <div class="team-photo">
-                                    <img src="src/img/Wesley.png" alt="Wesley" class="imagem-clicavel" data-descricao="Wesley - Investidor">
-                                    <div class="overlay"><span><strong>Wesley Almeida</strong><br>
-                                        <strong>*Cofundador*</strong><br><br>
-                                        <strong>Investidor e analista de inovações</strong><br><br>
-                                        . Instagram <br>
-                                        . Facebook <br>
-                                        . Tráfego <br>
-                                        . Prompt Enginner <br>
-                                        . Analista financeiro </span>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="swiper-slide team-card">
-                                <div class="team-photo">
-                                    <img src="src/img/Renan_teste.png" alt="Hadder1">
-                                    <div class="overlay"><span><strong>Renan Mestre</strong><br>
-                                        <strong>*Fundador*</strong><br><br>
-                                        <strong>Líder em Segurança cibernética</strong><br><br>
-                                        . DevSecOps<br>
-                                        . Pentest<br>
-                                        . Ofuscação de script <br>
-                                        . Criptografia <br>
-                                        . Desenvolvedor Full Stack</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="swiper-slide team-card">
-                                <div class="team-photo">
-                                    <img src="src/img/Arthur.png" alt="Hadder3">
-                                    <div class="overlay"><span><strong>Arthur Lima</strong><br>
-                                        <strong>*Cofundador*</strong><br><br>
-                                        <strong>Chefe de Operações</strong><br><br>
-                                        . HTML, CSS e JS<br>
-                                        . Figma <br>
-                                        . React <br>
-                                        . Levantamento de requisitos <br>
-                                        . Arquitetura de software</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="swiper-slide team-card">
-                                <div class="team-photo">
-                                    <img src="src/img/Mateus.png" alt="Hadder3">
-                                    <div class="overlay"><span><strong>Mateus Benzi</strong><br><br>
-                                        <strong>Líder em Marketing e Mídias</strong><br><br>
-                                        . Canva <br>
-                                        . Facebook <br>
-                                        . Instagram <br>
-                                        . Tráfego <br>
-                                        . Aprendiz python</span>
-                                    </div>
-                                </div>
+                    <!-- Segurança Cibernética -->
+                    <div class="service-card">
+                        <div class="card-header">
+                            <div class="service-icon">
+                                <i class="fas fa-shield-alt"></i>
                             </div>
                         </div>
-                        <!-- Navegação -->
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
+                        <div class="card-content">
+                            <h3>Segurança Cibernética</h3>
+                            <p>Proteção completa para seus sistemas e dados com serviços de hacker ético e análise de vulnerabilidades.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Testes de penetração</li>
+                                <li><i class="fas fa-check"></i> Análise de vulnerabilidades</li>
+                                <li><i class="fas fa-check"></i> Consultoria em segurança</li>
+                                <li><i class="fas fa-check"></i> Criptografia avançada</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <a href="contato.html#contact-form" class="btn-card">Solicitar orçamento</a>
+                        </div>
+                    </div>
+
+                    <!-- Desenvolvimento Desktop -->
+                    <div class="service-card">
+                        <div class="card-header">
+                            <div class="service-icon">
+                                <i class="fas fa-desktop"></i>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Desenvolvimento Desktop</h3>
+                            <p>Aplicativos desktop personalizados desenvolvidos com as melhores práticas de segurança e performance.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Aplicações Java</li>
+                                <li><i class="fas fa-check"></i> Sistemas seguros</li>
+                                <li><i class="fas fa-check"></i> Interface responsiva</li>
+                                <li><i class="fas fa-check"></i> Manutenção contínua</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <a href="contato.html#contact-form" class="btn-card">Solicitar orçamento</a>
+                        </div>
+                    </div>
+
+                    <!-- Backend & APIs -->
+                    <div class="service-card">
+                        <div class="card-header">
+                            <div class="service-icon">
+                                <i class="fas fa-database"></i>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Backend & APIs</h3>
+                            <p>Desenvolvimento de APIs robustas e sistemas backend escaláveis para suas aplicações.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> APIs RESTful</li>
+                                <li><i class="fas fa-check"></i> Integração de sistemas</li>
+                                <li><i class="fas fa-check"></i> Cloud Computing</li>
+                                <li><i class="fas fa-check"></i> Spring Boot</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <a href="contato.html#contact-form" class="btn-card">Solicitar orçamento</a>
+                        </div>
+                    </div>
+
+                    <!-- Inteligência Artificial -->
+                    <div class="service-card">
+                        <div class="card-header">
+                            <div class="service-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Inteligência Artificial</h3>
+                            <p>Soluções de IA personalizadas para automatizar processos e melhorar a experiência do usuário.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Chatbots inteligentes</li>
+                                <li><i class="fas fa-check"></i> Machine Learning</li>
+                                <li><i class="fas fa-check"></i> Desenvolvimento de imagens</li>
+                                <li><i class="fas fa-check"></i> Engenharia de prompts</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <a href="contato.html#contact-form" class="btn-card">Solicitar orçamento</a>
+                        </div>
+                    </div>
+
+                    <!-- Consultoria & Suporte -->
+                    <div class="service-card">
+                        <div class="card-header">
+                            <div class="service-icon">
+                                <i class="fas fa-tools"></i>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Consultoria & Suporte</h3>
+                            <p>Consultoria técnica especializada e suporte contínuo para seus projetos digitais.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Consultoria técnica</li>
+                                <li><i class="fas fa-check"></i> Code review</li>
+                                <li><i class="fas fa-check"></i> Otimização de performance</li>
+                                <li><i class="fas fa-check"></i> Suporte 24/7</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <a href="contato.html#contact-form" class="btn-card">Solicitar orçamento</a>
+                        </div>
+                    </div>
+
+                    <!-- Hacker ético -->
+                    <div class="service-card">
+                        <div class="card-header">
+                            <div class="service-icon">
+                                <i class="fas fa-user-secret"></i>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Hacker ético</h3>
+                            <p>Saiba se sua organização ou identidade corre risco por brechas de segurança.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Monitoramento de softwares</li>
+                                <li><i class="fas fa-check"></i> Teste de penetração em sistemas</li>
+                                <li><i class="fas fa-check"></i> Aplicação de segurança em rede doméstica ou empresarial</li>
+                                <li><i class="fas fa-check"></i> Proteção de roteadores e dispositivos conectados a internet</li>
+                                <li><i class="fas fa-check"></i> Segurança em dispositivos IoT</li>
+                                <li><i class="fas fa-check"></i> Busca de vazamentos na Dark Web</li>
+                                <li><i class="fas fa-check"></i> Recuperação e blindagem de contas</li>
+                                <li><i class="fas fa-check"></i> Limpeza completa de navegação na internet</li>
+                                <li><i class="fas fa-check"></i> Análise de ataques hackers e malwares</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <a href="contato.html#contact-form" class="btn-card">Solicitar orçamento</a>
+                        </div>
+                    </div>
+
+                    <!-- OSINT -->
+                    <div class="service-card">
+                        <div class="card-header">
+                            <div class="service-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3>OSINT</h3>
+                            <p>Sistemas que conectam o mundo contendo muitas informações preciosas, pegadas internas e externas, descubra o nível de segurança do seu negócio.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Busca de pessoas desaparecidas</li>
+                                <li><i class="fas fa-check"></i> Busca de informações expostas</li>
+                                <li><i class="fas fa-check"></i> Análise de organizações</li>
+                                <li><i class="fas fa-check"></i> Análise de perfis em redes sociais</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <a href="contato.html#contact-form" class="btn-card">Solicitar orçamento</a>
+                        </div>
+                    </div>
+
+                    <!-- Treinamento de equipes -->
+                    <div class="service-card">
+                        <div class="card-header">
+                            <div class="service-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Treinamento de equipes</h3>
+                            <p>Treine sua equipe pra seu negócio ficar blindado contra ataques cibernéticos.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Sistemas operacionais</li>
+                                <li><i class="fas fa-check"></i> Linux</li>
+                                <li><i class="fas fa-check"></i> Análise de Phishing</li>
+                                <li><i class="fas fa-check"></i> Resposta a incidentes de segurança</li>
+                                <li><i class="fas fa-check"></i> Monitoramentos</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <a href="contato.html#contact-form" class="btn-card">Solicitar orçamento</a>
+                        </div>
+                    </div>
+
+                    <!-- DevOps -->
+                    <div class="service-card">
+                        <div class="card-header">
+                            <div class="service-icon">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3>DevOps</h3>
+                            <p>Precisa de um analista em DevOps pra te ajudar nas conexões, conteinerização do seus projetos ou até automatizar pipelines pra scanners?</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Containers Docker</li>
+                                <li><i class="fas fa-check"></i> Grafana & Prometheus</li>
+                                <li><i class="fas fa-check"></i> Terraform</li>
+                                <li><i class="fas fa-check"></i> GitLab & GitHub</li>
+                                <li><i class="fas fa-check"></i> Scanners SAST & DAST</li>
+                                <li><i class="fas fa-check"></i> Cloud Computing</li>
+                                <li><i class="fas fa-check"></i> Pipelines</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <a href="contato.html#contact-form" class="btn-card">Solicitar orçamento</a>
+                        </div>
+                    </div>
+
+                    <!-- Colaboração Open Source -->
+                    <div class="service-card">
+                        <div class="card-header">
+                            <div class="service-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Colaboração Open Source</h3>
+                            <p>Você é um dev iniciante, ou é expert e precisa de uma força nos seus projetos? Conte conosco pra te ajudar a alcançar seus sonhos digitais nos seus scripts!</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> GitHub & GitLab</li>
+                                <li><i class="fas fa-check"></i> Java</li>
+                                <li><i class="fas fa-check"></i> JavaScript</li>
+                                <li><i class="fas fa-check"></i> Python</li>
+                                <li><i class="fas fa-check"></i> Sistemas Full Stack</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <a href="contato.html#contact-form" class="btn-card">Solicitar orçamento</a>
+                        </div>
+                    </div>
+
+                    <!-- Segurança de identidade digital -->
+                    <div class="service-card">
+                        <div class="card-header">
+                            <div class="service-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Segurança de identidade digital</h3>
+                            <p>Todos quando criamos uma conta na rede passamos a ter uma identidade digital, por isso se torna nosso dever blindar os sistemas e proteger nossos dados.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Localização de vazamentos</li>
+                                <li><i class="fas fa-check"></i> Linux</li>
+                                <li><i class="fas fa-check"></i> Análise de Phishing</li>
+                                <li><i class="fas fa-check"></i> Resposta a incidentes de segurança</li>
+                                <li><i class="fas fa-check"></i> Monitoramentos</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <a href="contato.html#contact-form" class="btn-card">Solicitar orçamento</a>
+                        </div>
+                    </div>
+
+                    <!-- Dark Web -->
+                    <div class="service-card">
+                        <div class="card-header">
+                            <div class="service-icon">
+                                <i class="fas fa-network-wired"></i>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Dark Web</h3>
+                            <p>Já parou pra pensar se tem alguma credencial vazada na rede obscura web ou como você pode se proteger?</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Monitoramento de vazamentos</li>
+                                <li><i class="fas fa-check"></i> Vazamento de credenciais</li>
+                                <li><i class="fas fa-check"></i> Vazamento de informações sensíveis</li>
+                                <li><i class="fas fa-check"></i> Localização e pesquisas de possíveis ataques a organizações</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <a href="contato.html#contact-form" class="btn-card">Solicitar orçamento</a>
+                        </div>
+                    </div>
+
+                    <!-- Segurança de Roteadores -->
+                    <div class="service-card">
+                        <div class="card-header">
+                            <div class="service-icon">
+                                <i class="fas fa-wifi"></i>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Segurança de Roteadores</h3>
+                            <p>A segurança de rede se tornou fundamental nos dias atuais por permitirem que usuários não autorizados acessem as informações do roteador e façam mudanças 
+                                significativas, podendo implamentar malwere, mudar configurações importantes e entrar em sistemas conectados.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> Configuração de segurança WPA</li>
+                                <li><i class="fas fa-check"></i> Pentest em rede wifi</li>
+                                <li><i class="fas fa-check"></i> Implantação de credenciais fortes</li>
+                                <li><i class="fas fa-check"></i> Criptografia em rede</li>
+                                <li><i class="fas fa-check"></i> Mudança de senhas</li>
+                                <li><i class="fas fa-check"></i> Criptografia em rede</li>
+                                <li><i class="fas fa-check"></i> Análise de segurança básica</li>
+                                <li><i class="fas fa-check"></i> Firewall & VPN</li>
+                                <li><i class="fas fa-check"></i> Rede de convidados & gerenciamento de dispositivos liberados pra acessar a rede</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <a href="contato.html#contact-form" class="btn-card">Solicitar orçamento</a>
+                        </div>
+                    </div>
+
+                    <!-- Dev de IoT -->
+                    <div class="service-card">
+                        <div class="card-header">
+                            <div class="service-icon">
+                                <i class="fas fa-microchip"></i>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <h3>Desenvolvimento de Automações IoT</h3>
+                            <p>Desenvolvimento básico de automações envolvendo monitoramento e conexão web pra transmissão e exposição de dados.</p>
+                            <ul class="service-features">
+                                <li><i class="fas fa-check"></i> ESP32</li>
+                                <li><i class="fas fa-check"></i> APIs de conexão com frontend</li>
+                                <li><i class="fas fa-check"></i> Arduíno</li>
+                            </ul>
+                        </div>
+                        <div class="card-footer">
+                            <a href="contato.html#contact-form" class="btn-card">Solicitar orçamento</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="services-cta">
+                    <div class="cta-content">
+                        <h3>Precisa de uma solução personalizada?</h3>
+                        <p>Nossa equipe está pronta para desenvolver a solução perfeita para seu negócio.</p>
+                        <a href="contato.html#contact-form" class="btn-primary">
+                            <span>Entrar em contato</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Etapas do desenvolvimento de software -->
+        <!-- Team Section Microsoft Style -->
+        <section id="team" class="team-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Hadders</span>
+                    <h2 class="section-title">
+                        Conheça os Devs por trás dos 
+                        <span class="gradient-text">projetos</span>
+                    </h2>
+                    <p class="section-description">
+                        Uma equipe multidisciplinar de profissionais apaixonados por tecnologia 
+                        e comprometidos com a excelência em cada projeto.
+                    </p>
+                </div>
+
+                <div class="team-grid">
+                    <!-- Renan M. - Fundador -->
+                    <div class="team-card featured">
+                        <div class="card-badge">CEO</div>
+                        <div class="team-photo">
+                            <img src="src/img/Hadders/Renan.jpg" alt="Renan M.">
+                        </div>
+                        <div class="team-info">
+                            <h3>Renan M.</h3>
+                            <p class="team-role">Segurança Cibernético & Hacker Ético</p>
+                            <p class="team-description">Pentester e desenvolvedor FullStack especializado em DevSecOps com 2 anos de experiência em desenvolvimento web.</p>
+                            <div class="team-skills">
+                                <span class="skill-tag">DevSecOps</span>
+                                <span class="skill-tag">Pentest</span>
+                                <span class="skill-tag">Criptografia</span>
+                                <span class="skill-tag">Ofuscação de scripts</span>
+                                <span class="skill-tag">APIs Java Spring Boot</span>
+                                <span class="skill-tag">Desenvolvedor Java</span>
+                                <span class="skill-tag">Bloqueio de teclas</span>
+                                <span class="skill-tag">MySQL e PostgreSQL</span>
+                                <span class="skill-tag">Machine Learning e Cloud</span>
+                                <span class="skill-tag">Implatanção de reCAPTCHA</span>
+                                <span class="skill-tag">Segurança em serviços e operações</span>
+                                <span class="skill-tag">OSINT</span>
+                            </div>
+                            <div class="team-social">
+                                <a href="https://instagram.com/usuario_aqui" target="_blank" aria-label="Instagram de Mateus">
+                                    <i class="fab fa-instagram"></i>
+                                    <span>Instagram</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Arthur L. - Cofundador -->
+                    <div class="team-card">
+                        <div class="card-badge">Cofundador</div>
+                        <div class="team-photo">
+                            <img src="src/img/Hadders/Arthur.jpg" alt="Arthur L.">
+                        </div>
+                        <div class="team-info">
+                            <h3>Arthur L.</h3>
+                            <p class="team-role">Chefe de Operações</p>
+                            <p class="team-description">Responsável pela arquitetura de software e levantamento de requisitos.</p>
+                            <div class="team-skills">
+                                <span class="skill-tag">React</span>
+                                <span class="skill-tag">Figma</span>
+                                <span class="skill-tag">Arquitetura</span>
+                                <span class="skill-tag">Frontend</span>
+                            </div>
+                            <div class="team-social">
+                                <a href="https://www.instagram.com/arthurlimma12/" target="_blank" aria-label="Instagram de Mateus">
+                                    <i class="fab fa-instagram"></i>
+                                    <span>Instagram</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Wesley A. - Cofundador -->
+                    <div class="team-card">
+                        <div class="card-badge">Cofundador</div>
+                        <div class="team-photo">
+                            <img src="src/img/Hadders/Wesley.jpg" alt="Wesley A.">
+                        </div>
+                        <div class="team-info">
+                            <h3>Wesley A.</h3>
+                            <p class="team-role">Investidor e Hacker Ético</p>
+                            <p class="team-description">Analista financeiro e longa experiência em Linux, Android e monitoramento de vazamentos da Dark Web.</p>
+                            <div class="team-skills">
+                                <span class="skill-tag">Marketing Digital</span>
+                                <span class="skill-tag">Tráfego pago</span>
+                                <span class="skill-tag">Prompt Engineering</span>
+                                <span class="skill-tag">Análise Financeira</span>
+                                <span class="skill-tag">Monitoramento da Dark Web</span>
+                            </div>
+                            <div class="team-social">
+                                <a href="https://www.instagram.com/wes_almeida7/" target="_blank" aria-label="Instagram de Mateus">
+                                    <i class="fab fa-instagram"></i>
+                                    <span>Instagram</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Kauã C. - Líder Frontend -->
+                    <div class="team-card">
+                        <div class="team-photo">
+                            <img src="src/img/Hadders/Kauã.jpg" alt="Kauã C.">
+                        </div>
+                        <div class="team-info">
+                            <h3>Kauã C.</h3>
+                            <p class="team-role">Líder em Desenvolvimento Frontend</p>
+                            <p class="team-description">Profissional do desenvolvimento web com modernidade, dinâmica, responsividade e grande manuseio de JavaScript.</p>
+                            <div class="team-skills">
+                                <span class="skill-tag">React</span>
+                                <span class="skill-tag">Responsividade</span>
+                                <span class="skill-tag">Frontend</span>
+                                <span class="skill-tag">SASS</span>
+                                <span class="skill-tag">UX/UI</span>
+                                <span class="skill-tag">Em treinamento: DevSecOps</span>
+                            </div>
+                            <div class="team-social">
+                                <a href="https://www.instagram.com/k4ua_dev/" target="_blank" aria-label="Instagram de Mateus">
+                                    <i class="fab fa-instagram"></i>
+                                    <span>Instagram</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mateus B. - Marketing -->
+                    <div class="team-card">
+                        <div class="team-photo">
+                            <img src="src/img/Hadders/Mateus.jpg" alt="Mateus B.">
+                        </div>
+                        <div class="team-info">
+                            <h3>Mateus B.</h3>
+                            <p class="team-role">Líder em Marketing e Mídias</p>
+                            <p class="team-description">Responsável pela estratégia de marketing e presença digital.</p>
+                            <div class="team-skills">
+                                <span class="skill-tag">Marketing</span>
+                                <span class="skill-tag">Redes Sociais</span>
+                                <span class="skill-tag">Tráfego</span>
+                                <span class="skill-tag">Python</span>
+                            </div>
+                            <div class="team-social">
+                                <a href="https://www.instagram.com/mateus_benzi/" target="_blank" aria-label="Instagram de Mateus">
+                                    <i class="fab fa-instagram"></i>
+                                    <span>Instagram</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gabriel M. - Desenvolvedor -->
+                    <div class="team-card">
+                        <div class="team-photo">
+                            <img src="src/img/Hadders/Gabriel.jpg" alt="Gabriel M.">
+                        </div>
+                        <div class="team-info">
+                            <h3>Gabriel M.</h3>
+                            <p class="team-role">Desenvolvedor Frontend</p>
+                            <p class="team-description">Desenvolvedor em treinamento focado em soluções no-code.</p>
+                            <div class="team-skills">
+                                <span class="skill-tag">No-Code</span>
+                                <span class="skill-tag">Frontend</span>
+                                <span class="skill-tag">Python</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Patrick - Desenvolvedor FullStack -->
+                    <div class="team-card">
+                        <div class="team-photo">
+                            <img src="src/img/Hadders/Patrick.jpg" alt="Patrick">
+                        </div>
+                        <div class="team-info">
+                            <h3>Patrick</h3>
+                            <p class="team-role">Desenvolvedor FullStack</p>
+                            <p class="team-description">Desenvolverdor com 5 anos de experiência e plataformas e-commerce, APIs de pagamentos, Bots e IoT.</p>
+                            <div class="team-skills">
+                                <span class="skill-tag">MySQL e PostgreSQL</span>
+                                <span class="skill-tag">Frontend</span>
+                                <span class="skill-tag">PHP</span>
+                                <span class="skill-tag">Bots Discord</span>
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">Servidores</span>
+                                <span class="skill-tag">Infraestrutura</span>
+                            </div>
+                            <div class="team-social">
+                                <a href="https://www.instagram.com/_pktrick/" target="_blank" aria-label="Instagram de Mateus">
+                                    <i class="fab fa-instagram"></i>
+                                    <span>Instagram</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--<div class="team-cta">
+                    <div class="cta-content">
+                        <h3>Quer fazer parte da nossa equipe?</h3>
+                        <p>Estamos sempre em busca de talentos apaixonados por tecnologia.</p>
+                        <a href="contato.html" class="btn-secondary">
+                            <span>Ver oportunidades</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>-->
+            </div>
+        </section>
+
+        <!-- Etapas do desenvolvimento de software
         <section id="processo" class="process vertical">
             <div class="container">
                 <div class="section-header">
@@ -362,7 +910,7 @@
                 </div>
 
                 <div class="vertical-steps">
-                    <!-- Etapa 1 -->
+                    Etapa 1
                     <div class="step-vertical">
                         <div class="image-container">
                         <img src="src/img/Planejamento.png" alt="Planejamento">
@@ -373,7 +921,7 @@
                         </div>
                     </div>
 
-                    <!-- Etapa 2 -->
+                    Etapa 2 
                     <div class="step-vertical">
                         <div class="image-container">
                         <img src="src/img/Figma.png" alt="Design UI/UX">
@@ -384,7 +932,7 @@
                         </div>
                     </div>
 
-                    <!-- Etapa 3 -->
+                    Etapa 3 
                     <div class="step-vertical">
                         <div class="image-container">
                         <img src="src/img/Dev.png" alt="Desenvolvimento">
@@ -395,7 +943,7 @@
                         </div>
                     </div>
 
-                    <!-- Etapa 4 -->
+                    Etapa 4
                     <div class="step-vertical">
                         <div class="image-container">
                         <img src="src/img/Testes.png" alt="Testes">
@@ -406,7 +954,7 @@
                         </div>
                     </div>
 
-                    <!-- Etapa 5-->
+                     Etapa 5
                     <div class="step-vertical">
                         <div class="image-container">
                         <img src="src/img/Segurança.png" alt="Testes">
@@ -417,7 +965,7 @@
                         </div>
                     </div>
 
-                    <!-- Etapa 6 -->
+                    Etapa 6 
                     <div class="step-vertical">
                         <div class="image-container">
                         <img src="src/img/Deploy.png" alt="Deploy">
@@ -428,7 +976,7 @@
                         </div>
                     </div>
 
-                    <!-- Etapa 6 -->
+                    Etapa 6 
                     <div class="step-vertical">
                         <div class="image-container">
                         <img src="src/img/Suporte.png" alt="Suporte">
@@ -440,9 +988,9 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section>-->
 
-        <!-- Tecnologias usadas -->
+        <!-- Tecnologias usadas
         <section class="tecnology">
             <div class="section-header">
                 <h2>Tecnologias que <span>Usamos</span></h2>
@@ -457,7 +1005,7 @@
                         <i class="fab fa-angular" title="Angular"></i>
                         <i class="fab fa-docker" title="Docker"></i>
                         <i class="fab fa-git-alt" title="Git"></i>
-                        <!-- Duplicando para loop infinito -->
+                        <!-- Duplicando para loop infinito
                         <i class="fa-solid fa-database" title="database"></i>
                         <i class="fa-brands fa-html5" title="HTML5"></i>
                         <i class="fa-brands fa-css3" title="CSS3"></i>
@@ -469,9 +1017,9 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section>-->
 
-        <!-- Diferenciais -->
+        <!-- Diferenciais
         <section class="diferenciais" id="diferenciais">
             <div class="container">
                 <div class="section-header">
@@ -496,7 +1044,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section>-->
 
         <!-- Avaliação de clientes -->
         <!--<section class="avaliacoes">
@@ -522,42 +1070,42 @@
             </div>
         </section>-->
 
-        <!-- Ofertas -->
+        <!-- Ofertas
         <section class="ofertas" id="pricing">
-        <div class="container">
-            <div class="section-header">
-            <h2>Oferta semana da <span>inauguração</span>!</h2>
-            <p>Aproveite as promoções especiais por tempo limitado.</p>
-            </div>
+            <div class="container">
+                <div class="section-header">
+                <h2>Oferta semana da <span>inauguração</span>!</h2>
+                <p>Aproveite as promoções especiais por tempo limitado.</p>
+                </div>
 
-            <div class="ofertas-grid">
-            <div class="oferta-card">
-                <h3>Sistema Web Simples</h3>
-                <p>Website Frontend apenas</p>
-                <strong><s>R$3.000,00</s> por R$800,00</strong>
-            </div>
+                <div class="ofertas-grid">
+                <div class="oferta-card">
+                    <h3>Sistema Web Simples</h3>
+                    <p>Website Frontend apenas</p>
+                    <strong><s>R$3.000,00</s> por R$800,00</strong>
+                </div>
 
-            <div class="oferta-card">
-                <h3>Sistema Web Seguro</h3>
-                <p>Website Frontend + Segurança</p>
-                <strong><s>R$4.500,00</s> por R$1.100,00</strong>
-            </div>
+                <div class="oferta-card">
+                    <h3>Sistema Web Seguro</h3>
+                    <p>Website Frontend + Segurança</p>
+                    <strong><s>R$4.500,00</s> por R$1.100,00</strong>
+                </div>
 
-            <div class="oferta-card destaque">
-                <h3>Serviço de Hacker Ético</h3>
-                <p>Análise de identidade digital + Busca de vazamentos na dark web</p>
-                <strong><s>R$5.000,00</s> por R$2.200,00</strong>
-            </div>
-            </div>
+                <div class="oferta-card destaque">
+                    <h3>Serviço de Hacker Ético</h3>
+                    <p>Análise de identidade digital + Busca de vazamentos na dark web</p>
+                    <strong><s>R$5.000,00</s> por R$2.200,00</strong>
+                </div>
+                </div>
 
-            <div class="contact-info">
-                p>Para ter acesso a essas e outras ofertas, entre em contato com a nossa equipe e garanta seu sistema pela metade do preço!</p>
-            <a href="contato.html"><button>Entrar em contato!</button></a>
+                <div class="contact-info">
+                    p>Para ter acesso a essas e outras ofertas, entre em contato com a nossa equipe e garanta seu sistema pela metade do preço!</p>
+                <a href="contato.html"><button>Entrar em contato!</button></a>
+                </div>
             </div>
-        </div>
-        </section>
+        </section>-->
 
-
+        <!-- Catálogo
         <section class="catalogo">
             <div class="container">
                 <div class="catalogo-content">
@@ -571,131 +1119,183 @@
                 </div>
                 </div>
             </div>
+        </section>-->
+
+        <!-- Seção: Empresas Parceiras -->
+        <section id="parcerias" class="parcerias-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Parcerias</span>
+                    <h2 class="section-title">
+                        Empresas que <span class="gradient-text">confiam</span> em nós
+                    </h2>
+                    <p class="section-description">
+                        Conheça as empresas que apoiam nossas soluções tecnológicas e compartilham nossa visão de inovação.
+                    </p>
+                </div>
+
+                <div class="parcerias-grid">
+                    <!-- Decora Com Gabi -->
+                    <div class="parceiro-card" id="decora_com_gabi">
+                        <a href="https://renanmestre.github.io/Gabi_front/"><img src="src/img/Parcerias/Decora Com Gabi.jpg" alt="Decora Com Gabi" class="parceiro-logo" /></a>
+                    </div>
+                    <!-- Guiatina -->
+                    <div class="parceiro-card" id="guiatina">
+                        <a href="#"><img src="src/img/Parcerias/Guiatina.jpg" alt="Guiatina" class="parceiro-logo" /></a>
+                    </div>
+                </div>
+            </div>
         </section>
 
-        <!-- Novidades -->
+        <!-- Novidades
         <section class="novidades destaque-novidades novidades-3d" id="novidades">
-        <div class="container">
-            <div class="novidades-wrapper">
-            <div class="hero-image">
-                <img src="src/img/3D.png" alt="Imagem-3D" class="imagem-3D"/>
+            <div class="container">
+                <div class="novidades-wrapp</div>er">
+                <div class="hero-image">
+                    <img src="src/img/3D.png" alt="Imagem-3D" class="imagem-3D"/>
+                </div>
+                <div class="novidades-text">
+                    <h2>
+                    <span class="icon-flash"><i class="fas fa-bolt"></i></span>
+                    <span class="gradient-title">Novidade em 3D!</span>
+                    </h2>
+                    <p class="novidades-desc">
+                    Quer que seus clientes tenham uma imersão nos seus produtos? Experimente a modelagem 3D.
+                    </p>
+                    <ul class="novidades-list">
+                    <li><i class="fas fa-check-circle"></i> Desenvolvido em JS</li>
+                    <li><i class="fas fa-check-circle"></i> Automação</li>
+                    <li><i class="fas fa-check-circle"></i> Previsão de peças</li>
+                    <li><i class="fas fa-check-circle"></i> Áudio de fundo disponível</li>
+                    </ul>
+                    <a href="3d.html" class="btn-inovacao btn-3d">
+                        <i class="fas fa-cube"></i>
+                        <span>Explorar 3D</span>
+                        <div class="btn-glow"></div>
+                    </a>
+                </div>
+                </div>
             </div>
-            <div class="novidades-text">
-                <h2>
-                <span class="icon-flash"><i class="fas fa-bolt"></i></span>
-                <span class="gradient-title">Novidade em 3D!</span>
-                </h2>
-                <p class="novidades-desc">
-                Quer que seus clientes tenham uma imersão nos seus produtos? Experimente a modelagem 3D.
-                </p>
-                <ul class="novidades-list">
-                <li><i class="fas fa-check-circle"></i> Desenvolvido em JS</li>
-                <li><i class="fas fa-check-circle"></i> Automação</li>
-                <li><i class="fas fa-check-circle"></i> Previsão de peças</li>
-                <li><i class="fas fa-check-circle"></i> Áudio de fundo disponível</li>
-                </ul>
-                <a href="3d.html" class="btn-inovacao btn-3d">
-                    <i class="fas fa-cube"></i>
-                    <span>Explorar 3D</span>
-                    <div class="btn-glow"></div>
-                </a>
-            </div>
-            </div>
-        </div>
         </section>
 
         <section class="novidades destaque-novidades novidades-hacker" id="novidades">
-        <div class="container">
-            <div class="novidades-wrapper">
-            <div class="hero-image">
-                <img src="src/img/Sistema Hacker.png" alt="Imagem-3D" class="imagem-3D"/>
+            <div class="container">
+                <div class="novidades-wrapper">
+                    <div class="hero-image">
+                        <img src="src/img/Sistema Hacker.png" alt="Imagem-3D" class="imagem-3D"/>
+                    </div>
+                    <div class="novidades-text">
+                        <h2>
+                            <span class="icon-flash"><i class="fas fa-bolt"></i></span>
+                            <span class="gradient-title">Novidade Hacker!</span>
+                        </h2>
+                        <p class="novidades-desc">
+                            Phishing, vishing, engenharia social, vishing, Spear Phishing, dentre outros, você sabe o que é e como funciona? <br>Experimente um sistema que utiliza de Machine Learnig para identificar ataques hackers com foco em engenharia social, proteja-se!
+                        </p>
+                        <ul class="novidades-list">
+                            <li><i class="fas fa-check-circle"></i> Já disponível!</li>
+                            <li><i class="fas fa-check-circle"></i> Desenvolvido com Python</li>
+                            <li><i class="fas fa-check-circle"></i> Ferramentas de automação</li>
+                            <li><i class="fas fa-check-circle"></i> Recursos de IA integrados</li>
+                            <li><i class="fas fa-check-circle"></i> Segurança implantada</li>
+                            <li><i class="fas fa-check-circle"></i> Jogos e Quizes</li>
+                            <li><i class="fas fa-check-circle"></i> Treinamento constante</li>
+                            <li><i class="fas fa-check-circle"></i> Artigos e plugins</li>
+                        </ul>
+                        <a href="inovacao.html" class="btn-inovacao btn-hacker">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Arsenal Hacker</span>
+                            <div class="btn-glow"></div>
+                        </a>
+                    </div>
+                </div>
             </div>
-            <div class="novidades-text">
-                <h2>
-                    <span class="icon-flash"><i class="fas fa-bolt"></i></span>
-                    <span class="gradient-title">Novidade Hacker!</span>
-                </h2>
-                <p class="novidades-desc">
-                    Phishing, vishing, engenharia social, vishing, Spear Phishing, dentre outros, você sabe o que é e como funciona? <br>Experimente um sistema que utiliza de Machine Learnig para identificar ataques hackers com foco em engenharia social, proteja-se!
-                </p>
-                <ul class="novidades-list">
-                    <li><i class="fas fa-check-circle"></i> Já disponível!</li>
-                    <li><i class="fas fa-check-circle"></i> Desenvolvido com Python</li>
-                    <li><i class="fas fa-check-circle"></i> Ferramentas de automação</li>
-                    <li><i class="fas fa-check-circle"></i> Recursos de IA integrados</li>
-                    <li><i class="fas fa-check-circle"></i> Segurança implantada</li>
-                    <li><i class="fas fa-check-circle"></i> Jogos e Quizes</li>
-                    <li><i class="fas fa-check-circle"></i> Treinamento constante</li>
-                    <li><i class="fas fa-check-circle"></i> Artigos e plugins</li>
-                </ul>
-                <a href="inovacao.html" class="btn-inovacao btn-hacker">
-                    <i class="fas fa-shield-alt"></i>
-                    <span>Arsenal Hacker</span>
-                    <div class="btn-glow"></div>
-                </a>
-            </div>
-            </div>
-        </div>
-        </section>
+        </section>-->
 
-
-        <!-- Footer -->
+        <!-- Footer Microsoft Style -->
         <footer class="footer">
             <div class="container">
                 <div class="footer-content">
-                    <div class="footer-section">
-                        <div class="footer-logo">
-                            <img src="src/img/ScriptHadder letreiro.png" alt="Logo">
+                    <div class="footer-main">
+                        <div class="footer-brand">
+                            <div class="footer-logo">
+                                <img src="src/img/Letreiro.png" alt="ScriptHadder">
+                            </div>
+                            <p class="footer-description">
+                                Transformando ideias em soluções digitais inovadoras. 
+                                Sua parceira estratégica em tecnologia e segurança.
+                            </p>
+                            <div class="social-links">
+                                <a href="https://www.facebook.com/share/17AUWjisdX/?mibextid=wwXIfr" class="social-link" aria-label="Facebook">
+                                    <i class="fab fa-facebook"></i>
+                                </a>
+                                <a href="https://www.instagram.com/scripthadder" class="social-link" aria-label="Instagram">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                                <a href="#" class="social-link" aria-label="LinkedIn">
+                                    <i class="fab fa-linkedin"></i>
+                                </a>
+                                <a href="https://github.com/ScriptHadder" class="social-link" aria-label="GitHub">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                            </div>
                         </div>
-                        <p>Transformando ideias em soluções digitais inovadoras. Sua parceira em tecnologia.</p>
-                        <div class="social-links">
-                            <a href="https://www.facebook.com/share/17AUWjisdX/?mibextid=wwXIfr"><i class="fab fa-facebook"></i></a>
-                            <a href="https://www.instagram.com/scripthadder"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-linkedin"></i></a>
-                            <a href="https://github.com/ScriptHadder"><i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                    
-                    <div class="footer-section">
-                        <h4>Serviços</h4>
-                        <ul>
-                            <li><a href="#services">Desenvolvimento Web</a></li>
-                            <li><a href="#services">Desenvolvimento Desktop</a></li>
-                            <li><a href="#services">Backend & APIs</a></li>
-                            <li><a href="#services">Consultoria</a></li>
-                            <li><a href="#services">Hacker Ético</a></li>
-                            <li><a href="#services">DevSec</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="footer-section">
-                        <h4>Empresa</h4>
-                        <ul>
-                            <li><a href="sobre.html">Sobre Nós</a></li>
-                            <li><a href="servicos.html">Serviços</a></li>
-                            <li><a href="#team">Equipe</a></li>
-                            <li><a href="#processo">Etapas</a></li>
-                            <li><a href="#diferenciais">Diferenciais</a></li>
-                            <li><a href="#novidades">Novidades</a></li>
-                            <li><a href="contato.html">Contato</a></li>
-                            <li><a href="portfólio.html">Templates</a></li>
-                            <li><a href="inovacao.html">Soluções</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="footer-section">
-                        <h4>Contato</h4>
-                        <div class="contact-info">
-                            <p><i class="fas fa-phone"></i> (16) 99308-8055</p>
-                            <p><i class="fas fa-envelope"></i> scripthadder@gmail.com</p>
-                            <p><i class="fas fa-map-marker-alt"></i> São Paulo, SP</p>
-                        </div>
-                    </div>
 
-                    <div class="footer-separator"></div>
+                        <div class="footer-links">
+                            <div class="footer-column">
+                                <h4 class="footer-title">Serviços</h4>
+                                <ul class="footer-list">
+                                    <li><a href="#services" class="footer-link">Desenvolvimento Web</a></li>
+                                    <li><a href="#services" class="footer-link">Segurança Cibernética</a></li>
+                                    <li><a href="#services" class="footer-link">Desenvolvimento Desktop</a></li>
+                                    <li><a href="#services" class="footer-link">Backend & APIs</a></li>
+                                    <li><a href="#services" class="footer-link">Inteligência Artificial</a></li>
+                                    <li><a href="#services" class="footer-link">Consultoria Técnica</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="footer-column">
+                                <h4 class="footer-title">Empresa</h4>
+                                <ul class="footer-list">
+                                    <li><a href="sobre.html" class="footer-link">Sobre Nós</a></li>
+                                    <li><a href="#team" class="footer-link">Nossa Equipe</a></li>
+                                    <li><a href="portfólio.html" class="footer-link">Portfólio</a></li>
+                                    <li><a href="inovacao.html" class="footer-link">Soluções</a></li>
+                                    <li><a href="contato.html" class="footer-link">Contato</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="footer-column">
+                                <h4 class="footer-title">Contato</h4>
+                                <div class="contact-info">
+                                    <div class="contact-item">
+                                        <i class="fas fa-phone"></i>
+                                        <span>(16) 99308-8055</span>
+                                    </div>
+                                    <div class="contact-item">
+                                        <i class="fas fa-envelope"></i>
+                                        <span>scripthadder@gmail.com</span>
+                                    </div>
+                                    <div class="contact-item">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                        <span>São Paulo, SP - Brasil</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                     <div class="footer-bottom">
-                        <p>&copy; 2025 ScriptHadder. Todos os direitos reservados.</p>
+                        <div class="footer-bottom-content">
+                            <p class="copyright">
+                                &copy; 2025 ScriptHadder. Todos os direitos reservados.
+                            </p>
+                            <div class="footer-legal">
+                                <a href="#" class="legal-link">Política de Privacidade</a>
+                                <a href="#" class="legal-link">Termos de Uso</a>
+                                <a href="#" class="legal-link">Cookies</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -712,34 +1312,11 @@
     <script src="src/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script>
-        // Ativar animação ao rolar para o Hero
-        const hero = document.querySelector(".hero-split");
-        const observer = new IntersectionObserver(([entry]) => {
-            if (entry.isIntersecting) {
-                hero.classList.add("reveal");
-            }
-        }, { threshold: 0.3 });
+        const btnHamburguer = document.getElementById('hamburguer');
+        const menu = document.getElementById('menu');
 
-        observer.observe(hero);
-
-        // Swiper do carrossel de equipe
-        var swiper = new Swiper(".teamSwiper", {
-            effect: "coverflow",
-            grabCursor: true,
-            centeredSlides: true,
-            slidesPerView: "auto",
-            initialSlide: 3,
-            coverflowEffect: {
-                rotate: 15,
-                stretch: 0,
-                depth: 100,
-                modifier: 1,
-                slideShadows: false,
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
+        btnHamburguer.addEventListener('click', () => {
+            menu.classList.toggle('ativo');
         });
 
         // Mostrar/ocultar botão dinamicamente

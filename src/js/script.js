@@ -1,6 +1,8 @@
 // Menu mobile
 const hamburguer = document.getElementById('hamburguer');
 const navMenu = document.querySelector('.nav-menu');
+const btnHamburguer = document.getElementById('hamburguer');
+const menu = document.getElementById('menu');
 
 if (hamburguer && navMenu) {
   hamburguer.addEventListener('click', () => {
@@ -9,11 +11,8 @@ if (hamburguer && navMenu) {
   });
 }
 
-// Swiper equipe (coverflow)
-const teamSwiper = new Swiper(".teamSwiper", {
-  effect: "coverflow", grabCursor: true, centeredSlides: true, slidesPerView: "auto",
-  coverflowEffect: { rotate:0, stretch:0, depth:150, modifier:1, slideShadows:false },
-  navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+btnHamburguer.addEventListener('click', () => {
+    menu.classList.toggle('ativo');
 });
 
 // Contador (stats)
@@ -40,17 +39,3 @@ document.getElementById('contactForm')?.addEventListener('submit', e => {
   alert('Obrigado! Entraremos em contato em breve.');
   e.target.reset();
 });
-
-// Quando clica em uma imagem
-document.querySelectorAll('.imagem-clicavel').forEach(img => {
-img.addEventListener('click', function () {
-    const descricao = this.getAttribute('data-descricao');
-    document.getElementById('descricao-texto').textContent = descricao;
-    document.getElementById('janela-descricao').style.display = 'block';
-});
-});
-
-// Fecha a descrição
-function fecharDescricao() {
-document.getElementById('janela-descricao').style.display = 'none';
-}

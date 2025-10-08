@@ -1,285 +1,689 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato</title>
+    <title>Contato - ScriptHadder | Vamos Transformar Suas Ideias</title>
+    
+    <!-- Modern Tech Design System -->
+    <link rel="stylesheet" href="src/css/styles.css">
     <link rel="stylesheet" href="src/css/contato.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- ✅ Favicon (.ico para o navegador) -->
+    <!-- Favicon -->
     <link rel="shortcut icon" href="src/ico/Letreiro-aba.ico" type="image/x-icon">
 
-    <!-- ✅ Open Graph (preview ao compartilhar link) -->
-    <meta property="og:title" content="ScriptHadder">
-    <meta property="og:description" content="Entre em contato conosco!">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Contato ScriptHadder - Vamos Transformar Suas Ideias">
+    <meta property="og:description" content="Entre em contato conosco e vamos transformar suas ideias em soluções digitais inovadoras">
     <meta property="og:image" content="https://renanmestre.github.io/scripthadder/src/img/icone.png">
-    <meta property="og:url" content="https://renanmestre.github.io/scripthadder/">
+    <meta property="og:url" content="https://renanmestre.github.io/scripthadder/contato">
     <meta property="og:type" content="website">
 
-    <!-- ✅ Twitter Card -->
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="ScriptHadder">
-    <meta name="twitter:description" content="Entre em contato conosco!">
+    <meta name="twitter:title" content="Contato ScriptHadder - Vamos Transformar Suas Ideias">
+    <meta name="twitter:description" content="Entre em contato conosco e vamos transformar suas ideias em soluções digitais inovadoras">
     <meta name="twitter:image" content="https://renanmestre.github.io/scripthadder/src/img/icone.png">
-
 </head>
 <body>
-    <!-- Header -->
+    <!-- Header Microsoft Style -->
     <header class="header">
         <nav class="navbar">
             <div class="nav-container">
                 <div class="logo">
-                    <a href="index.html"><img src="src/img/Letreiro.png" alt="Ícone"></a>
+                    <a href="index.html" class="logo-link">
+                        <img src="src/img/Letreiro.png" alt="ScriptHadder" class="logo-img">
+                    </a>
                 </div>
+                
                 <ul class="nav-menu">
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="portfólio.html">Templates</a></li>
-                    <li><a href="inovacao.html">Soluções</a></li>
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Início</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="index.html#services" class="nav-link">Serviços <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="index.html#services" class="dropdown-link">Desenvolvimento Web</a>
+                            <a href="index.html#services" class="dropdown-link">Segurança Cibernética</a>
+                            <a href="index.html#services" class="dropdown-link">Desenvolvimento desktop</a>
+                            <a href="index.html#services" class="dropdown-link">Backend</a>
+                            <a href="index.html#services" class="dropdown-link">IA</a>
+                            <a href="index.html#services" class="dropdown-link">Consultoria</a>
+                            <a href="index.html#services" class="dropdown-link">Hacker ético</a>
+                            <a href="index.html#services" class="dropdown-link">OSINT</a>
+                            <a href="index.html#services" class="dropdown-link">Treinamentos</a>
+                            <a href="index.html#services" class="dropdown-link">DevOps</a>
+                            <a href="index.html#services" class="dropdown-link">Open Source</a>
+                            <a href="index.html#services" class="dropdown-link">Segurança de identidade</a>
+                            <a href="index.html#services" class="dropdown-link">Dark Web</a>
+                            <a href="index.html#services" class="dropdown-link">Roteadores</a>
+                            <a href="index.html#services" class="dropdown-link">IoT</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#team" class="nav-link">Equipe</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="portfólio.html" class="nav-link">Portfólio</a>
+                    </li>
+                    <li class="nav-item dropdown" >
+                        <a href="inovacao.html" class="nav-link" >Soluções <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="inovacao.html" class="dropdown-link">Sistemas desenvolvidos</a>
+                        </div>
+                    </li>
                 </ul>
+                
+                <div class="nav-actions">
+                    <a href="#contact-form" class="btn-primary-nav">Começar</a>
+                </div>
+                
                 <div class="hamburguer" id="hamburguer">
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
+
+                <!-- Menu que será aberto -->
+                <nav class="menu" id="menu">
+                    <ul>
+                        <li>
+                            <a href="index.html">Início</a>
+                        </li>
+                        <li>
+                            <a href="index.html#services" class="nav-link">Serviços</a>
+                            <div class="dropdown-menu">
+                                <a href="#services" class="dropdown-link">Desenvolvimento Web</a>
+                                <a href="#services" class="dropdown-link">Segurança Cibernética</a>
+                                <a href="#services" class="dropdown-link">Desenvolvimento desktop</a>
+                                <a href="#services" class="dropdown-link">Backend</a>
+                                <a href="#services" class="dropdown-link">IA</a>
+                                <a href="#services" class="dropdown-link">Consultoria</a>
+                                <a href="#services" class="dropdown-link">Hacker ético</a>
+                                <a href="#services" class="dropdown-link">OSINT</a>
+                                <a href="#services" class="dropdown-link">Treinamentos</a>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="index.html#team">Equipe</a>
+                        </li>
+                        <li>
+                            <a href="portfólio.html">Portfólio</a>
+                        </li>
+                        <li>
+                            <a href="inovacao.html" class="nav-link" >Soluções</a>
+                            <div class="dropdown-menu">
+                                <a href="inovacao.html" class="dropdown-link">Sistemas</a>
+                            </div>
+                        </li>
+                        <!--<li>
+                            <a href="hadder_os.html">Hadder OS</a>
+                        </li>-->
+                    </ul>
+                </nav>
             </div>
         </nav>
     </header>
 
-    <!-- Hero -->
-    <section class="hero-split" id="hero">
-        <div class="hero-text">
-            <h1>Grandes <span class="highlight" style="font-style: italic">ideias</span> merecem um grande <span class="highlight" style="font-style: italic">site</span>!</h1>
-            <p>Você quer se tornar nosso <strong style="font-style: italic;">parceiro</strong>, ou <strong style="font-style: italic;">encomendar</strong>?</p>
-        </div>
-    </section>
-
-    <!-- Seção de contato -->
-    <section class="contact-section">
-        <!-- Luzes decorativas -->
-        <div class="light-blue"></div>
-        <div class="light-pink"></div>
-
-        <h1 class="contact-title">Entrar em Contato</h1>
-
-        <div class="card-container">
-            <!-- Card Parceria -->
-            <div class="card card-blue">
-                <img src="src/img/Parceria.png" alt="Parceria com empresas" class="card-image">
-                <div class="card-content">
-                    <h2 class="card-title card-title-blue">Parceria</h2>
-                    <p class="card-text">Se você é empreendedor e deseja ter um apoio nos seus negócios, ofertas exclusivas de baixo preço e uma equipe de profissionais, faça uma parceria com a ScriptHadder e se torne nossa empresa parceira!</p>
-                    <a href="#contact">
-                        <button class="card-button card-button-blue">Apoiar</button>
-                    </a>
-                    <a href="parceria.html">
-                        <button class="card-button card-button-blue">Saber mais</button>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Card Formulário -->
-            <div class="card card-pink">
-                <img src="src/img/Encomenda.png" alt="Formulário de contato" class="card-image">
-                <div class="card-content">
-                    <h2 class="card-title card-title-pink">Formulário de Contato</h2>
-                    <p class="card-text">Quer encomendar seu sistema, tirar dúvidas ou realizar uma consulta? Preencha nosso formulário e entraremos em contato!</p>
-                    <a href="#contact">
-                        <button class="card-button card-button-pink">Preencher</button>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-        <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2>Entre em Contato</h2>
-                <p>Vamos conversar sobre seu próximo projeto</p>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Fale Conosco</h3>
-                    <p>Estamos prontos para transformar suas ideias em realidade. Entre em contato e vamos discutir como podemos ajudar seu negócio.</p>
-                    
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h4>Telefone</h4>
-                            <p>(16) 99308-8055</p>
-                        </div>
+    <main>
+        <!-- Hero Section Contato -->
+        <section class="hero-section contact-hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <i class="fas fa-handshake"></i>
+                        <span>Vamos transformar suas ideias juntos</span>
                     </div>
                     
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email</h4>
-                            <p>scripthadder@gmail.com</p>
-                        </div>
-                    </div>
+                    <h1 class="hero-title">
+                        Grandes <span class="gradient-text">ideias</span> 
+                        merecem um grande <span class="gradient-text">sistema</span>!
+                    </h1>
                     
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Localização</h4>
-                            <p>São Paulo, SP - Brasil</p>
+                    <p class="hero-description">
+                        Você quer se tornar nosso <strong>parceiro</strong> ou 
+                        <strong>encomendar</strong> seu próximo projeto? 
+                        Estamos prontos para transformar suas ideias em realidade!
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="#contact-form" class="btn-primary">
+                            <span>Começar projeto</span>
+                            <i class="fas fa-arrow-down"></i>
+                        </a>
+                        <a href="#contact-options" class="btn-secondary">
+                            <i class="fas fa-users"></i>
+                            <span>Ver opções</span>
+                        </a>
+                    </div>
+
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">24h</span>
+                            <span class="stat-label">Resposta</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Personalizável</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">∞</span>
+                            <span class="stat-label">Possibilidades</span>
                         </div>
                     </div>
                 </div>
-                
-                <div class="contact-form">
-                    <form id="contactForm" action="https://api.staticforms.xyz/submit" method="post">
-                        <div class="form-group">
-                            <label for="first-name">Nome</label>
-                            <input type="text" id="first-name" name="$primeiro_nome" placeholder="Seu primeiro nome" required>
-                        </div>
 
-                        <div class="form-group">
-                            <label for="last-name">Sobrenome</label>
-                            <input type="text" id="last-name" name="$sobrenome" placeholder="Seu sobrenome" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="email">Seu melhor email</label>
-                            <input type="email" id="email" name="$email" placeholder="ex: email@dominio.com" required>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="phone">Celular</label>
-                            <input type="tel" id="phone" name="$phone" placeholder="(11) 99999-9999" maxlength="15" required oninput="formatPhone(this)">
-                        </div>
-
-                        <div class="form-group">
-                            <label>Serviço</label>
-                            <div class="radio-group">
-                                <label><input type="radio" name="$servico" value="sistemas" required> Desenvolvimento de sistemas</label>
-                                <label><input type="radio" name="$servico" value="seguranca"> Segurança cibernética</label>
-                                <label><input type="radio" name="$servico" value="consultoria"> Consultoria</label>
-                                <label><input type="radio" name="$servico" value="devsecops"> DevSec / AppSec / DevSecOps</label>
-                                <label><input type="radio" name="$servico" value="parceria"> Parceria</label>
-                                <label><input type="radio" name="$servico" value="duvida"> Dúvida</label>
+                <div class="hero-visual">
+                    <div class="hero-image-container">
+                        <img src="src/img/Wallpaper/Contato.jpg" alt="Contato ScriptHadder" class="hero-image"/>
+                        <div class="floating-elements">
+                            <div class="floating-card card-1">
+                                <i class="fas fa-comments"></i>
+                                <span>Conversa</span>
+                            </div>
+                            <div class="floating-card card-2">
+                                <i class="fas fa-handshake"></i>
+                                <span>Parceria</span>
+                            </div>
+                            <div class="floating-card card-3">
+                                <i class="fas fa-rocket"></i>
+                                <span>Projeto</span>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                        <div class="form-group">
-                            <label for="subject">Sobre o contato conosco</label>
-                            <textarea id="subject" name="$sobre" rows="5" placeholder="Fale mais sobre o seu requerimento..." required></textarea>
-                        </div>
+        <!-- Contact Options Section -->
+        <section id="contact-options" class="contact-options-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Escolha sua opção</span>
+                    <h2 class="section-title">
+                        Como podemos te 
+                        <span class="gradient-text">ajudar</span>?
+                    </h2>
+                    <p class="section-description">
+                        Escolha a melhor forma de entrar em contato conosco. 
+                        Seja para parceria, encomenda ou simplesmente tirar dúvidas.
+                    </p>
+                </div>
 
-                        <div class="form-group">
-                            <label>Como nos conheceu?</label>
-                            <div class="checkbox-group">
-                                <label><input type="checkbox" name="$conheceu" value="instagram"> Instagram</label>
-                                <label><input type="checkbox" name="$conheceu" value="google"> Pesquisa no Google</label>
-                                <label><input type="checkbox" name="$conheceu" value="indication"> Indicação de alguém</label>
-                                <label><input type="checkbox" name="$conheceu" value="linkedin"> LinkedIn</label>
-                                <label><input type="checkbox" name="$conheceu" value="portfolio"> Portfólio online</label>
-                                <label><input type="checkbox" name="$conheceu" value="outros"> Outros</label>
-                            </div>
-                        </div>
-
-                        <div class="form-actions">
-                            <button type="submit" class="btn btn-primary">
-                                <i class="fas fa-paper-plane"></i> Enviar
-                            </button>
-                            <button type="reset" class="btn btn-secondary">
-                                <i class="fas fa-broom"></i> Redefinir
-                            </button>
-                            <input type="hidden" name="accessKey" value="sf_d5al7bk3edi620aj9ai6hanf">
-                        </div>
-
-                        <!-- Modal de sucesso -->
-                        <div id="successModal" class="modal-success">
-                            <div class="modal-content">
-                                <div class="checkmark-wrapper">
-                                <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
-                                    <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
-                                    <path class="checkmark-check" fill="none" d="M14 27l7 7 16-16"/>
-                                </svg>
+                <div class="contact-options-grid">
+                    <!-- Opção Parceria -->
+                    <div class="contact-option-card featured">
+                        <div class="card-badge">Recomendado</div>
+                        <div class="option-image">
+                            <img src="src/img/Parceria.png" alt="Parceria ScriptHadder">
+                            <div class="option-overlay">
+                                <div class="option-actions">
+                                    <a href="#contact-form" class="btn-card">
+                                        <i class="fas fa-handshake"></i>
+                                        <span>Iniciar parceria</span>
+                                    </a>
                                 </div>
-                                <p>Formulário enviado com sucesso!</p>
                             </div>
                         </div>
+                        <div class="option-content">
+                            <h3>Parceria <span class="gradient-text">Estratégica</span></h3>
+                            <p class="option-description">
+                                Se você é empreendedor e deseja ter um apoio nos seus negócios, 
+                                ofertas exclusivas de baixo preço e uma equipe de profissionais, 
+                                faça uma parceria com a ScriptHadder!
+                            </p>
+                            
+                            <div class="option-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Ofertas exclusivas</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Equipe profissional</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Preços especiais</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Suporte dedicado</span>
+                                </div>
+                            </div>
 
-                    </form>
+                            <div class="option-actions">
+                                <a href="#contact-form" class="btn-primary">
+                                    <i class="fas fa-handshake"></i>
+                                    <span>Iniciar parceria</span>
+                                </a>
+                                <a href="parceria.html" class="btn-secondary">
+                                    <i class="fas fa-info-circle"></i>
+                                    <span>Saber mais</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Opção Formulário -->
+                    <div class="contact-option-card">
+                        <div class="option-image">
+                            <img src="src/img/Encomenda.png" alt="Formulário de Contato">
+                            <div class="option-overlay">
+                                <div class="option-actions">
+                                    <a href="#contact-form" class="btn-card">
+                                        <i class="fas fa-edit"></i>
+                                        <span>Preencher formulário</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="option-content">
+                            <h3>Formulário de <span class="gradient-text">Contato</span></h3>
+                            <p class="option-description">
+                                Quer encomendar seu sistema, tirar dúvidas ou realizar uma consulta? 
+                                Preencha nosso formulário e entraremos em contato rapidamente!
+                            </p>
+                            
+                            <div class="option-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Resposta rápida</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Orçamento gratuito</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Consulta técnica</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Proposta personalizada</span>
+                                </div>
+                            </div>
+
+                            <div class="option-actions">
+                                <a href="#contact-form" class="btn-primary">
+                                    <i class="fas fa-edit"></i>
+                                    <span>Preencher formulário</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
+        <!-- Contact Form Section -->
+        <section id="contact-form" class="contact-form-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Entre em contato</span>
+                    <h2 class="section-title">
+                        Vamos conversar sobre seu 
+                        <span class="gradient-text">próximo projeto</span>
+                    </h2>
+                    <p class="section-description">
+                        Preencha o formulário abaixo e nossa equipe entrará em contato 
+                        em até 24 horas para discutir suas necessidades.
+                    </p>
+                </div>
+
+                <div class="contact-form-container">
+                    <div class="contact-info-sidebar">
+                        <h3>Fale Conosco</h3>
+                        <p>Estamos prontos para transformar suas ideias em realidade. Entre em contato e vamos discutir como podemos ajudar seu negócio.</p>
+                        
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <div class="method-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="method-content">
+                                    <h4>Telefone</h4>
+                                    <p>(16) 99308-8055</p>
+                                    <span>Segunda a Sexta, 9h às 18h</span>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <div class="method-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="method-content">
+                                    <h4>Email</h4>
+                                    <p>scripthadder@gmail.com</p>
+                                    <span>Resposta em até 24h</span>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-method">
+                                <div class="method-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="method-content">
+                                    <h4>Localização</h4>
+                                    <p>São Paulo, SP - Brasil</p>
+                                    <span>Atendimento nacional</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-wrapper">
+                        <form id="contactForm" class="modern-form" action="https://api.staticforms.xyz/submit" method="post">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="first-name">Nome</label>
+                                    <input type="text" id="first-name" name="$primeiro_nome" placeholder="Seu primeiro nome" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="last-name">Sobrenome</label>
+                                    <input type="text" id="last-name" name="$sobrenome" placeholder="Seu sobrenome" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" name="$email" placeholder="ex: email@dominio.com" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="phone">Celular</label>
+                                    <input type="tel" id="phone" name="$phone" placeholder="(11) 99999-9999" maxlength="15" required oninput="formatPhone(this)">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Serviço de Interesse</label>
+                                <div class="radio-grid">
+                                    <label class="radio-option">
+                                        <input type="radio" name="$servico" value="sistemas" required>
+                                        <span class="radio-custom"></span>
+                                        <div class="radio-content">
+                                            <i class="fas fa-code"></i>
+                                            <span>Desenvolvimento de sistemas</span>
+                                        </div>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="$servico" value="seguranca">
+                                        <span class="radio-custom"></span>
+                                        <div class="radio-content">
+                                            <i class="fas fa-shield-alt"></i>
+                                            <span>Segurança cibernética</span>
+                                        </div>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="$servico" value="consultoria">
+                                        <span class="radio-custom"></span>
+                                        <div class="radio-content">
+                                            <i class="fas fa-lightbulb"></i>
+                                            <span>Consultoria</span>
+                                        </div>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="$servico" value="devsecops">
+                                        <span class="radio-custom"></span>
+                                        <div class="radio-content">
+                                            <i class="fas fa-lock"></i>
+                                            <span>DevSec / AppSec / DevSecOps</span>
+                                        </div>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="$servico" value="parceria">
+                                        <span class="radio-custom"></span>
+                                        <div class="radio-content">
+                                            <i class="fas fa-handshake"></i>
+                                            <span>Parceria</span>
+                                        </div>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="$servico" value="prox_inovacao">
+                                        <span class="radio-custom"></span>
+                                        <div class="radio-content">
+                                            <i class="fas fa-lightbulb"></i>
+                                            <span>Próxima Inovação</span>
+                                        </div>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="$servico" value="duvida">
+                                        <span class="radio-custom"></span>
+                                        <div class="radio-content">
+                                            <i class="fas fa-question-circle"></i>
+                                            <span>Dúvida</span>
+                                        </div>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="$servico" value="outro" id="radio-outro">
+                                        <span class="radio-custom"></span>
+                                        <div class="radio-content">
+                                            <i class="fas fa-question-circle"></i>
+                                            <span>Outro</span>
+                                        </div>
+                                    </label>
+
+                                    <!-- Campo de texto que só aparece se "Outro" for selecionado -->
+                                    <div id="outro-texto" class="hidden">
+                                        <label for="outro-input">Se escolheu "Outro":</label>
+                                        <input type="text" id="outro-input" name="outro_descricao" placeholder="Digite aqui o serviço..." />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject">Conte-nos sobre seu projeto ou ignore se for pra ser notificado sobre a próxima inovação</label>
+                                <textarea id="subject" name="$sobre" rows="5" placeholder="Descreva suas necessidades, objetivos e qualquer informação relevante sobre o projeto..."></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Como nos conheceu?</label>
+                                <div class="checkbox-grid">
+                                    <label class="checkbox-option">
+                                        <input type="checkbox" name="$conheceu" value="instagram">
+                                        <span class="checkbox-custom"></span>
+                                        <i class="fab fa-instagram"></i>
+                                        <span>Instagram</span>
+                                    </label>
+                                    <label class="checkbox-option">
+                                        <input type="checkbox" name="$conheceu" value="google">
+                                        <span class="checkbox-custom"></span>
+                                        <i class="fab fa-google"></i>
+                                        <span>Pesquisa no Google</span>
+                                    </label>
+                                    <label class="checkbox-option">
+                                        <input type="checkbox" name="$conheceu" value="indication">
+                                        <span class="checkbox-custom"></span>
+                                        <i class="fas fa-user-friends"></i>
+                                        <span>Indicação de alguém</span>
+                                    </label>
+                                    <label class="checkbox-option">
+                                        <input type="checkbox" name="$conheceu" value="linkedin">
+                                        <span class="checkbox-custom"></span>
+                                        <i class="fab fa-linkedin"></i>
+                                        <span>LinkedIn</span>
+                                    </label>
+                                    <label class="checkbox-option">
+                                        <input type="checkbox" name="$conheceu" value="portfolio">
+                                        <span class="checkbox-custom"></span>
+                                        <i class="fas fa-briefcase"></i>
+                                        <span>Portfólio online</span>
+                                    </label>
+                                    <label class="checkbox-option">
+                                        <input type="checkbox" name="$conheceu" value="outros">
+                                        <span class="checkbox-custom"></span>
+                                        <i class="fas fa-ellipsis-h"></i>
+                                        <span>Outros</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn-primary">
+                                    <i class="fas fa-paper-plane"></i>
+                                    <span>Enviar mensagem</span>
+                                </button>
+                                <button type="reset" class="btn-secondary">
+                                    <i class="fas fa-undo"></i>
+                                    <span>Limpar formulário</span>
+                                </button>
+                            </div>
+
+                            <input type="hidden" name="accessKey" value="sf_d5al7bk3edi620aj9ai6hanf">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Microsoft Style -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <img src="src/img/ScriptHadder letreiro.png" alt="Letreiro">
+                <div class="footer-main">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <img src="src/img/ScriptHadder letreiro.png" alt="ScriptHadder">
+                        </div>
+                        <p class="footer-description">
+                            Transformando ideias em soluções digitais inovadoras. 
+                            Sua parceira estratégica em tecnologia e segurança.
+                        </p>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/share/17AUWjisdX/?mibextid=wwXIfr" class="social-link" aria-label="Facebook">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a href="https://www.instagram.com/scripthadder" class="social-link" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://github.com/ScriptHadder" class="social-link" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
                     </div>
-                    <p>Transformando ideias em soluções digitais inovadoras. Sua parceira em tecnologia.</p>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/share/17AUWjisdX/?mibextid=wwXIfr"><i class="fab fa-facebook"></i></a>
-                        <a href="https://www.instagram.com/scripthadder"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://github.com/ScriptHadder"><i class="fab fa-github"></i></a>
-                    </div>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Serviços</h4>
-                    <ul>
-                        <li><a href="servicos.html">Desenvolvimento Web</a></li>
-                        <li><a href="servicos.html">Desenvolvimento Desktop</a></li>
-                        <li><a href="servicos.html">Backend & APIs</a></li>
-                        <li><a href="servicos.html">Consultoria</a></li>
-                        <li><a href="servicos.html">Hacker ético</a></li>
-                        <li><a href="servicos.html">DevSec</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Empresa</h4>
-                    <ul>
-                        <li><a href="index.html">Inicio</a></li>
-                        <li><a href="sobre.html">Sobre nós</a></li>
-                        <li><a href="servicos.html">Serviços</a></li>
-                        <li><a href="portfólio.html">Templates</a></li>
-                        <li><a href="inovacao.html">Soluções</a></li>
-                    </ul>
-                </div>
 
-                <div class=""></div>
-                
-                <div class="footer-section">
-                    <h4>Contato</h4>
-                    <div class="contact-info">
-                        <p><i class="fas fa-phone"></i> (16) 99308-8055</p>
-                        <p><i class="fas fa-envelope"></i> scripthadder@gmail.com</p>
-                        <p><i class="fas fa-map-marker-alt"></i> São Paulo, SP</p>
+                    <div class="footer-links">
+                        <div class="footer-column">
+                            <h4 class="footer-title">Serviços</h4>
+                            <ul class="footer-list">
+                                <li><a href="index.html#services" class="footer-link">Desenvolvimento Web</a></li>
+                                <li><a href="index.html#services" class="footer-link">Segurança Cibernética</a></li>
+                                <li><a href="index.html#services" class="footer-link">Desenvolvimento Desktop</a></li>
+                                <li><a href="index.html#services" class="footer-link">Backend & APIs</a></li>
+                                <li><a href="index.html#services" class="footer-link">Inteligência Artificial</a></li>
+                                <li><a href="index.html#services" class="footer-link">Consultoria Técnica</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="footer-column">
+                            <h4 class="footer-title">Empresa</h4>
+                            <ul class="footer-list">
+                                <li><a href="index.html#about" class="footer-link">Sobre Nós</a></li>
+                                <li><a href="index.html#team" class="footer-link">Nossa Equipe</a></li>
+                                <li><a href="portfólio.html" class="footer-link">Portfólio</a></li>
+                                <li><a href="inovacao.html" class="footer-link">Soluções</a></li>
+                                <li><a href="contato.html" class="footer-link">Contato</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="footer-column">
+                            <h4 class="footer-title">Contato</h4>
+                            <div class="contact-info">
+                                <div class="contact-item">
+                                    <i class="fas fa-phone"></i>
+                                    <span>(16) 99308-8055</span>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>scripthadder@gmail.com</span>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>São Paulo, SP - Brasil</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="footer-separator"></div>
 
                 <div class="footer-bottom">
-                    <p>&copy; 2025 ScriptHadder. Todos os direitos reservados.</p>
+                    <div class="footer-bottom-content">
+                        <p class="copyright">
+                            &copy; 2025 ScriptHadder. Todos os direitos reservados.
+                        </p>
+                        <div class="footer-legal">
+                            <a href="#" class="legal-link">Política de Privacidade</a>
+                            <a href="#" class="legal-link">Termos de Uso</a>
+                            <a href="#" class="legal-link">Cookies</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- Modal de Sucesso -->
+    <div id="successModal" class="modal-success">
+        <div class="modal-content">
+            <div class="checkmark-wrapper">
+                <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                    <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+                    <path class="checkmark-check" fill="none" d="M14 27l7 7 16-16"/>
+                </svg>
+            </div>
+            <h3>Mensagem enviada com sucesso!</h3>
+            <p>Obrigado pelo contato! Nossa equipe responderá em até 24 horas.</p>
+        </div>
+    </div>
+
     <!-- Botão de Voltar ao Topo -->
     <div class="topo">
-        <button id="scrollToTopBtn" >
+        <button id="scrollToTopBtn">
             <i class="fas fa-arrow-up" style="font-size: 1.5rem;"></i>
         </button>
     </div>
-
+    
+    <script src="src/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script>
+        // Smooth scroll para links internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Mostrar/ocultar botão de voltar ao topo
+        const scrollBtn = document.getElementById('scrollToTopBtn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollBtn.style.display = 'flex';
+            } else {
+                scrollBtn.style.display = 'none';
+            }
+        });
+        
+        scrollBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
         // Menu mobile
         const hamburguer = document.getElementById('hamburguer');
         const navMenu = document.querySelector('.nav-menu');
@@ -297,29 +701,6 @@
                     navMenu.classList.remove('active');
                 });
             });
-
-            // Fechar menu ao clicar fora dele
-            document.addEventListener('click', (e) => {
-                if (!hamburguer.contains(e.target) && !navMenu.contains(e.target)) {
-                    hamburguer.classList.remove('active');
-                    navMenu.classList.remove('active');
-                }
-            });
-        }
-
-        // Mostrar/ocultar botão dinamicamente
-        const scrollBtn = document.getElementById('scrollToTopBtn');
-        if (scrollBtn) {
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 300) {
-                    scrollBtn.style.display = 'block';
-                } else {
-                    scrollBtn.style.display = 'none';
-                }
-            });
-            scrollBtn.addEventListener('click', () => {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
         }
 
         // Função para formatar telefone
@@ -335,6 +716,7 @@
             input.value = value;
         }
 
+        // Envio do formulário
         document.getElementById('contactForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             const form = e.target;
@@ -352,14 +734,51 @@
                 const modal = document.getElementById('successModal');
                 modal.style.display = 'flex';
 
-                // Fechar automaticamente após 3 segundos
+                // Fechar automaticamente após 4 segundos
                 setTimeout(() => {
                     modal.style.display = 'none';
-                }, 3000);
+                }, 4000);
 
             } catch (err) {
                 alert('Ocorreu um erro ao enviar. Tente novamente.');
             }
+        });
+
+        // Animação de entrada dos cards
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observar todos os cards de contato
+        document.querySelectorAll('.contact-option-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
+
+        // Seleciona todos os radios
+        const radios = document.querySelectorAll('input[name="servico"]');
+        const outroTexto = document.getElementById('outro-texto');
+
+        radios.forEach(radio => {
+            radio.addEventListener('change', function () {
+                if (this.value === 'outro') {
+                    outroTexto.classList.remove('hidden');
+                } else {
+                    outroTexto.classList.add('hidden');
+                }
+            });
         });
     </script>
 </body>
