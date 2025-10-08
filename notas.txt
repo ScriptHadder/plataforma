@@ -1,0 +1,2 @@
+O sistema foi atualizado no dia 08/10/2025 por Renan Mestre
+Passou da versão 0.1 pra versão 0.2 melhorando e modernizando os templates

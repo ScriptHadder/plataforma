@@ -1,175 +1,469 @@
 <!DOCTYPE html>
-<html lang="pt-br ">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soluções</title>
+    <title>Soluções Inovadoras - ScriptHadder | Arsenal Hacker e Tecnologias</title>
+    
+    <!-- Modern Tech Design System -->
+    <link rel="stylesheet" href="src/css/styles.css">
     <link rel="stylesheet" href="src/css/inovacao.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- ✅ Favicon (.ico para o navegador) -->
+    <!-- Favicon -->
     <link rel="shortcut icon" href="src/ico/Letreiro-aba.ico" type="image/x-icon">
 
-    <!-- ✅ Open Graph (preview ao compartilhar link) -->
-    <meta property="og:title" content="ScriptHadder">
-    <meta property="og:description" content="Soluções tecnológicas e inovadoras">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Soluções Inovadoras ScriptHadder - Arsenal Hacker e Tecnologias">
+    <meta property="og:description" content="Explore nossas soluções tecnológicas inovadoras para os desafios da humanidade">
     <meta property="og:image" content="https://renanmestre.github.io/scripthadder/src/img/icone.png">
-    <meta property="og:url" content="https://renanmestre.github.io/scripthadder/portfólio">
+    <meta property="og:url" content="https://renanmestre.github.io/scripthadder/inovacao">
     <meta property="og:type" content="website">
 
-    <!-- ✅ Twitter Card -->
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="ScriptHadder">
-    <meta name="twitter:description" content="Soluções tecnológicas e inovadoras">
+    <meta name="twitter:title" content="Soluções Inovadoras ScriptHadder - Arsenal Hacker e Tecnologias">
+    <meta name="twitter:description" content="Explore nossas soluções tecnológicas inovadoras para os desafios da humanidade">
     <meta name="twitter:image" content="https://renanmestre.github.io/scripthadder/src/img/icone.png">
-
 </head>
 <body>
-
-    <!-- Header -->
+    <!-- Header Microsoft Style -->
     <header class="header">
         <nav class="navbar">
             <div class="nav-container">
                 <div class="logo">
-                    <a href="index.html">
-                    <img src="src/img/Letreiro.png" alt="Letreiro"></a>
+                    <a href="index.html" class="logo-link">
+                        <img src="src/img/Letreiro.png" alt="ScriptHadder" class="logo-img">
+                    </a>
                 </div>
+                
                 <ul class="nav-menu">
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="portfólio.html">Templates</a></li>
-                    <li><a href="contato.html">Contato</a></li>
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Início</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="index.html#services" class="nav-link">Serviços <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="index.html#services" class="dropdown-link">Desenvolvimento Web</a>
+                            <a href="index.html#services" class="dropdown-link">Segurança Cibernética</a>
+                            <a href="index.html#services" class="dropdown-link">Consultoria</a>
+                            <a href="index.html#services" class="dropdown-link">Desenvolvimento Web</a>
+                            <a href="index.html#services" class="dropdown-link">Segurança Cibernética</a>
+                            <a href="index.html#services" class="dropdown-link">Desenvolvimento desktop</a>
+                            <a href="index.html#services" class="dropdown-link">Backend</a>
+                            <a href="index.html#services" class="dropdown-link">IA</a>
+                            <a href="index.html#services" class="dropdown-link">Consultoria</a>
+                            <a href="index.html#services" class="dropdown-link">Hacker ético</a>
+                            <a href="index.html#services" class="dropdown-link">OSINT</a>
+                            <a href="index.html#services" class="dropdown-link">Treinamentos</a>
+                            <a href="index.html#services" class="dropdown-link">DevOps</a>
+                            <a href="index.html#services" class="dropdown-link">Open Source</a>
+                            <a href="index.html#services" class="dropdown-link">Segurança de identidade</a>
+                            <a href="index.html#services" class="dropdown-link">Dark Web</a>
+                            <a href="index.html#services" class="dropdown-link">Roteadores</a>
+                            <a href="index.html#services" class="dropdown-link">IoT</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#team" class="nav-link">Equipe</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="portfólio.html" class="nav-link">Portfólio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contato.html" class="nav-link">Contato</a>
+                    </li>
                 </ul>
+                
+                <div class="nav-actions">
+                    <a href="contato.html#contactForm" class="btn-primary-nav">Começar</a>
+                </div>
+                
                 <div class="hamburguer" id="hamburguer">
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
+
+                <!-- Menu que será aberto -->
+                <nav class="menu" id="menu">
+                    <ul>
+                        <li>
+                            <a href="index.html">Início</a>
+                        </li>
+                        <li>
+                            <a href="index.html#services" class="nav-link">Serviços</a>
+                            <div class="dropdown-menu">
+                                <a href="#services" class="dropdown-link">Desenvolvimento Web</a>
+                                <a href="#services" class="dropdown-link">Segurança Cibernética</a>
+                                <a href="#services" class="dropdown-link">Desenvolvimento desktop</a>
+                                <a href="#services" class="dropdown-link">Backend</a>
+                                <a href="#services" class="dropdown-link">IA</a>
+                                <a href="#services" class="dropdown-link">Consultoria</a>
+                                <a href="#services" class="dropdown-link">Hacker ético</a>
+                                <a href="#services" class="dropdown-link">OSINT</a>
+                                <a href="#services" class="dropdown-link">Treinamentos</a>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="index.html#team">Equipe</a>
+                        </li>
+                        <li>
+                            <a href="portfólio.html">Portfólio</a>
+                        </li>
+                        <li>
+                            <a href="contato.html" class="nav-link" >Contato</a>
+                        </li>
+                        <!--<li>
+                            <a href="hadder_os.html">Hadder OS</a>
+                        </li>-->
+                    </ul>
+                </nav>
             </div>
         </nav>
     </header>
 
     <main>
-        <!-- Hero -->
-        <section class="hero-split" id="hero">
-            <div class="hero-text">
-                <h1>Escrevendo novos <span class="highlight">script </span>para os desafios da humanidade.</h1>
-                <p>Segurança não é uma feature, é nossa <span class="destaque"><strong>Essência</strong>.</span> Inovação não é um extra, é nosso <span destaque><strong>DNA</strong>.</span></p>
-                <div class="hero-buttons">
-                    <a href="avaliacao.html" class="btn primary">Avalie nosso serviço!</a>
-                    <a href="#" class="btn outline">Enviar um problema para solução</a>
-                </div>
-            </div>
+        <!-- Hero Section Inovação -->
+        <section class="hero-section innovation-hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <i class="fas fa-lightbulb"></i>
+                        <span>Inovação e segurança em primeiro lugar</span>
+                    </div>
+                    
+                    <h1 class="hero-title">
+                        Escrevendo novos 
+                        <span class="gradient-text">scripts</span>
+                        para os desafios da humanidade
+                    </h1>
+                    
+                    <p class="hero-description">
+                        Segurança não é uma feature, é nossa <strong>Essência</strong>. 
+                        Inovação não é um extra, é nosso <strong>DNA</strong>. 
+                        Desenvolvemos soluções que transformam desafios em oportunidades.
+                    </p>
 
-            <div class="hero-image">
-                <img src="src/img/Soluções.png" alt="Imagem-3D" class="imagem-3D" />
+                    <div class="hero-actions">
+                        <a href="#solutions" class="btn-primary">
+                            <span>Explorar soluções</span>
+                            <i class="fas fa-arrow-down"></i>
+                        </a>
+                        <a href="contato.html" class="btn-secondary">
+                            <i class="fas fa-rocket"></i>
+                            <span>Solicitar solução</span>
+                        </a>
+                    </div>
+
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Segurança</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Inovação</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">∞</span>
+                            <span class="stat-label">Possibilidades</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-visual">
+                    <div class="hero-image-container">
+                        <img src="src/img/Wallpaper/Soluções inovadoras.jpg" alt="Soluções Inovadoras" class="hero-image"/>
+                        <div class="floating-elements">
+                            <div class="floating-card card-1">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Segurança</span>
+                            </div>
+                            <div class="floating-card card-2">
+                                <i class="fas fa-brain"></i>
+                                <span>IA & ML</span>
+                            </div>
+                            <div class="floating-card card-3">
+                                <i class="fas fa-code"></i>
+                                <span>Desenvolvimento</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="systems" id="systems">
+        <!-- Solutions Section -->
+        <section id="solutions" class="solutions-section">
             <div class="container">
-                <h2>Soluções <span class="destaque-1">Desenvolvidas</span></h2>
-                <p>
-                    Bem-vindo às nossas soluções pensadas para enfrentar os desafios da humanidade atual. <br>
-                    Explore, teste e salve suas ferramentas favoritas, qualquer forma de apoio e colaboração com nosso trabalho é extremamente valiosa! <br>
-                    <strong>Observação:</strong> nem todos os sistemas apresentados são gratuitos. Fique atento às descrições!
-                </p>
+                <div class="section-header">
+                    <span class="section-badge">Nossas soluções</span>
+                    <h2 class="section-title">
+                        Soluções desenvolvidas para 
+                        <span class="gradient-text">desafios reais</span>
+                    </h2>
+                    <p class="section-description">
+                        Bem-vindo às nossas soluções pensadas para enfrentar os desafios da humanidade atual. 
+                        Explore, teste e salve suas ferramentas favoritas. Qualquer forma de apoio e colaboração 
+                        com nosso trabalho é extremamente valiosa!
+                    </p>
+                </div>
 
-                <div class="hero">
-                    <div class="image-container" style="position: relative;">
-                        <img src="src/img/Sistema Hacker.png" alt="Arcenal Hacker">
-                        <div class="parallelograms">
-                            <div class="parallelogram"></div>
-                            <div class="parallelogram"></div>
-                            <div class="parallelogram"></div>
-                            <div class="parallelogram"></div>
-                            <div class="parallelogram"></div>
+                <div class="solutions-grid">
+                    <!-- Arsenal Hacker - Solução Principal -->
+                    <div class="solution-card featured">
+                        <div class="card-badge">Gratuito</div>
+                        <div class="solution-image">
+                            <img src="src/img/Sistema Hacker.jpg" alt="Arsenal Hacker">
+                            <div class="solution-overlay">
+                                <div class="solution-actions">
+                                    <a href="https://phishing-vrjl.onrender.com/" target="_blank" class="btn-card">
+                                        <i class="fas fa-external-link-alt"></i>
+                                        <span>Acessar sistema</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="solution-content">
+                            <h3>Arsenal <span class="gradient-text">Hacker</span></h3>
+                            <p class="solution-description">
+                                Website desenvolvido para detecção de ataques hackers com foco em 
+                                <strong>engenharia social</strong>, uma das técnicas mais comuns atualmente. 
+                                Graças à manipulação e enganação, muitos usuários clicam em links suspeitos 
+                                e acabam baixando vírus ou entregando suas credenciais a agentes mal-intencionados.
+                            </p>
+                            
+                            <div class="solution-features">
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Detecção de Phishing</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Machine Learning</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Engenharia Social</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Interface Intuitiva</span>
+                                </div>
+                            </div>
+
+                            <div class="solution-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Machine Learning</span>
+                                <span class="tech-tag">Web App</span>
+                                <span class="tech-tag">Segurança</span>
+                            </div>
+
+                            <div class="solution-actions">
+                                <a href="https://phishing-vrjl.onrender.com/" target="_blank" class="btn-primary">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    <span>Acessar sistema</span>
+                                </a>
+                                <a href="formulário.html" class="btn-secondary">
+                                    <i class="fas fa-star"></i>
+                                    <span>Avaliar solução</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="about">
-                        <h3>Arsenal <span class="destaque-2">Hacker</span></h3>
-                        <p>
-                            <span class="destaque-3">Descrição:</span> <br>
-                            Website desenvolvido para detecção de ataques hackers com foco em <strong>engenharia social</strong>, uma das técnicas mais comuns atualmente. <br>
-                            Graças à manipulação e enganação, muitos usuários clicam em links suspeitos e acabam baixando vírus ou entregando suas credenciais a agentes mal-intencionados.
-                        </p>
-                        <span class="destaque-4">Sistema Gratuito já disponível!</span> <br>
-                        <a href="https://phishing-vrjl.onrender.com/"><button class="link-site">Acessar site <i class="fas fa-link"></i></button></a>
-                        <a href="#"><button class="link-money">Apoie doando <i class="fas fa-money-bill-wave"></i></button></a>
-                        <a href="avaliacao.html"><button class="link-solution">Avalie a solução <i class="fas fa-star"></i></button></a>
+                    <!-- Placeholder para futuras soluções -->
+                    <div class="solution-card coming-soon">
+                        <div class="card-badge">Em breve</div>
+                        <div class="solution-image-2">
+                            <div class="coming-soon-placeholder">
+                                <i class="fas fa-rocket"></i>
+                                <h4>Nova Solução</h4>
+                                <p>Em desenvolvimento</p>
+                            </div>
+                        </div>
+                        <div class="solution-content">
+                            <h3>Próxima <span class="gradient-text">Inovação</span></h3>
+                            <p class="solution-description">
+                                Estamos trabalhando em uma nova solução revolucionária que irá 
+                                transformar a forma como você lida com desafios tecnológicos.
+                            </p>
+                            
+                            <div class="solution-actions">
+                                <a href="contato.html" class="btn-secondary">
+                                    <i class="fas fa-bell"></i>
+                                    <span>Ser notificado</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="solution-card coming-soon">
+                        <div class="card-badge">Em breve</div>
+                        <div class="solution-image-2">
+                            <div class="coming-soon-placeholder">
+                                <i class="fas fa-cogs"></i>
+                                <h4>Ferramenta Avançada</h4>
+                                <p>Em desenvolvimento</p>
+                            </div>
+                        </div>
+                        <div class="solution-content">
+                            <h3>Ferramenta <span class="gradient-text">Avançada</span></h3>
+                            <p class="solution-description">
+                                Uma ferramenta poderosa que irá revolucionar seu workflow 
+                                e aumentar significativamente sua produtividade.
+                            </p>
+                            
+                            <div class="solution-actions">
+                                <a href="contato.html" class="btn-secondary">
+                                    <i class="fas fa-bell"></i>
+                                    <span>Ser notificado</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="solutions-cta">
+                    <div class="cta-content">
+                        <h3>Precisa de uma solução personalizada?</h3>
+                        <p>Nossa equipe está pronta para desenvolver a solução perfeita para seus desafios específicos.</p>
+                        <a href="contato.html" class="btn-primary">
+                            <span>Solicitar solução</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
-
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-section">
-                        <div class="footer-logo">
-                            <img src="src/img/ScriptHadder letreiro.png" alt="Letreiro">
-                        </div>
-                        <p>Transformando ideias em soluções digitais inovadoras. Sua parceira em tecnologia.</p>
-                        <div class="social-links">
-                            <a href="https://www.facebook.com/share/17AUWjisdX/?mibextid=wwXIfr"><i class="fab fa-facebook"></i></a>
-                            <a href="https://www.instagram.com/scripthadder"><i class="fab fa-instagram"></i></a>
-                            <a href="#"><i class="fab fa-linkedin"></i></a>
-                            <a href="https://github.com/ScriptHadder"><i class="fab fa-github"></i></a>
-                        </div>
-                    </div>
-                    
-                    <div class="footer-section">
-                        <h4>Sistemas</h4>
-                        <ul>
-                            <li><a href="#systems">Arsenal Hacker</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="footer-section">
-                        <h4>Empresa</h4>
-                        <ul>
-                            <li><a href="index.html">Inicio</a></li>
-                            <li><a href="sobre.html">Sobre nós</a></li>
-                            <li><a href="servicos.html">Serviços</a></li>
-                            <li><a href="portfólio.html">Templates</a></li>
-                            <li><a href="portfólio.html">Contato</a></li>
-                        </ul>
-                    </div>
-                    
-                    <div class="footer-section">
-                        <h4>Contato</h4>
-                        <div class="contact-info">
-                            <p><i class="fas fa-phone"></i> (16) 99308-8055</p>
-                            <p><i class="fas fa-envelope"></i> scripthadder@gmail.com</p>
-                            <p><i class="fas fa-map-marker-alt"></i> São Paulo, SP</p>
-                        </div>
-                    </div>
-
-                    <div class="footer-separator"></div>
-
-                    <div class="footer-bottom">
-                        <p>&copy; 2025 ScriptHadder. Todos os direitos reservados.</p>
-                    </div>
-                </div>
-                
-            </div>
-        </footer>
-
     </main>
 
-    <script src="js/script.js"></script>
-    <script>
-        // Ativar animação ao rolar para o Hero
-        const hero = document.querySelector(".hero-split");
-        const observer = new IntersectionObserver(([entry]) => {
-            if (entry.isIntersecting) {
-                hero.classList.add("reveal");
-            }
-        }, { threshold: 0.3 });
+    <!-- Footer Microsoft Style -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <img src="src/img/ScriptHadder letreiro.png" alt="ScriptHadder">
+                        </div>
+                        <p class="footer-description">
+                            Transformando ideias em soluções digitais inovadoras. 
+                            Sua parceira estratégica em tecnologia e segurança.
+                        </p>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/share/17AUWjisdX/?mibextid=wwXIfr" class="social-link" aria-label="Facebook">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a href="https://www.instagram.com/scripthadder" class="social-link" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://github.com/ScriptHadder" class="social-link" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
 
-        observer.observe(hero);
+                    <div class="footer-links">
+                        <div class="footer-column">
+                            <h4 class="footer-title">Soluções</h4>
+                            <ul class="footer-list">
+                                <li><a href="#solutions" class="footer-link">Arsenal Hacker</a></li>
+                                <li><a href="#solutions" class="footer-link">Próximas Inovações</a></li>
+                                <li><a href="contato.html" class="footer-link">Solicitar Solução</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="footer-column">
+                            <h4 class="footer-title">Empresa</h4>
+                            <ul class="footer-list">
+                                <li><a href="index.html#about" class="footer-link">Sobre Nós</a></li>
+                                <li><a href="index.html#team" class="footer-link">Nossa Equipe</a></li>
+                                <li><a href="portfólio.html" class="footer-link">Portfólio</a></li>
+                                <li><a href="inovacao.html" class="footer-link">Soluções</a></li>
+                                <li><a href="contato.html" class="footer-link">Contato</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="footer-column">
+                            <h4 class="footer-title">Contato</h4>
+                            <div class="contact-info">
+                                <div class="contact-item">
+                                    <i class="fas fa-phone"></i>
+                                    <span>(16) 99308-8055</span>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>scripthadder@gmail.com</span>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>São Paulo, SP - Brasil</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-bottom">
+                    <div class="footer-bottom-content">
+                        <p class="copyright">
+                            &copy; 2025 ScriptHadder. Todos os direitos reservados.
+                        </p>
+                        <div class="footer-legal">
+                            <a href="#" class="legal-link">Política de Privacidade</a>
+                            <a href="#" class="legal-link">Termos de Uso</a>
+                            <a href="#" class="legal-link">Cookies</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão de Voltar ao Topo -->
+    <div class="topo">
+        <button id="scrollToTopBtn">
+            <i class="fas fa-arrow-up" style="font-size: 1.5rem;"></i>
+        </button>
+    </div>
+    
+    <script src="src/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+        // Smooth scroll para links internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Mostrar/ocultar botão de voltar ao topo
+        const scrollBtn = document.getElementById('scrollToTopBtn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollBtn.style.display = 'flex';
+            } else {
+                scrollBtn.style.display = 'none';
+            }
+        });
+        
+        scrollBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
 
         // Menu mobile
         const hamburguer = document.getElementById('hamburguer');
@@ -188,15 +482,30 @@
                     navMenu.classList.remove('active');
                 });
             });
+        }
 
-            // Fechar menu ao clicar fora dele
-            document.addEventListener('click', (e) => {
-                if (!hamburguer.contains(e.target) && !navMenu.contains(e.target)) {
-                    hamburguer.classList.remove('active');
-                    navMenu.classList.remove('active');
+        // Animação de entrada dos cards
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
                 }
             });
-        }
+        }, observerOptions);
+
+        // Observar todos os cards de solução
+        document.querySelectorAll('.solution-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
     </script>
 </body>
 </html>

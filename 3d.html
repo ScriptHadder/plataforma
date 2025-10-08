@@ -3,27 +3,44 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Modelo 3D - ScriptHadder</title>
+  <title>Modelo 3D Interativo</title>
+  <meta name="description" content="Visualizador 3D interativo para portfolio" />
 
-  <!-- Fonte moderna -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+  <!-- Fontes modernas -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  
+  <!-- Ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
   <style>
-    /* Reset */
+    :root {
+      --primary-color: #00d4ff;
+      --secondary-color: #ff6b6b;
+      --accent-color: #4ecdc4;
+      --text-primary: #ffffff;
+      --text-secondary: #b0b0b0;
+      --bg-primary: #0a0a0a;
+      --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      --shadow-glow: 0 0 30px rgba(0, 212, 255, 0.3);
+    }
+
+    /* Reset e base */
     * {
-      margin: 0; padding: 0; box-sizing: border-box;
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box;
     }
 
     body, html {
       width: 100%;
       height: 100%;
-      background: linear-gradient(135deg, #121212, #1a1a1a);
-      font-family: 'Poppins', sans-serif;
+      background: var(--bg-primary);
+      font-family: 'Inter', sans-serif;
+      color: var(--text-primary);
       overflow: hidden;
-      color: #e0e0e0;
-      user-select: none;
     }
 
+    /* Container principal */
     #3d-container {
       width: 100vw;
       height: 100vh;
@@ -34,130 +51,133 @@
       align-items: center;
     }
 
-    /* Tela de carregamento */
+    /* Loading Screen modernizado */
     #loading-screen {
-      position: absolute;
+      position: fixed;
       inset: 0;
-      background: rgba(18, 18, 18, 0.95);
+      background: var(--bg-primary);
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      z-index: 20;
-      font-weight: 600;
-      font-size: 1.5rem;
-      color: #00e6db;
-      letter-spacing: 0.05em;
-      backdrop-filter: blur(6px);
-      box-shadow: inset 0 0 50px #00e6db;
-      border-radius: 10px;
-      padding: 20px;
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+    }
+
+    .loading-content {
       text-align: center;
-      max-width: 350px;
-      margin: auto;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
     }
 
-    #loading-bar {
-      margin-top: 20px;
-      width: 100%;
-      height: 14px;
-      border-radius: 14px;
-      background: #333;
-      overflow: hidden;
-      box-shadow: 0 0 8px #00e6db inset;
+    .loading-spinner {
+      width: 80px;
+      height: 80px;
+      border: 4px solid rgba(0, 212, 255, 0.2);
+      border-top: 4px solid var(--primary-color);
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-glow);
     }
 
-    #loading-progress {
-      height: 100%;
-      background: linear-gradient(90deg, #27afa8, #00e6db);
-      width: 0;
-      transition: width 0.3s ease;
-      box-shadow: 0 0 12px #00e6db;
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
     }
 
-    /* Info Boxes */
-    .info-container, .info-container-right {
-      position: absolute;
-      top: 25px;
-      background: rgba(0, 0, 0, 0.7);
-      padding: 18px 22px;
-      border-radius: 15px;
-      box-shadow: 0 0 15px #00e6db;
-      width: 280px;
-      max-width: 90vw;
-      transition: transform 0.3s ease;
-      user-select: text;
-    }
-
-    .info-container {
-      left: 25px;
-      border: 2px solid #00e6db;
-    }
-
-    .info-container-right {
-      right: 25px;
-      border: 2px solid #00e6db;
-    }
-
-    .info-container h3,
-    .info-container-right h3 {
-      margin-bottom: 10px;
-      font-weight: 700;
-      font-size: 1.3rem;
-      color: #00e6db;
-      text-shadow: 0 0 10px #00e6db;
-    }
-
-    .info-container p,
-    .info-container-right p {
-      font-weight: 400;
-      line-height: 1.4;
-      color: #cdeccc;
-      margin-bottom: 6px;
-    }
-
-    .info-container span,
-    .info-container-right span {
-      color: #00e6db;
+    .loading-text {
+      font-size: 1.5rem;
+      color: var(--primary-color);
       font-weight: 600;
-      text-shadow: 0 0 6px #00e6db;
+      text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
     }
-      
-    @media (max-width: 800px) {
-      #3d-container {
-        width: 100%;
-        min-height: 60vh;
-        height: auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        overflow: hidden;
-        flex-direction: column;
+
+    /* Info overlay moderno */
+    .info-overlay {
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(20px);
+      padding: 20px 25px;
+      border-radius: 20px;
+      border: 1px solid rgba(0, 212, 255, 0.3);
+      box-shadow: var(--shadow-glow);
+      max-width: 300px;
+      z-index: 100;
+      transition: all 0.3s ease;
+    }
+
+    .info-overlay:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 212, 255, 0.4);
+    }
+
+    .info-overlay h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      background: var(--gradient-accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .info-overlay p {
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 8px;
+    }
+
+    .info-overlay span {
+      color: var(--primary-color);
+      font-weight: 600;
+      text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+    }
+
+    /* Controles visuais */
+    .controls-info {
+      position: absolute;
+      bottom: 30px;
+      right: 30px;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(20px);
+      padding: 15px 20px;
+      border-radius: 15px;
+      border: 1px solid rgba(0, 212, 255, 0.3);
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      z-index: 100;
+    }
+
+    .controls-info i {
+      color: var(--primary-color);
+      margin-right: 8px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .info-overlay {
+        top: 20px;
+        left: 20px;
+        right: 20px;
+        max-width: none;
+        padding: 15px 20px;
       }
 
-      .info-container,
-      .info-container-right {
-        position: static;
-        width: 90%;
-        max-width: 500px;
-        margin: 10px auto;
-        transform: none !important;
-        box-shadow: 0 0 15px #00e6db;
+      .controls-info {
+        bottom: 20px;
+        right: 20px;
+        left: 20px;
+        text-align: center;
       }
 
-      #loading-screen {
-        max-width: 90vw;
-        font-size: 1rem;
-        padding: 15px;
-        transform: translate(-50%, -50%);
+      .loading-text {
+        font-size: 1.2rem;
       }
 
-      canvas {
-        margin: -250px auto;
+      .loading-spinner {
+        width: 60px;
+        height: 60px;
       }
     }
 
@@ -169,25 +189,189 @@
         cursor: grabbing;
       }
 
-  </style>
+    /* Efeitos de partículas (opcional) */
+    .particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
 
+    .particle {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: var(--primary-color);
+      border-radius: 50%;
+      opacity: 0.6;
+      animation: float 6s infinite linear;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.6;
+      }
+      90% {
+        opacity: 0.6;
+      }
+      100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* Efeito Ray Tracing */
+    .ray-tracing-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 2;
+      background: 
+        radial-gradient(circle at 20% 80%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(78, 205, 196, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(102, 126, 234, 0.1) 0%, transparent 50%);
+      animation: rayTracingPulse 4s ease-in-out infinite;
+    }
+
+    @keyframes rayTracingPulse {
+      0%, 100% {
+        opacity: 0.3;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0.6;
+        transform: scale(1.05);
+      }
+    }
+
+    /* Efeito de reflexos */
+    .reflection-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 3;
+      background: linear-gradient(
+        45deg,
+        transparent 30%,
+        rgba(0, 212, 255, 0.05) 50%,
+        transparent 70%
+      );
+      animation: reflectionSweep 3s linear infinite;
+    }
+
+    @keyframes reflectionSweep {
+      0% {
+        transform: translateX(-100%) skewX(-15deg);
+      }
+      100% {
+        transform: translateX(100%) skewX(-15deg);
+      }
+    }
+
+    /* Controles de áudio */
+    .audio-controls {
+      position: absolute;
+      top: 30px;
+      right: 30px;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(20px);
+      padding: 15px 20px;
+      border-radius: 15px;
+      border: 1px solid rgba(0, 212, 255, 0.3);
+      box-shadow: var(--shadow-glow);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .audio-controls button {
+      background: transparent;
+      border: 1px solid var(--primary-color);
+      color: var(--primary-color);
+      padding: 8px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 14px;
+    }
+
+    .audio-controls button:hover {
+      background: var(--primary-color);
+      color: var(--bg-primary);
+      box-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+    }
+
+    .volume-slider {
+      width: 80px;
+      height: 4px;
+      background: rgba(0, 212, 255, 0.2);
+      border-radius: 2px;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .volume-slider::-webkit-slider-thumb {
+      appearance: none;
+      width: 16px;
+      height: 16px;
+      background: var(--primary-color);
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+    }
+
+    /* Responsive para controles de áudio */
+    @media (max-width: 768px) {
+      .audio-controls {
+        top: 20px;
+        right: 20px;
+        left: 20px;
+        justify-content: center;
+        padding: 10px 15px;
+      }
+    }
+  </style>
 </head>
 <body>
-
-  <!-- Tela de Carregamento -->
-  <div id="loading-screen" aria-live="polite" role="alert">
-    <div>Carregando Modelo 3D...</div>
-    <div id="loading-bar">
-      <div id="loading-progress"></div>
+  <!-- Loading Screen -->
+  <div id="loading-screen">
+    <div class="loading-content">
+      <div class="loading-spinner"></div>
+      <div class="loading-text">Carregando Modelo 3D...</div>
     </div>
   </div>
 
-  <!-- Container para o modelo 3D -->
-  <div id="3d-container" aria-label="Visualizador 3D">
+  <!-- Container principal para o modelo 3D -->
+  <div id="3d-container">
+    <!-- Efeito de partículas -->
+    <div class="particles" id="particles"></div>
+    
+     <!-- Info overlay -->
+     <div class="info-overlay">
+       <h3>Modelo 3D Interativo</h3>
+       <p>Status: <span>Carregado</span></p>
+       <p>Controles: <span>Mouse para rotacionar</span></p>
+       <p>Zoom: <span>Scroll do mouse</span></p>
+     </div>
 
-    <div class="info-container" aria-label="Status do projeto">
-      <h3>ScriptHadder</h3>
-      <p>Status: <span>Em desenvolvimento</span></p>
+    <!-- Controles info -->
+    <div class="controls-info">
+      <div><i class="fas fa-mouse"></i> Arraste para rotacionar</div>
+      <div><i class="fas fa-search-plus"></i> Scroll para zoom</div>
     </div>
   </div>
 
@@ -197,38 +381,102 @@
   <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
 
   <script>
-    // Setup básico da cena
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(
-      75,
+    // Variáveis globais
+    let scene, camera, renderer, controls, loadedObject;
+    let mouseX = 0, mouseY = 0;
+    let windowHalfX = window.innerWidth / 2;
+    let windowHalfY = window.innerHeight / 2;
+    let time = 0;
+
+    // Inicialização
+    function init() {
+      // Setup da cena
+      scene = new THREE.Scene();
+      scene.fog = new THREE.Fog(0x0a0a0a, 1, 50);
+
+      // Câmera
+      camera = new THREE.PerspectiveCamera(
+        50,
       window.innerWidth / window.innerHeight,
       0.1,
       1000
     );
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    renderer.setClearColor(0x000000, 0);
+      camera.position.set(0, 2, 8);
+
+       // Renderer com configurações modernas
+       renderer = new THREE.WebGLRenderer({ 
+         antialias: true, 
+         alpha: true,
+         powerPreference: "high-performance"
+       });
+       renderer.setSize(window.innerWidth, window.innerHeight);
+       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+       renderer.setClearColor(0x0a0a0a, 0);
+       renderer.shadowMap.enabled = true;
+       renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+       renderer.toneMapping = THREE.ACESFilmicToneMapping;
+       renderer.toneMappingExposure = 1.2;
+      
     document.getElementById('3d-container').appendChild(renderer.domElement);
 
-    // Luzes
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.45);
-    scene.add(ambientLight);
+      // Iluminação moderna
+      setupLighting();
 
-    const directionalLight = new THREE.DirectionalLight(0x00e676, 1.2);
-    directionalLight.position.set(10, 15, 10);
-    directionalLight.castShadow = true;
-    scene.add(directionalLight);
+      // Controles
+      controls = new THREE.OrbitControls(camera, renderer.domElement);
+      controls.enableDamping = true;
+      controls.dampingFactor = 0.05;
+      controls.screenSpacePanning = false;
+      controls.minDistance = 3;
+      controls.maxDistance = 15;
+      controls.maxPolarAngle = Math.PI / 2;
 
-    // Controle Orbit
-    const controls = new THREE.OrbitControls(camera, renderer.domElement);
-    controls.enableDamping = true;
-    controls.dampingFactor = 0.3;
-    controls.screenSpacePanning = false;
-    controls.minDistance = 2;
-    controls.maxDistance = 12;
+      // Carregar modelo
+      loadModel();
 
-    // Carregador do modelo
-    let loadedObject = null;
+      // Criar partículas
+      createParticles();
+
+      // Event listeners
+      setupEventListeners();
+
+      // Iniciar animação
+      animate();
+    }
+
+    function setupLighting() {
+      // Luz ambiente suave
+      const ambientLight = new THREE.AmbientLight(0x404040, 0.3);
+      scene.add(ambientLight);
+
+      // Luz direcional principal
+      const directionalLight = new THREE.DirectionalLight(0x00d4ff, 1);
+      directionalLight.position.set(10, 10, 5);
+      directionalLight.castShadow = true;
+      directionalLight.shadow.mapSize.width = 1024;
+      directionalLight.shadow.mapSize.height = 1024;
+      directionalLight.shadow.camera.near = 0.5;
+      directionalLight.shadow.camera.far = 50;
+      scene.add(directionalLight);
+
+      // Luz de preenchimento
+      const fillLight = new THREE.DirectionalLight(0x4ecdc4, 0.5);
+      fillLight.position.set(-10, 5, -5);
+      scene.add(fillLight);
+
+      // Luz pontual para efeito especial
+      const pointLight = new THREE.PointLight(0x00d4ff, 0.8, 20);
+      pointLight.position.set(0, 5, 0);
+      scene.add(pointLight);
+
+      // Luz de fundo
+      const backLight = new THREE.DirectionalLight(0x667eea, 0.3);
+      backLight.position.set(0, 0, -10);
+      scene.add(backLight);
+    }
+
+
+    function loadModel() {
     const loader = new THREE.OBJLoader();
 
     loader.load(
@@ -236,61 +484,145 @@
       (object) => {
         if (loadedObject) scene.remove(loadedObject);
 
-        object.scale.set(1.3, 1.3, 1.3);
-        object.position.set(0, -1.2, 0);
-        object.rotation.y = Math.PI; // gira 180 graus para melhor visual
+            // Configurações do modelo
+            object.scale.set(1.5, 1.5, 1.5);
+            object.position.set(0, -1.5, 0);
+            object.rotation.y = Math.PI;
 
-        // Material estilizado
-        object.traverse((child) => {
-          if (child.isMesh) {
-            child.material.metalness = 0.6;
-            child.material.roughness = 0.4;
-            child.material.color.set(0x00ffff);
-            child.material.emissive = new THREE.Color(0x006666);
-            child.material.emissiveIntensity = 0.5;
-            child.material.needsUpdate = true;
-          }
-        });
+            // Aplicar materiais modernos
+            object.traverse((child) => {
+              if (child.isMesh) {
+                // Material PBR moderno
+                child.material = new THREE.MeshStandardMaterial({
+                  color: 0x00d4ff,
+                  metalness: 0.8,
+                  roughness: 0.2,
+                  emissive: 0x001122,
+                  emissiveIntensity: 0.3,
+                  envMapIntensity: 1.0
+                });
+                
+                child.castShadow = true;
+                child.receiveShadow = true;
+              }
+            });
 
         scene.add(object);
         loadedObject = object;
-        document.getElementById('loading-screen').style.opacity = 0;
-        setTimeout(() => {
-          document.getElementById('loading-screen').style.display = 'none';
-        }, 800);
+
+            // Esconder loading screen
+            hideLoadingScreen();
+            
+            console.log('Modelo carregado com sucesso!');
       },
       (xhr) => {
+            if (xhr.lengthComputable) {
         const progress = (xhr.loaded / xhr.total) * 100;
-        document.getElementById('loading-progress').style.width = progress + '%';
+              console.log('Carregando modelo: ' + Math.round(progress) + '%');
+            }
       },
       (error) => {
         console.error('Erro ao carregar o modelo:', error);
+            console.log('Tentando carregar modelo alternativo...');
+            createFallbackModel();
+            hideLoadingScreen();
+          }
+        );
       }
-    );
 
-    // Posiciona a câmera
-    camera.position.set(0, 1.2, 5);
+      function createFallbackModel() {
+        // Modelo de fallback se o OBJ não carregar
+        const fallbackGeometry = new THREE.BoxGeometry(2, 2, 2);
+        const fallbackMaterial = new THREE.MeshStandardMaterial({
+          color: 0x00d4ff,
+          metalness: 0.8,
+          roughness: 0.2,
+          emissive: 0x001122,
+          emissiveIntensity: 0.3,
+          envMapIntensity: 1.0
+        });
+        
+        const fallbackObject = new THREE.Mesh(fallbackGeometry, fallbackMaterial);
+        fallbackObject.position.set(0, -1.5, 0);
+        fallbackObject.castShadow = true;
+        fallbackObject.receiveShadow = true;
+        
+        scene.add(fallbackObject);
+        loadedObject = fallbackObject;
+        
+        console.log('Modelo alternativo carregado!');
+      }
 
-    // Responsividade
-    window.addEventListener('resize', () => {
+    function hideLoadingScreen() {
+      const loadingScreen = document.getElementById('loading-screen');
+      loadingScreen.style.opacity = '0';
+      setTimeout(() => {
+        loadingScreen.style.display = 'none';
+      }, 500);
+    }
+
+    function createParticles() {
+      const particleCount = 50;
+      const particlesContainer = document.getElementById('particles');
+      
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 6 + 's';
+        particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
+        particlesContainer.appendChild(particle);
+      }
+    }
+
+    function setupEventListeners() {
+      // Mouse movement para parallax
+      document.addEventListener('mousemove', onMouseMove, false);
+      
+      // Resize
+      window.addEventListener('resize', onWindowResize, false);
+    }
+
+    function onMouseMove(event) {
+      mouseX = (event.clientX - windowHalfX) * 0.01;
+      mouseY = (event.clientY - windowHalfY) * 0.01;
+    }
+
+    function onWindowResize() {
+      windowHalfX = window.innerWidth / 2;
+      windowHalfY = window.innerHeight / 2;
+
       camera.aspect = window.innerWidth / window.innerHeight;
       camera.updateProjectionMatrix();
       renderer.setSize(window.innerWidth, window.innerHeight);
-    });
+    }
 
     // Loop de animação
     function animate() {
       requestAnimationFrame(animate);
+       time += 0.01;
 
+       // Rotação suave do modelo
       if (loadedObject) {
-        loadedObject.rotation.y += 0.008;
-      }
+         loadedObject.rotation.y += 0.005;
+         
+         // Efeito de parallax com mouse
+         loadedObject.rotation.x = mouseY * 0.1;
+         loadedObject.rotation.z = mouseX * 0.05;
+
+         // Efeito de pulsação sutil
+         const scale = 1.5 + Math.sin(time) * 0.02;
+         loadedObject.scale.setScalar(scale);
+
+       }
+
 
       controls.update();
       renderer.render(scene, camera);
     }
 
-    animate();
+    // Inicializar quando a página carregar
+    window.addEventListener('load', init);
   </script>
 </body>
 </html>

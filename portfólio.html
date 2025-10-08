@@ -1,191 +1,622 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Templates</title>
-    <link rel="stylesheet" href="src/css/porfólio.css">
+    <title>Portfólio - ScriptHadder | Projetos e Templates</title>
+    
+    <!-- Modern Tech Design System -->
+    <link rel="stylesheet" href="src/css/styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- ✅ Favicon (.ico para o navegador) -->
+    <!-- Favicon -->
     <link rel="shortcut icon" href="src/ico/Letreiro-aba.ico" type="image/x-icon">
 
-    <!-- ✅ Open Graph (preview ao compartilhar link) -->
-    <meta property="og:title" content="ScriptHadder">
-    <meta property="og:description" content="Conheça nossos templatea!">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Portfólio ScriptHadder - Projetos e Templates">
+    <meta property="og:description" content="Explore nossos projetos desenvolvidos com tecnologia de ponta e design moderno">
     <meta property="og:image" content="https://renanmestre.github.io/scripthadder/src/img/icone.png">
     <meta property="og:url" content="https://renanmestre.github.io/scripthadder/portfólio">
     <meta property="og:type" content="website">
 
-    <!-- ✅ Twitter Card -->
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="ScriptHadder">
-    <meta name="twitter:description" content="Conheça nossos templates!">
+    <meta name="twitter:title" content="Portfólio ScriptHadder - Projetos e Templates">
+    <meta name="twitter:description" content="Explore nossos projetos desenvolvidos com tecnologia de ponta e design moderno">
     <meta name="twitter:image" content="https://renanmestre.github.io/scripthadder/src/img/icone.png">
 </head>
 <body>
-
-    <!-- Header -->
+    <!-- Header Microsoft Style -->
     <header class="header">
         <nav class="navbar">
             <div class="nav-container">
                 <div class="logo">
-                    <a href="index.html">
-                    <img src="src/img/Letreiro.png" alt="Letreiro"></a>
+                    <a href="index.html" class="logo-link">
+                        <img src="src/img/Letreiro.png" alt="ScriptHadder" class="logo-img">
+                    </a>
                 </div>
+                
                 <ul class="nav-menu">
-                    <li><a href="index.html">Início</a></li>
-                    <li><a href="inovacao.html">Soluções</a></li>
-                    <li><a href="contato.html">Contato</a></li>
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Início</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="index.html#services" class="nav-link">Serviços <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="index.html#services" class="dropdown-link">Desenvolvimento Web</a>
+                            <a href="index.html#services" class="dropdown-link">Segurança Cibernética</a>
+                            <a href="index.html#services" class="dropdown-link">Consultoria</a>
+                            <a href="index.html#services" class="dropdown-link">Desenvolvimento Web</a>
+                            <a href="index.html#services" class="dropdown-link">Segurança Cibernética</a>
+                            <a href="index.html#services" class="dropdown-link">Desenvolvimento desktop</a>
+                            <a href="index.html#services" class="dropdown-link">Backend</a>
+                            <a href="index.html#services" class="dropdown-link">IA</a>
+                            <a href="index.html#services" class="dropdown-link">Consultoria</a>
+                            <a href="index.html#services" class="dropdown-link">Hacker ético</a>
+                            <a href="index.html#services" class="dropdown-link">OSINT</a>
+                            <a href="index.html#services" class="dropdown-link">Treinamentos</a>
+                            <a href="index.html#services" class="dropdown-link">DevOps</a>
+                            <a href="index.html#services" class="dropdown-link">Open Source</a>
+                            <a href="index.html#services" class="dropdown-link">Segurança de identidade</a>
+                            <a href="index.html#services" class="dropdown-link">Dark Web</a>
+                            <a href="index.html#services" class="dropdown-link">Roteadores</a>
+                            <a href="index.html#services" class="dropdown-link">IoT</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index.html#team" class="nav-link">Equipe</a>
+                    </li>
+                    <li class="nav-item dropdown" >
+                        <a href="inovacao.html" class="nav-link">Soluções <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-menu">
+                            <a href="inovacao.html" class="dropdown-link">Sistemas desenvolvidos</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="contato.html" class="nav-link">Contato</a>
+                    </li>
                 </ul>
+                
+                <div class="nav-actions">
+                    <a href="contato.html#contactForm" class="btn-primary-nav">Começar</a>
+                </div>
+                
                 <div class="hamburguer" id="hamburguer">
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
+
+                <!-- Menu que será aberto -->
+                <nav class="menu" id="menu">
+                    <ul>
+                        <li>
+                            <a href="index.html">Início</a>
+                        </li>
+                        <li>
+                            <a href="index.html#services" class="nav-link">Serviços</a>
+                            <div class="dropdown-menu">
+                                <a href="#services" class="dropdown-link">Desenvolvimento Web</a>
+                                <a href="#services" class="dropdown-link">Segurança Cibernética</a>
+                                <a href="#services" class="dropdown-link">Desenvolvimento desktop</a>
+                                <a href="#services" class="dropdown-link">Backend</a>
+                                <a href="#services" class="dropdown-link">IA</a>
+                                <a href="#services" class="dropdown-link">Consultoria</a>
+                                <a href="#services" class="dropdown-link">Hacker ético</a>
+                                <a href="#services" class="dropdown-link">OSINT</a>
+                                <a href="#services" class="dropdown-link">Treinamentos</a>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#team">Equipe</a>
+                        </li>
+                        <li>
+                            <a href="inovacao.html" class="nav-link" >Soluções</a>
+                            <div class="dropdown-menu">
+                                <a href="inovacao.html" class="dropdown-link">Sistemas</a>
+                                <a href="galeria.html" class="dropdown-link">Vídeos</a>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="contato.html">Contato</a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </nav>
     </header>
 
-    <!-- Conteúdo principal -->
-    <main class="container">
-
-        <!-- Card 1 -->
-        <div class="card">
-            <div class="card1">
-                <img src="src/img/Sistemas/Condominio.png" alt="Arcenal Hacker"> <!-- Atualizar o caminho da imagem -->
-                <h2>Sistema para edifícios</h2>
-                <p>
-                    Sistema completo para administração de condomínios, com login, painel, alertas e muito mais.
-                    Desenvolvido em arquitetura full stack, com backend integrado.
-                </p>
-                <a href="https://condominio-66km.onrender.com/"><button>Acessar o site!</button></a>
-            </div>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="card">
-            <div class="card2">
-                <img src="src/img/Sistemas/Portfólio.png" alt="Portfólio Particular"> <!-- Atualizar o caminho da imagem -->
-                <h2>Portfólio particular</h2>
-                <p>
-                    Site pessoal para apresentação de projetos e habilidades. Visual moderno e responsivo.
-                    Ideal para quem quer mostrar seus trabalhos na web.
-                </p>
-                <a href="https://scripthadder.github.io/portfolio/"><button>Acessar o site!</button></a>
-            </div>
-        </div>
-
-        <!-- Card 3 - Neo3D -->
-        <div class="card">
-            <div class="card3">
-                <img src="src/img/Sistemas/Neo3D.png" alt="Neo3D"> <!-- Atualizar o caminho da imagem -->
-                <h2>Neo3D</h2>
-                <p>
-                    Template para pequenas empresas de impressão 3D.
-                    Permite exibir catálogos, receber pedidos e divulgar os serviços de forma eficiente.
-                </p>
-                <a href="https://scripthadder.github.io/neo_3d/"><button>Acessar o site!</button></a>
-            </div>
-        </div>
-
-        <!-- Card 4 - Neo3D duplicado (você pode remover ou alterar) -->
-        <div class="card">
-            <div class="card4">
-                <img src="src/img/Sistemas/login.png" alt="Sistema de pizzas">
-                <h2>Tela de login</h2>
-                <p>
-                    Interface de login elegante e moderna com fundo estilizado. Ideal para sistemas que buscam
-                    uma primeira impressão profissional e amigável.
-                </p>
-                <a href="https://scripthadder.github.io/login/"><button>Acessar o site!</button></a>
-            </div>
-        </div>
-
-        <!-- Card 5 - Neo3D duplicado (você pode remover ou alterar) -->
-        <div class="card">
-            <img src="src/img/Sistemas/Login_animado.png" alt="Neo3D">
-            <h2>Login Animado</h2>
-            <p>
-                Tela de login interativa com efeitos visuais inspirados no universo infantil.
-                Design envolvente para projetos que precisam cativar o público desde o início.      
-            </p>
-            <a href="https://scripthadder.github.io/login_animado/"><button>Acessar o site!</button></a>
-        </div>
-        
-        <!-- Card 6 -->
-        <div class="card">
-            <img src="src/img/Sistemas/Cliente_Alessandra.png" alt="Neo3D">
-            <h2>Sistema para cliente: Alessandra</h2>
-            <p>
-                Página institucional personalizada para a cliente Alessandra.
-                Desenvolvida com base em identidade visual e foco em apresentação de serviços.
-            </p>
-            <a href="https://renanmestre.github.io/Alessandra/"><button>Acessar o site!</button></a>
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <img src="src/img/ScriptHadder letreiro.png" alt="Logo">
+    <main>
+        <!-- Hero Section Portfólio -->
+        <section class="hero-section portfolio-hero">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <i class="fas fa-code"></i>
+                        <span>Nossos projetos em destaque</span>
                     </div>
-                    <p>Transformando ideias em soluções digitais inovadoras. Sua parceira em tecnologia.</p>
-                    <div class="social-links">
-                        <a href="https://www.facebook.com/share/17AUWjisdX/?mibextid=wwXIfr"><i class="fab fa-facebook"></i></a>
-                        <a href="https://www.instagram.com/scripthadder"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://github.com/ScriptHadder"><i class="fab fa-github"></i></a>
+                    
+                    <h1 class="hero-title">
+                        Portfólio de 
+                        <span class="gradient-text">projetos</span>
+                    </h1>
+                    
+                    <p class="hero-description">
+                        Explore nossa coleção de projetos desenvolvidos com tecnologia de ponta, 
+                        design moderno e foco na experiência do usuário.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="#projects" class="btn-primary">
+                            <span>Ver projetos</span>
+                            <i class="fas fa-arrow-down"></i>
+                        </a>
+                        <a href="contato.html" class="btn-secondary">
+                            <i class="fas fa-rocket"></i>
+                            <span>Solicitar projeto</span>
+                        </a>
+                    </div>
+
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">6+</span>
+                            <span class="stat-label">Projetos</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Responsivos</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">24/7</span>
+                            <span class="stat-label">Suporte</span>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="footer-section">
-                    <h4>Serviços</h4>
-                    <ul>
-                        <li><a href="servicos.html">Desenvolvimento Web</a></li>
-                        <li><a href="servicos.html">Desenvolvimento Mobile</a></li>
-                        <li><a href="servicos.html">Backend & APIs</a></li>
-                        <li><a href="servicos.html">Consultoria</a></li>
-                        <li><a href="servicos.html">DevSec</a></li>
-                    </ul>
+
+                <div class="hero-visual">
+                    <div class="hero-image-container">
+                        <img src="src/img/Wallpaper/Portfólio.png" alt="Portfólio ScriptHadder" class="hero-image"/>
+                        <div class="floating-elements">
+                            <div class="floating-card card-1">
+                                <i class="fas fa-laptop-code"></i>
+                                <span>Desenvolvimento</span>
+                            </div>
+                            <div class="floating-card card-2">
+                                <i class="fas fa-palette"></i>
+                                <span>Design</span>
+                            </div>
+                            <div class="floating-card card-3">
+                                <i class="fas fa-mobile-alt"></i>
+                                <span>Mobile</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                
-                <div class="footer-section">
-                    <h4>Empresa</h4>
-                    <ul>
-                        <li><a href="sobre.html">Sobre Nós</a></li>
-                        <li><a href="index.html">Sobre Nós</a></li>
-                        <li><a href="contato.html">Contato</a></li>
-                        <li><a href="inovacao.html">Soluções</a></li>
-                    </ul>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-badge">Nossos projetos</span>
+                    <h2 class="section-title">
+                        Projetos desenvolvidos com 
+                        <span class="gradient-text">excelência</span>
+                    </h2>
+                    <p class="section-description">
+                        Cada projeto é único e desenvolvido com as melhores práticas de desenvolvimento, 
+                        design moderno e foco na experiência do usuário.
+                    </p>
                 </div>
-                
-                    <div class="footer-section">
-                        <h4>Contato</h4>
-                        <div class="contact-info">
-                            <p><i class="fas fa-phone"></i> (16) 99308-8055</p>
-                            <p><i class="fas fa-envelope"></i> scripthadder@gmail.com</p>
-                            <p><i class="fas fa-map-marker-alt"></i> São Paulo, SP</p>
+
+                <div class="projects-grid">
+                    <!-- Projeto 1 - Sistema Condomínio -->
+                    <div class="project-card featured">
+                        <div class="card-badge">Destaque</div>
+                        <div class="project-image">
+                            <img src="src/img/Sistemas/Condominio.png" alt="Sistema para Condomínios">
+                            <div class="project-overlay">
+                                <div class="project-actions">
+                                    <a href="https://condominio-66km.onrender.com/" target="_blank" class="btn-card">
+                                        <i class="fas fa-external-link-alt"></i>
+                                        <span>Ver projeto</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Sistema para Condomínios</h3>
+                            <p>Sistema completo para administração de condomínios, com login, painel administrativo, alertas e muito mais. Desenvolvido em arquitetura full stack.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Full Stack</span>
+                                <span class="tech-tag">Backend</span>
+                                <span class="tech-tag">Frontend</span>
+                                <span class="tech-tag">Responsivo</span>
+                            </div>
                         </div>
                     </div>
 
-                <div class="footer-separator"></div>
+                    <!-- Projeto 2 - Portfólio Pessoal -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="src/img/Sistemas/Portfólio.png" alt="Portfólio Pessoal">
+                            <div class="project-overlay">
+                                <div class="project-actions">
+                                    <a href="https://scripthadder.github.io/portfolio/" target="_blank" class="btn-card">
+                                        <i class="fas fa-external-link-alt"></i>
+                                        <span>Ver projeto</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Portfólio Pessoal</h3>
+                            <p>Site pessoal para apresentação de projetos e habilidades. Visual moderno e responsivo, ideal para quem quer mostrar seus trabalhos na web.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Frontend</span>
+                                <span class="tech-tag">Responsivo</span>
+                                <span class="tech-tag">Moderno</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projeto 3 - Neo3D -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="src/img/Sistemas/Neo3D.png" alt="Neo3D Template">
+                            <div class="project-overlay">
+                                <div class="project-actions">
+                                    <a href="https://scripthadder.github.io/neo_3d/" target="_blank" class="btn-card">
+                                        <i class="fas fa-external-link-alt"></i>
+                                        <span>Ver projeto</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Neo3D Template</h3>
+                            <p>Template para pequenas empresas de impressão 3D. Permite exibir catálogos, receber pedidos e divulgar serviços de forma eficiente.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">E-commerce</span>
+                                <span class="tech-tag">Template</span>
+                                <span class="tech-tag">Responsivo</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projeto 4 - Login System -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="src/img/Sistemas/login.png" alt="Sistema de Login">
+                            <div class="project-overlay">
+                                <div class="project-actions">
+                                    <a href="https://scripthadder.github.io/login/" target="_blank" class="btn-card">
+                                        <i class="fas fa-external-link-alt"></i>
+                                        <span>Ver projeto</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Sistema de Login</h3>
+                            <p>Interface de login elegante e moderna com fundo estilizado. Ideal para sistemas que buscam uma primeira impressão profissional.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">UI/UX</span>
+                                <span class="tech-tag">Login</span>
+                                <span class="tech-tag">Design</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projeto 5 - Login Animado -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="src/img/Sistemas/Login_animado.png" alt="Login Animado">
+                            <div class="project-overlay">
+                                <div class="project-actions">
+                                    <a href="https://scripthadder.github.io/login_animado/" target="_blank" class="btn-card">
+                                        <i class="fas fa-external-link-alt"></i>
+                                        <span>Ver projeto</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Login Animado</h3>
+                            <p>Tela de login interativa com efeitos visuais inspirados no universo infantil. Design envolvente para projetos que precisam cativar o público.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Animação</span>
+                                <span class="tech-tag">Interativo</span>
+                                <span class="tech-tag">Criativo</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projeto 6 - Saúde e Bem estar -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="src/img/Sistemas/Saúde e Bem estar.png" alt="Sistema Cliente Alessandra">
+                            <div class="project-overlay">
+                                <div class="project-actions">
+                                    <a href="https://renanmestre.github.io/Alessandra/" target="_blank" class="btn-card">
+                                        <i class="fas fa-external-link-alt"></i>
+                                        <span>Ver projeto</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Sistema de Saúde Mental - Bem estar</h3>
+                            <p>Página institucional personalizada para uma cliente. Desenvolvida com base em identidade visual e foco em apresentação de serviços relacionados 
+                                a essa profissional.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Institucional</span>
+                                <span class="tech-tag">Personalizado</span>
+                                <span class="tech-tag">Profissional</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projeto 7 - Template de Design de Interiores -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="src/img/Sistemas/Design_interior.png" alt="Sistema Cliente Alessandra">
+                            <div class="project-overlay">
+                                <div class="project-actions">
+                                    <a href="https://renanmestre.github.io/Gabi_front/" target="_blank" class="btn-card">
+                                        <i class="fas fa-external-link-alt"></i>
+                                        <span>Ver projeto</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Sistema De Design de Interiores</h3>
+                            <p>Página profissional personalizada para uma cliente empreendedora de Design de Interiores. Desenvolvida com base em identidade visual e foco em apresentação de serviços prestados.
+                                O sistema utiliza uma tela de login com acesso administrativo e clientes, os clientes tem acesso as formas 
+                                de pagamento, podendo ser realizado em PIX, boleto e cartão de crédito pela API integrada do Mercado Pago.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Institucional</span>
+                                <span class="tech-tag">Personalizado</span>
+                                <span class="tech-tag">Profissional</span>
+                                <span class="tech-tag">Full Stack</span>
+                                <span class="tech-tag">Responsivo</span>
+                                <span class="tech-tag">API Mercado Pago</span>
+                                <span class="tech-tag">Formulário Inteligente</span>
+                                <span class="tech-tag">Integração de Email</span>
+                                <span class="tech-tag">Spring Boot, Spring Web e Security</span>
+                                <span class="tech-tag">Java</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projeto 8 - 3D -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="src/img/Sistemas/3D.png" alt="Sistema Cliente Alessandra">
+                            <div class="project-overlay">
+                                <div class="project-actions">
+                                    <a href="3d.html" target="_blank" class="btn-card">
+                                        <i class="fas fa-external-link-alt"></i>
+                                        <span>Ver projeto</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Modelagem 3D</h3>
+                            <p>Já imaginou ver objetos em 3D? Com essa modelagem é possível ver os ojetos facilmente em 3D
+                                e não só ver como também controlar eles na tela!
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Personalizado</span>
+                                <span class="tech-tag">3D</span>
+                                <span class="tech-tag">Dinâmico</span>
+                                <span class="tech-tag">Animado</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Projeto 7 - Template de Turismo -->
+                    <!--<div class="project-card">
+                        <div class="project-image">
+                            <img src="src/img/Sistemas/Design_interior.png" alt="Sistema Cliente Alessandra">
+                            <div class="project-overlay">
+                                <div class="project-actions">
+                                    <a href="https://renanmestre.github.io/Alessandra/" target="_blank" class="btn-card">
+                                        <i class="fas fa-external-link-alt"></i>
+                                        <span>Ver projeto</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Sistema De Turismo</h3>
+                            <p>Página institucional personalizada para a cliente Alessandra. Desenvolvida com base em identidade visual e foco em apresentação de serviços.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Institucional</span>
+                                <span class="tech-tag">Personalizado</span>
+                                <span class="tech-tag">Profissional</span>
+                            </div>
+                        </div>
+                    </div>-->
+
+                    <!-- Projeto 8 - Projeto do Senai -->
+                    <!--<div class="project-card">
+                        <div class="project-image">
+                            <img src="src/img/Sistemas/Sistema acadêmico.png" alt="Sistema Cliente Alessandra">
+                            <div class="project-overlay">
+                                <div class="project-actions">
+                                    <a href="https://renanmestre.github.io/Senai/" target="_blank" class="btn-card">
+                                        <i class="fas fa-external-link-alt"></i>
+                                        <span>Ver projeto</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Projeto Acadêmico</h3>
+                            <p>Já ouviu falar em tecnologia IoT? Esse sistema foi desenvolvido pra realizar uma comunicação externa com uma caixa de água, podendo ser utilizado um ESP32 ou Arduíno CLoud 
+                                sem contar os sensores que deverão estar no meio dessa comunicação.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Acadêmico</span>
+                                <span class="tech-tag">Resolução de problemas</span>
+                                <span class="tech-tag">Comunicação segura</span>
+                                <span class="tech-tag">IoT</span>
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Full Stack</span>
+                                <span class="tech-tag">ESP 32 & Arduíno Cloud</span>
+                            </div>
+                        </div>
+                    </div>-->
+                </div>
+
+                <div class="projects-cta">
+                    <div class="cta-content">
+                        <h3>Gostou dos nossos projetos?</h3>
+                        <p>Que tal desenvolvermos algo incrível juntos? Entre em contato e vamos criar seu próximo projeto!</p>
+                        <a href="contato.html" class="btn-primary">
+                            <span>Começar projeto</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Microsoft Style -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <img src="src/img/ScriptHadder letreiro.png" alt="ScriptHadder">
+                        </div>
+                        <p class="footer-description">
+                            Transformando ideias em soluções digitais inovadoras. 
+                            Sua parceira estratégica em tecnologia e segurança.
+                        </p>
+                        <div class="social-links">
+                            <a href="https://www.facebook.com/share/17AUWjisdX/?mibextid=wwXIfr" class="social-link" aria-label="Facebook">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a href="https://www.instagram.com/scripthadder" class="social-link" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://github.com/ScriptHadder" class="social-link" aria-label="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="footer-links">
+                        <div class="footer-column">
+                            <h4 class="footer-title">Serviços</h4>
+                            <ul class="footer-list">
+                                <li><a href="index.html#services" class="footer-link">Desenvolvimento Web</a></li>
+                                <li><a href="index.html#services" class="footer-link">Segurança Cibernética</a></li>
+                                <li><a href="index.html#services" class="footer-link">Desenvolvimento Desktop</a></li>
+                                <li><a href="index.html#services" class="footer-link">Backend & APIs</a></li>
+                                <li><a href="index.html#services" class="footer-link">Inteligência Artificial</a></li>
+                                <li><a href="index.html#services" class="footer-link">Consultoria Técnica</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="footer-column">
+                            <h4 class="footer-title">Empresa</h4>
+                            <ul class="footer-list">
+                                <li><a href="index.html#about" class="footer-link">Sobre Nós</a></li>
+                                <li><a href="index.html#team" class="footer-link">Nossa Equipe</a></li>
+                                <li><a href="portfólio.html" class="footer-link">Portfólio</a></li>
+                                <li><a href="inovacao.html" class="footer-link">Soluções</a></li>
+                                <li><a href="contato.html" class="footer-link">Contato</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="footer-column">
+                            <h4 class="footer-title">Contato</h4>
+                            <div class="contact-info">
+                                <div class="contact-item">
+                                    <i class="fas fa-phone"></i>
+                                    <span>(16) 99308-8055</span>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-envelope"></i>
+                                    <span>scripthadder@gmail.com</span>
+                                </div>
+                                <div class="contact-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>São Paulo, SP - Brasil</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="footer-bottom">
-                    <p>&copy; 2025 ScriptHadder. Todos os direitos reservados.</p>
+                    <div class="footer-bottom-content">
+                        <p class="copyright">
+                            &copy; 2025 ScriptHadder. Todos os direitos reservados.
+                        </p>
+                        <div class="footer-legal">
+                            <a href="#" class="legal-link">Política de Privacidade</a>
+                            <a href="#" class="legal-link">Termos de Uso</a>
+                            <a href="#" class="legal-link">Cookies</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- Botão de Voltar ao Topo -->
+    <div class="topo">
+        <button id="scrollToTopBtn">
+            <i class="fas fa-arrow-up" style="font-size: 1.5rem;"></i>
+        </button>
+    </div>
+    
+    <script src="src/js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script>
+        // Smooth scroll para links internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Mostrar/ocultar botão de voltar ao topo
+        const scrollBtn = document.getElementById('scrollToTopBtn');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollBtn.style.display = 'flex';
+            } else {
+                scrollBtn.style.display = 'none';
+            }
+        });
+        
+        scrollBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
         // Menu mobile
         const hamburguer = document.getElementById('hamburguer');
         const navMenu = document.querySelector('.nav-menu');
@@ -203,15 +634,30 @@
                     navMenu.classList.remove('active');
                 });
             });
+        }
 
-            // Fechar menu ao clicar fora dele
-            document.addEventListener('click', (e) => {
-                if (!hamburguer.contains(e.target) && !navMenu.contains(e.target)) {
-                    hamburguer.classList.remove('active');
-                    navMenu.classList.remove('active');
+        // Animação de entrada dos cards
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
                 }
             });
-        }
+        }, observerOptions);
+
+        // Observar todos os cards de projeto
+        document.querySelectorAll('.project-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
     </script>
 </body>
 </html>
