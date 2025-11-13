@@ -1341,12 +1341,32 @@ header {
   font-size: var(--font-size-lg);
 }
 
+.partner-webtec {
+  border: 2px solid #007bff; /* Azul para destaque */
+  background-color: #0c4368; /* Fundo levemente azul */
+  position: relative;
+}
+
+.card-title-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.partner-logo {
+  height: 30px; /* Ajuste conforme necessário */
+}
+
+.partner-name {
+  color: #007bff;
+}
+
 /* ========================================
    TEAM SECTION
    ======================================== */
 
 .team-section {
-  padding: var(--space-5xl) 0;
+  padding: var(--space-2xl) 0;
   background: var(--bg-secondary);
 }
 
@@ -1476,6 +1496,14 @@ header {
 .team-social a:hover {
   color: #f56040; /* Hover suave */
   transform: scale(1.1);
+}
+
+.partner-logo {
+  display: block;
+  margin: 10px auto 20px; 
+  width: 110px;           
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  object-fit: contain;    
 }
 
 /* ========================================
@@ -1645,6 +1673,8 @@ header {
   width: 150px;
   object-fit: contain;
 }
+
+
 
 /* ========================================
    FOOTER

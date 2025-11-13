@@ -27,6 +27,94 @@
     <meta name="twitter:title" content="Contato ScriptHadder - Vamos Transformar Suas Ideias">
     <meta name="twitter:description" content="Entre em contato conosco e vamos transformar suas ideias em soluções digitais inovadoras">
     <meta name="twitter:image" content="https://renanmestre.github.io/scripthadder/src/img/icone.png">
+
+    <script>
+    function formatPhone(input) {
+        let value = input.value.replace(/\D/g, "");
+        if (value.length > 11) value = value.slice(0, 11);
+
+        if (value.length > 6) {
+            value = `(${value.slice(0,2)}) ${value.slice(2,7)}-${value.slice(7)}`;
+        } else if (value.length > 2) {
+            value = `(${value.slice(0,2)}) ${value.slice(2)}`;
+        } else if (value.length > 0) {
+            value = `(${value}`;
+        }
+
+        input.value = value;
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("contactForm");
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault(); // Evita o envio padrão do formulário
+
+        // Captura os valores dos inputs
+        const firstName = document.getElementById("first-name").value.trim();
+        const lastName = document.getElementById("last-name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const phone = document.getElementById("phone").value.trim();
+        const subject = document.getElementById("subject").value.trim();
+
+        // Serviço selecionado
+        let service = document.querySelector('input[name="servico"]:checked');
+        service = service ? service.value : "";
+
+        // Caso seja "Outro", pegar o input extra
+        if (service === "Outro") {
+            const outroInput = document.getElementById("outro-input").value.trim();
+            if (outroInput) service = outroInput;
+        }
+
+        // Como conheceu (checkbox múltipla escolha)
+        const conheceuChecked = Array.from(document.querySelectorAll('input[name="conheceu"]:checked'));
+        const conheceu = conheceuChecked.map(input => input.value).join(", ");
+
+        // Monta a mensagem para o WhatsApp de forma profissional
+        const message = `Olá, equipe!\n\n` +
+            `Gostaria de iniciar um contato para discutir um possível projeto.\n\n` +
+            `- Informações do contato:\n` +
+            `Nome: ${firstName} ${lastName}\n` +
+            `Email: ${email}\n` +
+            `Celular: ${phone}\n\n` +
+            `- Serviço de interesse:\n` +
+            `${service}\n\n` +
+            `- Como nos conheceu:\n` +
+            `${conheceu}\n\n` +
+            `- Mensagem / Detalhes do projeto:\n` +
+            `${subject}\n\n` +
+            `Aguardo o retorno de vocês. Obrigado!`;
+
+
+        // Número do WhatsApp (formato internacional, sem "+" e sem espaços)
+        const whatsappNumber = "5516993088055"; // substitua pelo seu número
+
+        // Cria a URL do WhatsApp
+        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+        // Abre o WhatsApp em nova aba
+        window.open(whatsappURL, "_blank");
+        });
+    });
+    document.addEventListener("DOMContentLoaded", () => {
+        const radioOutro = document.getElementById("radio-outro");
+        const outroTexto = document.getElementById("outro-texto");
+        const radiosServico = document.querySelectorAll('input[name="servico"]');
+
+        radiosServico.forEach(radio => {
+            radio.addEventListener("change", () => {
+                if (radioOutro.checked) {
+                    outroTexto.classList.remove("hidden");
+                } else {
+                    outroTexto.classList.add("hidden");
+                    document.getElementById("outro-input").value = ""; // limpa se mudar de opção
+                }
+            });
+        });
+    });
+    </script>
+
 </head>
 <body>
     <!-- Header Microsoft Style -->
@@ -377,28 +465,26 @@
                     </div>
                     
                     <div class="contact-form-wrapper">
-                        <form id="contactForm" class="modern-form" action="https://api.staticforms.xyz/submit" method="post">
+                        <form id="contactForm" class="modern-form">
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="first-name">Nome</label>
-                                    <input type="text" id="first-name" name="$primeiro_nome" placeholder="Seu primeiro nome" required>
+                                    <input type="text" id="first-name" placeholder="Seu primeiro nome" required>
                                 </div>
-
                                 <div class="form-group">
                                     <label for="last-name">Sobrenome</label>
-                                    <input type="text" id="last-name" name="$sobrenome" placeholder="Seu sobrenome" required>
+                                    <input type="text" id="last-name" placeholder="Seu sobrenome" required>
                                 </div>
                             </div>
 
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="email">Email</label>
-                                    <input type="email" id="email" name="$email" placeholder="ex: email@dominio.com" required>
+                                    <input type="email" id="email" placeholder="ex: email@dominio.com" required>
                                 </div>
-
                                 <div class="form-group">
                                     <label for="phone">Celular</label>
-                                    <input type="tel" id="phone" name="$phone" placeholder="(11) 99999-9999" maxlength="15" required oninput="formatPhone(this)">
+                                    <input type="tel" id="phone" placeholder="(11) 99999-9999" maxlength="15" required oninput="formatPhone(this)">
                                 </div>
                             </div>
 
@@ -406,7 +492,7 @@
                                 <label>Serviço de Interesse</label>
                                 <div class="radio-grid">
                                     <label class="radio-option">
-                                        <input type="radio" name="$servico" value="sistemas" required>
+                                        <input type="radio" name="servico" value="Desenvolvimento de sistemas" required>
                                         <span class="radio-custom"></span>
                                         <div class="radio-content">
                                             <i class="fas fa-code"></i>
@@ -414,7 +500,7 @@
                                         </div>
                                     </label>
                                     <label class="radio-option">
-                                        <input type="radio" name="$servico" value="seguranca">
+                                        <input type="radio" name="servico" value="Segurança cibernética">
                                         <span class="radio-custom"></span>
                                         <div class="radio-content">
                                             <i class="fas fa-shield-alt"></i>
@@ -422,7 +508,7 @@
                                         </div>
                                     </label>
                                     <label class="radio-option">
-                                        <input type="radio" name="$servico" value="consultoria">
+                                        <input type="radio" name="servico" value="Consultoria">
                                         <span class="radio-custom"></span>
                                         <div class="radio-content">
                                             <i class="fas fa-lightbulb"></i>
@@ -430,7 +516,7 @@
                                         </div>
                                     </label>
                                     <label class="radio-option">
-                                        <input type="radio" name="$servico" value="devsecops">
+                                        <input type="radio" name="servico" value="DevSec / AppSec / DevSecOps">
                                         <span class="radio-custom"></span>
                                         <div class="radio-content">
                                             <i class="fas fa-lock"></i>
@@ -438,7 +524,7 @@
                                         </div>
                                     </label>
                                     <label class="radio-option">
-                                        <input type="radio" name="$servico" value="parceria">
+                                        <input type="radio" name="servico" value="Parceria">
                                         <span class="radio-custom"></span>
                                         <div class="radio-content">
                                             <i class="fas fa-handshake"></i>
@@ -446,7 +532,7 @@
                                         </div>
                                     </label>
                                     <label class="radio-option">
-                                        <input type="radio" name="$servico" value="prox_inovacao">
+                                        <input type="radio" name="servico" value="Próxima Inovação">
                                         <span class="radio-custom"></span>
                                         <div class="radio-content">
                                             <i class="fas fa-lightbulb"></i>
@@ -454,7 +540,7 @@
                                         </div>
                                     </label>
                                     <label class="radio-option">
-                                        <input type="radio" name="$servico" value="duvida">
+                                        <input type="radio" name="servico" value="Dúvida">
                                         <span class="radio-custom"></span>
                                         <div class="radio-content">
                                             <i class="fas fa-question-circle"></i>
@@ -462,7 +548,7 @@
                                         </div>
                                     </label>
                                     <label class="radio-option">
-                                        <input type="radio" name="$servico" value="outro" id="radio-outro">
+                                        <input type="radio" name="servico" value="Outro" id="radio-outro">
                                         <span class="radio-custom"></span>
                                         <div class="radio-content">
                                             <i class="fas fa-question-circle"></i>
@@ -470,54 +556,53 @@
                                         </div>
                                     </label>
 
-                                    <!-- Campo de texto que só aparece se "Outro" for selecionado -->
                                     <div id="outro-texto" class="hidden">
                                         <label for="outro-input">Se escolheu "Outro":</label>
-                                        <input type="text" id="outro-input" name="outro_descricao" placeholder="Digite aqui o serviço..." />
+                                        <input type="text" id="outro-input" placeholder="Digite aqui o serviço..." />
                                     </div>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="subject">Conte-nos sobre seu projeto ou ignore se for pra ser notificado sobre a próxima inovação</label>
-                                <textarea id="subject" name="$sobre" rows="5" placeholder="Descreva suas necessidades, objetivos e qualquer informação relevante sobre o projeto..."></textarea>
+                                <textarea id="subject" rows="5" placeholder="Descreva suas necessidades, objetivos e qualquer informação relevante sobre o projeto..."></textarea>
                             </div>
 
                             <div class="form-group">
                                 <label>Como nos conheceu?</label>
                                 <div class="checkbox-grid">
                                     <label class="checkbox-option">
-                                        <input type="checkbox" name="$conheceu" value="instagram">
+                                        <input type="checkbox" name="conheceu" value="instagram">
                                         <span class="checkbox-custom"></span>
                                         <i class="fab fa-instagram"></i>
                                         <span>Instagram</span>
                                     </label>
                                     <label class="checkbox-option">
-                                        <input type="checkbox" name="$conheceu" value="google">
+                                        <input type="checkbox" name="conheceu" value="google">
                                         <span class="checkbox-custom"></span>
                                         <i class="fab fa-google"></i>
                                         <span>Pesquisa no Google</span>
                                     </label>
                                     <label class="checkbox-option">
-                                        <input type="checkbox" name="$conheceu" value="indication">
+                                        <input type="checkbox" name="conheceu" value="indication">
                                         <span class="checkbox-custom"></span>
                                         <i class="fas fa-user-friends"></i>
                                         <span>Indicação de alguém</span>
                                     </label>
                                     <label class="checkbox-option">
-                                        <input type="checkbox" name="$conheceu" value="linkedin">
+                                        <input type="checkbox" name="conheceu" value="linkedin">
                                         <span class="checkbox-custom"></span>
                                         <i class="fab fa-linkedin"></i>
                                         <span>LinkedIn</span>
                                     </label>
                                     <label class="checkbox-option">
-                                        <input type="checkbox" name="$conheceu" value="portfolio">
+                                        <input type="checkbox" name="conheceu" value="portfolio">
                                         <span class="checkbox-custom"></span>
                                         <i class="fas fa-briefcase"></i>
                                         <span>Portfólio online</span>
                                     </label>
                                     <label class="checkbox-option">
-                                        <input type="checkbox" name="$conheceu" value="outros">
+                                        <input type="checkbox" name="conheceu" value="outros">
                                         <span class="checkbox-custom"></span>
                                         <i class="fas fa-ellipsis-h"></i>
                                         <span>Outros</span>
@@ -527,16 +612,12 @@
 
                             <div class="form-actions">
                                 <button type="submit" class="btn-primary">
-                                    <i class="fas fa-paper-plane"></i>
-                                    <span>Enviar mensagem</span>
+                                    <i class="fas fa-paper-plane"></i> Enviar mensagem
                                 </button>
                                 <button type="reset" class="btn-secondary">
-                                    <i class="fas fa-undo"></i>
-                                    <span>Limpar formulário</span>
+                                    <i class="fas fa-undo"></i> Limpar formulário
                                 </button>
                             </div>
-
-                            <input type="hidden" name="accessKey" value="sf_d5al7bk3edi620aj9ai6hanf">
                         </form>
                     </div>
                 </div>
@@ -633,20 +714,6 @@
         </div>
     </footer>
 
-    <!-- Modal de Sucesso -->
-    <div id="successModal" class="modal-success">
-        <div class="modal-content">
-            <div class="checkmark-wrapper">
-                <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
-                    <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
-                    <path class="checkmark-check" fill="none" d="M14 27l7 7 16-16"/>
-                </svg>
-            </div>
-            <h3>Mensagem enviada com sucesso!</h3>
-            <p>Obrigado pelo contato! Nossa equipe responderá em até 24 horas.</p>
-        </div>
-    </div>
-
     <!-- Botão de Voltar ao Topo -->
     <div class="topo">
         <button id="scrollToTopBtn">
@@ -704,47 +771,6 @@
             });
         }
 
-        // Função para formatar telefone
-        function formatPhone(input) {
-            let value = input.value.replace(/\D/g, "");
-            if (value.length > 11) value = value.slice(0, 11);
-
-            if (value.length > 0) {
-                value = "(" + value;
-                if (value.length > 3) value = value.slice(0, 3) + ") " + value.slice(3);
-                if (value.length > 10) value = value.slice(0, 10) + "-" + value.slice(10);
-            }
-            input.value = value;
-        }
-
-        // Envio do formulário
-        document.getElementById('contactForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const form = e.target;
-            const data = new FormData(form);
-
-            try {
-                await fetch(form.action, {
-                    method: form.method,
-                    body: data,
-                });
-
-                form.reset();
-
-                // Mostrar modal
-                const modal = document.getElementById('successModal');
-                modal.style.display = 'flex';
-
-                // Fechar automaticamente após 4 segundos
-                setTimeout(() => {
-                    modal.style.display = 'none';
-                }, 4000);
-
-            } catch (err) {
-                alert('Ocorreu um erro ao enviar. Tente novamente.');
-            }
-        });
-
         // Animação de entrada dos cards
         const observerOptions = {
             threshold: 0.1,
@@ -766,20 +792,6 @@
             card.style.transform = 'translateY(30px)';
             card.style.transition = 'all 0.6s ease';
             observer.observe(card);
-        });
-
-        // Seleciona todos os radios
-        const radios = document.querySelectorAll('input[name="servico"]');
-        const outroTexto = document.getElementById('outro-texto');
-
-        radios.forEach(radio => {
-            radio.addEventListener('change', function () {
-                if (this.value === 'outro') {
-                    outroTexto.classList.remove('hidden');
-                } else {
-                    outroTexto.classList.add('hidden');
-                }
-            });
         });
     </script>
 </body>

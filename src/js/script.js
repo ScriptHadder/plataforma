@@ -31,11 +31,3 @@ document.querySelectorAll('.stat-item h4').forEach(el => {
     }
   }, 20);
 });
-
-// Submissão formulário
-document.getElementById('contactForm')?.addEventListener('submit', e => {
-  e.preventDefault();
-  // Pode integrar com WhatsApp API ou enviar por backend
-  alert('Obrigado! Entraremos em contato em breve.');
-  e.target.reset();
-});
