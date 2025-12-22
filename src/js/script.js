@@ -1,19 +1,15 @@
 // Menu mobile
 const hamburguer = document.getElementById('hamburguer');
 const navMenu = document.querySelector('.nav-menu');
-const btnHamburguer = document.getElementById('hamburguer');
 const menu = document.getElementById('menu');
 
 if (hamburguer && navMenu) {
   hamburguer.addEventListener('click', () => {
     hamburguer.classList.toggle('active');
     navMenu.classList.toggle('active');
+    menu.classList.toggle('ativo');
   });
 }
-
-btnHamburguer.addEventListener('click', () => {
-    menu.classList.toggle('ativo');
-});
 
 // Contador (stats)
 document.querySelectorAll('.stat-item h4').forEach(el => {
