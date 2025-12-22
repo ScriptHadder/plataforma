@@ -45,56 +45,28 @@
     }
 
     document.addEventListener("DOMContentLoaded", function () {
-    const form = document.getElementById("contactForm");
+        const form = document.getElementById("contactForm");
 
-    form.addEventListener("submit", function (e) {
-        e.preventDefault(); // Evita o envio padrão do formulário
+        form.addEventListener("submit", async function (e) {
+            e.preventDefault(); // Evita o envio padrão do formulário
 
-        // Captura os valores dos inputs
-        const firstName = document.getElementById("first-name").value.trim();
-        const lastName = document.getElementById("last-name").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const phone = document.getElementById("phone").value.trim();
-        const subject = document.getElementById("subject").value.trim();
+            const formData = new FormData(form);
 
-        // Serviço selecionado
-        let service = document.querySelector('input[name="servico"]:checked');
-        service = service ? service.value : "";
+            try {
+                const response = await fetch(form.action, {
+                    method: form.method,
+                    body: formData,
+                });
 
-        // Caso seja "Outro", pegar o input extra
-        if (service === "Outro") {
-            const outroInput = document.getElementById("outro-input").value.trim();
-            if (outroInput) service = outroInput;
-        }
-
-        // Como conheceu (checkbox múltipla escolha)
-        const conheceuChecked = Array.from(document.querySelectorAll('input[name="conheceu"]:checked'));
-        const conheceu = conheceuChecked.map(input => input.value).join(", ");
-
-        // Monta a mensagem para o WhatsApp de forma profissional
-        const message = `Olá, equipe!\n\n` +
-            `Gostaria de iniciar um contato para discutir um possível projeto.\n\n` +
-            `- Informações do contato:\n` +
-            `Nome: ${firstName} ${lastName}\n` +
-            `Email: ${email}\n` +
-            `Celular: ${phone}\n\n` +
-            `- Serviço de interesse:\n` +
-            `${service}\n\n` +
-            `- Como nos conheceu:\n` +
-            `${conheceu}\n\n` +
-            `- Mensagem / Detalhes do projeto:\n` +
-            `${subject}\n\n` +
-            `Aguardo o retorno de vocês. Obrigado!`;
-
-
-        // Número do WhatsApp (formato internacional, sem "+" e sem espaços)
-        const whatsappNumber = "5516993088055"; // substitua pelo seu número
-
-        // Cria a URL do WhatsApp
-        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-
-        // Abre o WhatsApp em nova aba
-        window.open(whatsappURL, "_blank");
+                if (response.ok) {
+                    alert("Mensagem enviada com sucesso! Entraremos em contato em breve.");
+                    form.reset();
+                } else {
+                    alert("Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente mais tarde.");
+                }
+            } catch (error) {
+                alert("Erro de conexão. Verifique sua internet e tente novamente.");
+            }
         });
     });
     document.addEventListener("DOMContentLoaded", () => {
@@ -465,26 +437,30 @@
                     </div>
                     
                     <div class="contact-form-wrapper">
-                        <form id="contactForm" class="modern-form">
+                        <form id="contactForm" class="modern-form" action="https://api.staticforms.xyz/submit" method="POST">
+                            <!-- Static Form Hidden Fields -->
+                            <!-- A chave será gerenciada pelo ambiente de hospedagem -->
+                            <input type="hidden" name="redirectTo" value="https://scripthadder.com.br/contato.html">
+
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="first-name">Nome</label>
-                                    <input type="text" id="first-name" placeholder="Seu primeiro nome" required>
+                                    <input type="text" id="primeiro-name" name="primeiro-nome" placeholder="Seu primeiro nome" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="last-name">Sobrenome</label>
-                                    <input type="text" id="last-name" placeholder="Seu sobrenome" required>
+                                    <input type="text" id="ultimo-name" name="ultimo-nome" placeholder="Seu sobrenome" required>
                                 </div>
                             </div>
 
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="email">Email</label>
-                                    <input type="email" id="email" placeholder="ex: email@dominio.com" required>
+                                    <input type="email" id="email" name="email" placeholder="ex: email@dominio.com" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="phone">Celular</label>
-                                    <input type="tel" id="phone" placeholder="(11) 99999-9999" maxlength="15" required oninput="formatPhone(this)">
+                                    <input type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999" maxlength="15" required oninput="formatPhone(this)">
                                 </div>
                             </div>
 
@@ -558,51 +534,51 @@
 
                                     <div id="outro-texto" class="hidden">
                                         <label for="outro-input">Se escolheu "Outro":</label>
-                                        <input type="text" id="outro-input" placeholder="Digite aqui o serviço..." />
+                                        <input type="text" id="outro-input" name="otherService" placeholder="Digite aqui o serviço..." />
                                     </div>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="subject">Conte-nos sobre seu projeto ou ignore se for pra ser notificado sobre a próxima inovação</label>
-                                <textarea id="subject" rows="5" placeholder="Descreva suas necessidades, objetivos e qualquer informação relevante sobre o projeto..."></textarea>
+                                <textarea id="subject" name="observacao" rows="5" placeholder="Descreva suas necessidades, objetivos e qualquer informação relevante sobre o projeto..."></textarea>
                             </div>
 
                             <div class="form-group">
                                 <label>Como nos conheceu?</label>
                                 <div class="checkbox-grid">
                                     <label class="checkbox-option">
-                                        <input type="checkbox" name="conheceu" value="instagram">
+                                        <input type="checkbox" name="indicacao[]" value="instagram">
                                         <span class="checkbox-custom"></span>
                                         <i class="fab fa-instagram"></i>
                                         <span>Instagram</span>
                                     </label>
                                     <label class="checkbox-option">
-                                        <input type="checkbox" name="conheceu" value="google">
+                                        <input type="checkbox" name="indicacao[]" value="google">
                                         <span class="checkbox-custom"></span>
                                         <i class="fab fa-google"></i>
                                         <span>Pesquisa no Google</span>
                                     </label>
                                     <label class="checkbox-option">
-                                        <input type="checkbox" name="conheceu" value="indication">
+                                        <input type="checkbox" name="indicacao[]" value="indication">
                                         <span class="checkbox-custom"></span>
                                         <i class="fas fa-user-friends"></i>
                                         <span>Indicação de alguém</span>
                                     </label>
                                     <label class="checkbox-option">
-                                        <input type="checkbox" name="conheceu" value="linkedin">
+                                        <input type="checkbox" name="indicacao[]" value="linkedin">
                                         <span class="checkbox-custom"></span>
                                         <i class="fab fa-linkedin"></i>
                                         <span>LinkedIn</span>
                                     </label>
                                     <label class="checkbox-option">
-                                        <input type="checkbox" name="conheceu" value="portfolio">
+                                        <input type="checkbox" name="indicacao[]" value="portfolio">
                                         <span class="checkbox-custom"></span>
                                         <i class="fas fa-briefcase"></i>
                                         <span>Portfólio online</span>
                                     </label>
                                     <label class="checkbox-option">
-                                        <input type="checkbox" name="conheceu" value="outros">
+                                        <input type="checkbox" name="indicacao[]" value="outros">
                                         <span class="checkbox-custom"></span>
                                         <i class="fas fa-ellipsis-h"></i>
                                         <span>Outros</span>
