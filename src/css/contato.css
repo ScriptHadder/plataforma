@@ -6,3 +6,101 @@
 }
 
 .hidden { display: none; }
+
+/* ========================================
+   TERMS AGREEMENT STYLES
+   ======================================== */
+
+.terms-agreement {
+    background: var(--bg-card);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+    padding: var(--space-xl);
+    margin-bottom: var(--space-xl);
+}
+
+.terms-checkbox {
+    margin-bottom: var(--space-md) !important;
+}
+
+.terms-text {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+    line-height: 1.6;
+}
+
+.terms-text i {
+    color: var(--primary-color);
+    font-size: var(--font-size-lg);
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.terms-link {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: all var(--transition-normal);
+    position: relative;
+}
+
+.terms-link:hover {
+    color: var(--secondary-color);
+    text-decoration: underline;
+}
+
+.terms-link:before {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    transition: width var(--transition-normal);
+}
+
+.terms-link:hover:before {
+    width: 100%;
+}
+
+.terms-description {
+    color: var(--text-tertiary);
+    font-size: var(--font-size-sm);
+    margin: 0;
+    padding-left: calc(24px + var(--space-lg)); /* Alinha com o texto do checkbox */
+    line-height: 1.5;
+}
+
+/* Required field styling for terms checkbox */
+.terms-checkbox input[type="checkbox"]:invalid + .checkbox-custom {
+    border-color: #ef4444;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.terms-checkbox input[type="checkbox"]:invalid + .checkbox-custom:after {
+    border-color: #ef4444;
+}
+
+/* Animation for terms checkbox */
+.terms-checkbox {
+    transition: all var(--transition-normal);
+}
+
+.terms-checkbox:hover {
+    transform: translateX(4px);
+}
+
+/* Responsive adjustments for terms */
+@media (max-width: 768px) {
+    .terms-text {
+        font-size: var(--font-size-sm);
+    }
+    
+    .terms-description {
+        padding-left: calc(20px + var(--space-md));
+        font-size: var(--font-size-xs);
+    }
+}

@@ -50,6 +50,14 @@
         form.addEventListener("submit", async function (e) {
             e.preventDefault(); // Evita o envio padrão do formulário
 
+            // Validação dos termos de uso
+            const termsCheckbox = document.getElementById('terms-checkbox');
+            if (!termsCheckbox.checked) {
+                alert("Você deve concordar com os Termos de Uso e Política de Privacidade para continuar.");
+                termsCheckbox.focus();
+                return;
+            }
+
             const formData = new FormData(form);
 
             // Chave de acesso diretamente no script
@@ -602,6 +610,26 @@
                                 </div>
                             </div>
 
+                            <!-- Checkbox de Termos e Política de Privacidade -->
+                            <div class="form-group terms-agreement">
+                                <label class="checkbox-option terms-checkbox">
+                                    <input type="checkbox" name="terms-agreement" value="accepted" id="terms-checkbox" required>
+                                    <span class="checkbox-custom"></span>
+                                    <div class="terms-text">
+                                        <i class="fas fa-file-contract"></i>
+                                        <span>
+                                            Concordo com os 
+                                            <a href="termos-uso.html" target="_blank" class="terms-link">Termos de Uso</a> 
+                                            e 
+                                            <a href="politica-privacidade.html" target="_blank" class="terms-link">Política de Privacidade</a>
+                                        </span>
+                                    </div>
+                                </label>
+                                <p class="terms-description">
+                                    Ao marcar esta opção, você confirma que leu e aceita nossas condições de uso e política de privacidade.
+                                </p>
+                            </div>
+
                             <div class="form-actions">
                                 <button type="submit" class="btn-primary">
                                     <i class="fas fa-paper-plane"></i> Enviar mensagem
@@ -637,7 +665,7 @@
                             <a href="https://www.instagram.com/scripthadder" class="social-link" aria-label="Instagram">
                                 <i class="fab fa-instagram"></i>
                             </a>
-                            <a href="#" class="social-link" aria-label="LinkedIn">
+                            <a href="https://linkedin.com/company/scripthadder" class="social-link" aria-label="LinkedIn">
                                 <i class="fab fa-linkedin"></i>
                             </a>
                             <a href="https://github.com/ScriptHadder" class="social-link" aria-label="GitHub">
@@ -651,22 +679,18 @@
                             <h4 class="footer-title">Serviços</h4>
                             <ul class="footer-list">
                                 <li><a href="index.html#services" class="footer-link">Desenvolvimento Web</a></li>
-                                <li><a href="index.html#services" class="footer-link">Segurança Cibernética</a></li>
-                                <li><a href="index.html#services" class="footer-link">Desenvolvimento Desktop</a></li>
-                                <li><a href="index.html#services" class="footer-link">Backend & APIs</a></li>
-                                <li><a href="index.html#services" class="footer-link">Inteligência Artificial</a></li>
-                                <li><a href="index.html#services" class="footer-link">Consultoria Técnica</a></li>
+                                <li><a href="index.html#services" class="footer-link">DevSecOps</a></li>
+                                <li><a href="index.html#services" class="footer-link">AppSec</a></li>
                             </ul>
                         </div>
 
                         <div class="footer-column">
                             <h4 class="footer-title">Empresa</h4>
                             <ul class="footer-list">
-                                <li><a href="index.html#about" class="footer-link">Sobre Nós</a></li>
-                                <li><a href="index.html#team" class="footer-link">Nossa Equipe</a></li>
+                                <li><a href="sobre.html" class="footer-link">Sobre Nós</a></li>
+                                <li><a href="time.html" class="footer-link">Nossa Equipe</a></li>
                                 <li><a href="portfólio.html" class="footer-link">Portfólio</a></li>
                                 <li><a href="inovacao.html" class="footer-link">Soluções</a></li>
-                                <li><a href="contato.html" class="footer-link">Contato</a></li>
                             </ul>
                         </div>
 
@@ -693,12 +717,11 @@
                 <div class="footer-bottom">
                     <div class="footer-bottom-content">
                         <p class="copyright">
-                            &copy; 2025 ScriptHadder. Todos os direitos reservados.
+                            &copy; 2026 ScriptHadder. Todos os direitos reservados.
                         </p>
                         <div class="footer-legal">
-                            <a href="#" class="legal-link">Política de Privacidade</a>
-                            <a href="#" class="legal-link">Termos de Uso</a>
-                            <a href="#" class="legal-link">Cookies</a>
+                            <a href="politica-privacidade.html" class="legal-link">Política de Privacidade</a>
+                            <a href="termos-uso.html" class="legal-link">Termos de Uso</a>
                         </div>
                     </div>
                 </div>
