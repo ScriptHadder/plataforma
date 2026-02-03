@@ -2,7 +2,9 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <title>Scrithadder | Intelligence Hub</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -14,6 +16,14 @@
             --cyan-glow: rgba(0, 242, 255, 0.4);
             --gold-accent: #facc15;
             --border-glow: rgba(0, 242, 255, 0.1);
+            --purple-accent: #a855f7;
+            --green-accent: #10b981;
+            --red-accent: #ef4444;
+            --success-glow: rgba(16, 185, 129, 0.3);
+            --warning-glow: rgba(245, 158, 11, 0.3);
+            --danger-glow: rgba(239, 68, 68, 0.3);
+            --glass-bg: rgba(15, 23, 42, 0.8);
+            --glass-border: rgba(148, 163, 184, 0.1);
         }
 
         body {
@@ -24,6 +34,12 @@
             font-family: 'Rajdhani', sans-serif;
             height: 100vh;
             margin: 0;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
         }
 
         /* Ambient Background Shapes */
@@ -39,28 +55,41 @@
             border-radius: 50%;
             filter: blur(80px);
             opacity: 0.15;
-            animation: floatBg 20s linear infinite alternate;
+            animation: floatBg 20s ease-in-out infinite alternate;
         }
         .bg-shape1 {
             width: 500px; height: 500px;
             left: -10%; top: -10%;
-            background: radial-gradient(circle, var(--cyan-primary) 0%, transparent 70%);
+            background: radial-gradient(circle, var(--cyan-primary) 0%, var(--purple-accent) 50%, transparent 70%);
+            animation-duration: 25s;
         }
         .bg-shape2 {
             width: 400px; height: 400px;
             right: -5%; top: 30%;
-            background: radial-gradient(circle, var(--gold-accent) 0%, transparent 70%);
-            animation-delay: -5s;
+            background: radial-gradient(circle, var(--gold-accent) 0%, var(--red-accent) 50%, transparent 70%);
+            animation-delay: -8s;
+            animation-duration: 30s;
         }
         .bg-shape3 {
             width: 350px; height: 350px;
             left: 20%; bottom: -10%;
-            background: radial-gradient(circle, #3b82f6 0%, transparent 70%);
-            animation-delay: -10s;
+            background: radial-gradient(circle, #3b82f6 0%, var(--green-accent) 50%, transparent 70%);
+            animation-delay: -15s;
+            animation-duration: 22s;
+        }
+        .bg-shape4 {
+            width: 300px; height: 300px;
+            right: 30%; bottom: 20%;
+            background: radial-gradient(circle, var(--purple-accent) 0%, var(--cyan-primary) 50%, transparent 70%);
+            animation-delay: -3s;
+            animation-duration: 35s;
         }
         @keyframes floatBg {
-            0% { transform: translate(0, 0) scale(1); }
-            100% { transform: translate(40px, -60px) scale(1.1); }
+            0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+            25% { transform: translate(30px, -40px) scale(1.05) rotate(5deg); }
+            50% { transform: translate(-20px, -80px) scale(0.95) rotate(-3deg); }
+            75% { transform: translate(50px, -60px) scale(1.1) rotate(8deg); }
+            100% { transform: translate(40px, -60px) scale(1.1) rotate(10deg); }
         }
 
         h1, h2, h3, .tech-font {
@@ -122,30 +151,44 @@
             transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
             cursor: pointer;
             opacity: 0;
-            transform: scale(0.5) translateY(20px);
+            transform: scale(0.5) translateY(20px) rotateY(45deg);
+            filter: drop-shadow(0 0 0 transparent);
         }
 
         .hex-container.revealed {
             opacity: 1;
-            transform: scale(1) translateY(0);
+            transform: scale(1) translateY(0) rotateY(0deg);
+            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
         }
 
         .hexagon-outer {
             width: 100%;
             height: 100%;
-            background: rgba(0, 242, 255, 0.15);
+            background: linear-gradient(135deg, rgba(0, 242, 255, 0.15) 0%, rgba(168, 85, 247, 0.1) 100%);
             clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 2px;
-            transition: all 0.3s ease;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hexagon-outer::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+            clip-path: inherit;
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
         }
 
         .hexagon-inner {
             width: 100%;
             height: 100%;
-            background: #0f172a;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             clip-path: inherit;
             display: flex;
             justify-content: center;
@@ -154,23 +197,77 @@
             overflow: hidden;
         }
 
+        .hexagon-inner::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, transparent 60%, rgba(0, 242, 255, 0.1) 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
         .hexagon-inner img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            filter: grayscale(1) contrast(1.1);
-            transition: all 0.5s;
+            filter: grayscale(1) contrast(1.1) brightness(0.9);
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
-        .hex-container:hover .hexagon-outer {
-            background: var(--cyan-primary);
-            box-shadow: 0 0 25px var(--cyan-glow);
-            transform: translateY(-5px);
+        .hex-container:hover .hexagon-outer,
+        .hex-container:focus .hexagon-outer,
+        .hex-container:active .hexagon-outer {
+            background: linear-gradient(135deg, var(--cyan-primary) 0%, var(--purple-accent) 50%, var(--gold-accent) 100%);
+            box-shadow: 0 0 30px var(--cyan-glow), 0 0 60px rgba(168, 85, 247, 0.2);
+            transform: translateY(-8px) scale(1.05);
+            animation: hexPulse 2s ease-in-out infinite;
         }
 
-        .hex-container:hover .hexagon-inner img {
-            filter: grayscale(0) brightness(1.1);
-            transform: scale(1.1);
+        .hex-container:hover .hexagon-outer::before {
+            transform: translateX(100%);
+        }
+
+        .hex-container:hover .hexagon-inner::after {
+            opacity: 1;
+        }
+
+        .hex-container:hover .hexagon-inner img,
+        .hex-container:focus .hexagon-inner img,
+        .hex-container:active .hexagon-inner img {
+            filter: grayscale(0) brightness(1.2) contrast(1.1) saturate(1.2);
+            transform: scale(1.15) rotate(2deg);
+        }
+
+        .hex-container:hover .hex-label {
+            transform: translateX(-50%) translateY(-5px);
+        }
+
+        .hex-container:hover .hex-name {
+            color: var(--cyan-primary);
+            text-shadow: 0 0 10px var(--cyan-glow);
+        }
+
+        @keyframes hexPulse {
+            0%, 100% { box-shadow: 0 0 30px var(--cyan-glow), 0 0 60px rgba(168, 85, 247, 0.2); }
+            50% { box-shadow: 0 0 40px var(--cyan-glow), 0 0 80px rgba(168, 85, 247, 0.3), 0 0 120px rgba(245, 158, 11, 0.1); }
+        }
+
+        /* Touch device optimizations */
+        @media (hover: none) and (pointer: coarse) {
+            .hex-container {
+                cursor: default;
+            }
+            
+            .hex-container:active .hexagon-outer {
+                background: linear-gradient(135deg, var(--cyan-primary) 0%, var(--purple-accent) 100%);
+                box-shadow: 0 0 25px var(--cyan-glow);
+                transform: translateY(-4px) scale(1.02);
+            }
+            
+            .hex-container:active .hexagon-inner img {
+                filter: grayscale(0) brightness(1.1);
+                transform: scale(1.08);
+            }
         }
 
         .hex-label {
@@ -181,6 +278,7 @@
             text-align: center;
             width: 150px;
             pointer-events: none;
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
         .hex-name {
@@ -189,6 +287,8 @@
             letter-spacing: 1px;
             color: #fff;
             text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            transition: all 0.3s ease;
+            margin-bottom: 2px;
         }
 
         .hex-role {
@@ -196,6 +296,8 @@
             color: var(--cyan-dim);
             letter-spacing: 1px;
             text-transform: uppercase;
+            transition: all 0.3s ease;
+            opacity: 0.8;
         }
 
         /* Center Hub */
@@ -211,8 +313,41 @@
             font-weight: 900;
             letter-spacing: 1rem;
             color: #fff;
-            filter: drop-shadow(0 0 20px var(--cyan-glow));
+            filter: drop-shadow(0 0 20px var(--cyan-glow)) drop-shadow(0 0 40px rgba(168, 85, 247, 0.3));
             margin: 0;
+            background: linear-gradient(135deg, #fff 0%, var(--cyan-primary) 50%, var(--purple-accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: logoGlow 4s ease-in-out infinite alternate;
+            position: relative;
+        }
+
+        .hub-logo::before {
+            content: 'SCRITHADDER';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: logoShimmer 3s linear infinite;
+        }
+
+        @keyframes logoGlow {
+            0% { 
+                filter: drop-shadow(0 0 20px var(--cyan-glow)) drop-shadow(0 0 40px rgba(168, 85, 247, 0.3));
+                transform: scale(1);
+            }
+            100% { 
+                filter: drop-shadow(0 0 30px var(--cyan-glow)) drop-shadow(0 0 60px rgba(168, 85, 247, 0.5)) drop-shadow(0 0 80px rgba(245, 158, 11, 0.2));
+                transform: scale(1.02);
+            }
+        }
+
+        @keyframes logoShimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
         }
 
         /* SVG Connections */
@@ -227,13 +362,46 @@
             fill: none;
             stroke: var(--cyan-primary);
             stroke-width: 1.5;
-            stroke-opacity: 0.15;
+            stroke-opacity: 0.3;
             stroke-dasharray: 4 4;
             animation: dash 20s linear infinite;
+            filter: drop-shadow(0 0 3px var(--cyan-glow));
+            transition: all 0.3s ease;
+        }
+
+        .connection-path.active {
+            stroke-width: 2;
+            stroke-opacity: 0.8;
+            stroke: var(--gold-accent);
+            filter: drop-shadow(0 0 8px var(--warning-glow));
+            animation: dashActive 8s linear infinite, connectionPulse 2s ease-in-out infinite;
         }
 
         @keyframes dash {
             to { stroke-dashoffset: -100; }
+        }
+
+        @keyframes dashActive {
+            to { stroke-dashoffset: -50; }
+        }
+
+        @keyframes connectionPulse {
+            0%, 100% { stroke-opacity: 0.8; }
+            50% { stroke-opacity: 1; }
+        }
+
+        /* Data flow particles along paths */
+        .data-particle {
+            fill: var(--cyan-primary);
+            opacity: 0.8;
+            animation: flowParticle 8s linear infinite;
+        }
+
+        @keyframes flowParticle {
+            0% { opacity: 0; r: 1; }
+            10% { opacity: 1; r: 2; }
+            90% { opacity: 1; r: 2; }
+            100% { opacity: 0; r: 1; }
         }
 
         /* Sector Tags */
@@ -243,6 +411,11 @@
             text-align: center;
             z-index: 15;
             pointer-events: none;
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .sector-tag.active {
+            transform: translateX(-50%) scale(1.1);
         }
 
         .sector-text {
@@ -251,40 +424,179 @@
             letter-spacing: 4px;
             color: var(--gold-accent);
             opacity: 0.8;
+            transition: all 0.3s ease;
+            text-shadow: 0 0 10px rgba(245, 158, 11, 0.3);
+            position: relative;
+        }
+
+        .sector-text::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent 0%, var(--gold-accent) 50%, transparent 100%);
+            transition: width 0.5s ease;
+        }
+
+        .sector-tag.active .sector-text {
+            color: var(--cyan-primary);
+            text-shadow: 0 0 15px var(--cyan-glow);
+        }
+
+        .sector-tag.active .sector-text::after {
+            width: 100%;
+            background: linear-gradient(90deg, transparent 0%, var(--cyan-primary) 50%, transparent 100%);
         }
 
         /* Modal Styles */
         #profileModal {
             position: fixed;
             inset: 0;
-            background: rgba(2, 6, 23, 0.9);
-            backdrop-filter: blur(8px);
+            background: rgba(2, 6, 23, 0.95);
+            backdrop-filter: blur(12px) saturate(180%);
             z-index: 200;
             display: none;
             align-items: center;
             justify-content: center;
             padding: 20px;
+            overflow-y: auto;
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        #profileModal.show {
+            opacity: 1;
         }
 
         .modal-card {
-            background: #0f172a;
+            background: linear-gradient(135deg, var(--glass-bg) 0%, rgba(30, 41, 59, 0.8) 100%);
             border: 1px solid var(--cyan-primary);
             padding: 2.5rem;
             max-width: 450px;
             width: 100%;
             text-align: center;
-            box-shadow: 0 0 50px rgba(0, 242, 255, 0.15);
+            box-shadow: 0 0 50px rgba(0, 242, 255, 0.15), 0 20px 40px rgba(0, 0, 0, 0.3);
             position: relative;
+            border-radius: 12px;
+            max-height: 90vh;
+            overflow-y: auto;
+            transform: scale(0.8) translateY(40px);
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        #profileModal.show .modal-card {
+            transform: scale(1) translateY(0);
+        }
+
+        .modal-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.05) 50%, transparent 70%);
+            border-radius: inherit;
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+
+        .modal-card:hover::before {
+            transform: translateX(100%);
+        }
+
+        .modal-card button {
+            transition: all 0.3s ease;
+            min-height: 44px;
+            border-radius: 6px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .modal-card button::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, transparent, rgba(0, 242, 255, 0.1), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-card button:hover::before {
+            transform: translateX(100%);
+        }
+
+        .modal-card button:active {
+            transform: scale(0.98);
         }
 
         /* Responsive Adjustments */
+        @media (max-width: 1200px) {
+            .hub-logo { font-size: 2.5rem; letter-spacing: 0.8rem; }
+            .hex-container { width: 85px; height: 98px; }
+            .hex-label { width: 130px; bottom: -30px; }
+            .hex-name { font-size: 10px; }
+            .hex-role { font-size: 7px; }
+            .bg-shape1 { width: 400px; height: 400px; }
+            .bg-shape2 { width: 350px; height: 350px; }
+            .bg-shape3 { width: 300px; height: 300px; }
+        }
+
         @media (max-width: 768px) {
-            .hub-logo { font-size: 1.5rem; letter-spacing: 0.5rem; }
-            .hud-corner { width: 40px; height: 40px; }
-            .hex-container { width: 60px; height: 70px; }
-            .hex-label { width: 100px; bottom: -25px; }
+            body { overflow-y: auto; height: auto; min-height: 100vh; }
+            .hub-logo { font-size: 1.8rem; letter-spacing: 0.5rem; }
+            .hud-corner { width: 30px; height: 30px; }
+            .top-left, .top-right { top: 10px; }
+            .bottom-left, .bottom-right { bottom: 10px; }
+            .top-left, .bottom-left { left: 10px; }
+            .top-right, .bottom-right { right: 10px; }
+            .hex-container { width: 70px; height: 80px; }
+            .hex-label { width: 110px; bottom: -28px; }
+            .hex-name { font-size: 9px; }
+            .hex-role { font-size: 7px; }
+            .modal-card { padding: 1.5rem; margin: 10px; max-width: 350px; }
+            .bg-shape1 { width: 300px; height: 300px; }
+            .bg-shape2 { width: 250px; height: 250px; }
+            .bg-shape3 { width: 200px; height: 200px; }
+            .sector-text { font-size: 8px; letter-spacing: 2px; }
+            .grid-bg { background-size: 60px 60px; }
+        }
+
+        @media (max-width: 480px) {
+            .hub-logo { font-size: 1.4rem; letter-spacing: 0.3rem; }
+            .hud-corner { width: 25px; height: 25px; }
+            .hex-container { width: 55px; height: 63px; }
+            .hex-label { width: 90px; bottom: -25px; }
             .hex-name { font-size: 8px; }
             .hex-role { font-size: 6px; }
+            .modal-card { padding: 1rem; margin: 5px; max-width: 300px; font-size: 14px; }
+            .bg-shape1 { width: 200px; height: 200px; }
+            .bg-shape2 { width: 180px; height: 180px; }
+            .bg-shape3 { width: 150px; height: 150px; }
+            .sector-text { font-size: 7px; letter-spacing: 1px; }
+            .grid-bg { background-size: 40px 40px; }
+            #profileModal { padding: 10px; }
+        }
+
+        @media (max-width: 320px) {
+            .hub-logo { font-size: 1.2rem; letter-spacing: 0.2rem; }
+            .hex-container { width: 45px; height: 52px; }
+            .hex-label { width: 80px; bottom: -22px; }
+            .hex-name { font-size: 7px; }
+            .hex-role { font-size: 5px; }
+            .modal-card { padding: 0.8rem; max-width: 280px; font-size: 13px; }
+        }
+
+        /* Orientation adjustments */
+        @media (orientation: landscape) and (max-height: 600px) {
+            .hub-logo { font-size: 1.5rem; }
+            .hex-container { width: 60px; height: 69px; }
+            .hud-corner { width: 30px; height: 30px; }
+        }
+
+        /* High DPI displays */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 2dppx) {
+            .hexagon-inner img { image-rendering: -webkit-optimize-contrast; }
         }
     </style>
 </head>
@@ -294,6 +606,7 @@
         <div class="bg-shape bg-shape1"></div>
         <div class="bg-shape bg-shape2"></div>
         <div class="bg-shape bg-shape3"></div>
+        <div class="bg-shape bg-shape4"></div>
     </div>
 
     <div class="hud-corner top-left"></div>
@@ -326,44 +639,79 @@
     </div>
 
     <script>
+        // Audio System
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        
+        function playSound(frequency = 800, duration = 150, type = 'sine') {
+            try {
+                if (audioCtx.state === 'suspended') {
+                    audioCtx.resume();
+                }
+                
+                const oscillator = audioCtx.createOscillator();
+                const gainNode = audioCtx.createGain();
+                
+                oscillator.connect(gainNode);
+                gainNode.connect(audioCtx.destination);
+                
+                oscillator.frequency.setValueAtTime(frequency, audioCtx.currentTime);
+                oscillator.type = type;
+                
+                gainNode.gain.setValueAtTime(0.1, audioCtx.currentTime);
+                gainNode.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration / 1000);
+                
+                oscillator.start();
+                oscillator.stop(audioCtx.currentTime + duration / 1000);
+            } catch (e) {
+                console.log('Audio not supported:', e);
+            }
+        }
+        
+        function vibrateDevice(pattern = [50]) {
+            if ('vibrate' in navigator) {
+                navigator.vibrate(pattern);
+            }
+        }
+        
+        // Team data with enhanced information
         const teamData = {
             dev: {
                 label: "FRONTEND & TEMPLATES",
                 x: 20, y: 50,
                 members: [
-                    { name: "ARTHUR L.", role: "Líder do Frontend", ox: -3, oy: -2, img: "https://scripthadder.github.io/plataforma_atualizada/src/img/Hadders/Arthur.jpg", bio: "Liderança técnica e arquitetura de sistemas distribuídos." },
-                    { name: "KAUÃ C.", role: "React JS, SASS e Tailwind", ox: -10, oy: 7, img: "https://scripthadder.github.io/plataforma_atualizada/src/img/Hadders/Kaua.jpg", bio: "Especialista em infraestrutura server-side e APIs de alta performance." },
-                    { name: "GABRIEL", role: "Aprendiz", ox: -3, oy: 15, img: "https://scripthadder.github.io/plataforma_atualizada/src/img/Hadders/Gabriel.jpg", bio: "Pesquisador focado em modelos generativos e automação inteligente." }
+                    { name: "ARTHUR L.", role: "Líder do Frontend", ox: -3, oy: -2, img: "https://scripthadder.com.br/src/img/Hadders/Arthur.jpg", bio: "Liderança técnica e arquitetura de sistemas distribuídos." },
+                    { name: "KAUÃ C.", role: "React JS, SASS e Tailwind", ox: -10, oy: 7, img: "https://scripthadder.com.br/src/img/Hadders/Kaua.jpg", bio: "Especialista em infraestrutura server-side e APIs de alta performance." },
+                    { name: "GABRIEL", role: "Aprendiz", ox: -3, oy: 15, img: "https://scripthadder.com.br/src/img/Hadders/Gabriel.jpg", bio: "Pesquisador focado em modelos generativos e automação inteligente." }
                 ]
             },
             infosec: {
                 label: "CYBER DEFENSE",
                 x: 80, y: 35,
                 members: [
-                    { name: "RENAN M.", role: "DevSecOps & Segurança cibernética", ox: 0, oy: -2, img: "https://scripthadder.github.io/plataforma_atualizada/src/img/Hadders/Renan.jpg", bio: "Estrategista de segurança ofensiva e mitigação de riscos críticos." }
+                    { name: "RENAN M.", role: "DevSecOps & Segurança cibernética", ox: 0, oy: -2, img: "https://scripthadder.com.br/src/img/Hadders/Renan.jpg", bio: "Estrategista de segurança ofensiva e mitigação de riscos críticos." }
                 ]
             },
             marketing: {
                 label: "MARKETING & DESIGN",
                 x: 80, y: 65,
                 members: [
-                    { name: "MATEUS B.", role: "Líder do Marketing", ox: 0, oy: 0, img: "https://scripthadder.github.io/plataforma_atualizada/src/img/Hadders/Mateus.jpg", bio: "Focado em expansão de mercado e aquisição estratégica de usuários." },
-                    { name: "RANI", role: "Criadora de conteúdos e design", ox: 6, oy: 8, img: "https://scripthadder.github.io/plataforma_atualizada/src/img/Hadders/Rani.jpg", bio: "Responsável pela identidade visual e comunicação da marca." }
+                    { name: "MATEUS B.", role: "Líder do Marketing", ox: 0, oy: 0, img: "https://scripthadder.com.br/src/img/Hadders/Mateus.jpg", bio: "Focado em expansão de mercado e aquisição estratégica de usuários." },
+                    { name: "RANI", role: "Criadora de conteúdos e design", ox: 6, oy: 8, img: "https://scripthadder.com.br/src/img/Hadders/Rani.jpg", bio: "Responsável pela identidade visual e comunicação da marca." }
                 ]
             },
             academy: {
                 label: "BACKEND & DATA",
                 x: 50, y: 82,
                 members: [
-                    { name: "PATRICK", role: "Líder do Backend Pleno", ox: -4, oy: 0, img: "https://scripthadder.github.io/plataforma_atualizada/src/img/Hadders/Patrick.jpg", bio: "Apoiando o desenvolvimento core com foco em automação front-end." },
-                    { name: "DAVI A.", role: "Aprendiz", ox: 4, oy: 0, img: "https://scripthadder.github.io/plataforma_atualizada/src/img/Hadders/Davi.jpg", bio: "Gestão de bases de dados e análise preditiva de performance." }
+                    { name: "PATRICK", role: "Líder do Backend Pleno", ox: -4, oy: 0, img: "https://scripthadder.com.br/src/img/Hadders/Patrick.jpg", bio: "Apoiando o desenvolvimento core com foco em automação front-end." },
+                    { name: "DAVI A.", role: "Aprendiz", ox: 4, oy: 0, img: "https://scripthadder.com.br/src/img/Hadders/Davi.jpg", bio: "Gestão de bases de dados e análise preditiva de performance." }
                 ]
             },
             ops: {
                 label: "COMPLIANCE & INVESTIMENTOS",
                 x: 50, y: 18,
                 members: [
-                    { name: "WESLEY A.", role: "Analista de compliance e investimentos", ox: 0, oy: 0, img: "https://scripthadder.github.io/plataforma_atualizada/src/img/Hadders/Wesley.jpg", bio: "Monitoramento de integridade e auditoria de processos técnicos." }
+                    { name: "WESLEY A.", role: "Analista de compliance e investimentos", ox: 0, oy: 0, img: "https://scripthadder.com.br/src/img/Hadders/Wesley.jpg", bio: "Monitoramento de integridade e auditoria de processos técnicos." }
                 ]
             }
         };
@@ -377,20 +725,37 @@
             const vw = window.innerWidth;
             const vh = window.innerHeight;
             
-            let hexSize = vw > 768 ? {w: 100, h: 115} : {w: 60, h: 70};
+            // Responsive hex sizing
+            let hexSize;
+            if (vw <= 320) {
+                hexSize = {w: 45, h: 52};
+            } else if (vw <= 480) {
+                hexSize = {w: 55, h: 63};
+            } else if (vw <= 768) {
+                hexSize = {w: 70, h: 80};
+            } else if (vw <= 1200) {
+                hexSize = {w: 85, h: 98};
+            } else {
+                hexSize = {w: 100, h: 115};
+            }
 
+            let revealDelay = 0;
+            
             Object.keys(teamData).forEach(key => {
                 const sector = teamData[key];
                 
-                // Label
+                // Enhanced Label
                 const label = document.createElement('div');
                 label.className = 'sector-tag';
                 label.style.left = `${sector.x}%`;
                 label.style.top = `${sector.y - 14}%`;
-                label.innerHTML = `<div class="sector-text">${sector.label}</div><div class="h-[1px] w-8 bg-yellow-500/20 mx-auto mt-2"></div>`;
+                label.innerHTML = `
+                    <div class="sector-text">${sector.label}</div>
+                    <div class="h-[1px] w-8 bg-gradient-to-r from-transparent via-yellow-500/30 to-transparent mx-auto mt-2"></div>
+                `;
                 container.appendChild(label);
 
-                // Nodes
+                // Enhanced Nodes
                 sector.members.forEach((m, i) => {
                     const node = document.createElement('div');
                     node.className = 'hex-container';
@@ -405,7 +770,8 @@
                     node.innerHTML = `
                         <div class="hexagon-outer">
                             <div class="hexagon-inner">
-                                <img src="${m.img}" alt="${m.name}" onerror="this.onerror=null; console.error('Image not found:', this.src); this.src='https://api.dicebear.com/7.x/bottts/svg?seed=${m.name}'">
+                                <img src="${m.img}" alt="${m.name}" 
+                                     onerror="this.onerror=null; console.error('Image not found:', this.src); this.src='https://api.dicebear.com/7.x/bottts/svg?seed=${m.name}'">
                             </div>
                         </div>
                         <div class="hex-label">
@@ -414,77 +780,374 @@
                         </div>
                     `;
 
-                    node.onclick = () => showModal(m);
+                    // Enhanced interactions
+                    node.onclick = () => {
+                        playSound(1200, 100, 'triangle');
+                        vibrateDevice([30]);
+                        showModal(m);
+                        
+                        // Activate connections
+                        const paths = svg.querySelectorAll('.connection-path');
+                        const currentPath = paths[revealDelay];
+                        if (currentPath) {
+                            currentPath.classList.add('active');
+                            setTimeout(() => currentPath.classList.remove('active'), 3000);
+                        }
+                        
+                        // Activate sector
+                        label.classList.add('active');
+                        setTimeout(() => label.classList.remove('active'), 2000);
+                    };
+                    
+                    // Hover effects with sound
+                    node.onmouseenter = () => {
+                        if (window.innerWidth > 768) {
+                            playSound(800, 50, 'sine');
+                        }
+                    };
+                    
                     container.appendChild(node);
-                    setTimeout(() => node.classList.add('revealed'), 150 + (i * 100));
+                    
+                    // Staggered reveal animation
+                    setTimeout(() => {
+                        node.classList.add('revealed');
+                        if (revealDelay % 3 === 0) playSound(600 + revealDelay * 50, 80, 'triangle');
+                    }, 200 + (revealDelay * 150));
 
-                    // Lines
+                    // Enhanced SVG connections with curves
                     const line = document.createElementNS("http://www.w3.org/2000/svg", "path");
                     const startX = vw / 2;
                     const startY = vh / 2;
                     const endX = (posX / 100) * vw;
                     const endY = (posY / 100) * vh;
                     
-                    // Bezier curve to make it feel organic
-                    const cp1x = startX + (endX - startX) * 0.2;
-                    const cp1y = startY + (endY - startY) * 0.8;
+                    // More organic bezier curves
+                    const distance = Math.sqrt(Math.pow(endX - startX, 2) + Math.pow(endY - startY, 2));
+                    const cp1x = startX + (endX - startX) * 0.3 + Math.sin(revealDelay) * (distance * 0.1);
+                    const cp1y = startY + (endY - startY) * 0.1 + Math.cos(revealDelay) * (distance * 0.1);
+                    const cp2x = startX + (endX - startX) * 0.7 + Math.cos(revealDelay + Math.PI) * (distance * 0.1);
+                    const cp2y = startY + (endY - startY) * 0.9 + Math.sin(revealDelay + Math.PI) * (distance * 0.1);
                     
-                    line.setAttribute("d", `M ${startX} ${startY} Q ${cp1x} ${cp1y} ${endX} ${endY}`);
+                    line.setAttribute("d", `M ${startX} ${startY} C ${cp1x} ${cp1y}, ${cp2x} ${cp2y}, ${endX} ${endY}`);
                     line.setAttribute("class", "connection-path");
+                    line.style.animationDelay = `${revealDelay * 0.5}s`;
                     svg.appendChild(line);
+                    
+                    // Add data flow particles
+                    if (Math.random() > 0.5) {
+                        const particle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+                        particle.setAttribute("class", "data-particle");
+                        particle.setAttribute("r", "2");
+                        particle.setAttribute("cx", startX);
+                        particle.setAttribute("cy", startY);
+                        particle.style.animationDelay = `${Math.random() * 8}s`;
+                        
+                        // Animate particle along path
+                        const animateMotion = document.createElementNS("http://www.w3.org/2000/svg", "animateMotion");
+                        animateMotion.setAttribute("dur", "8s");
+                        animateMotion.setAttribute("repeatCount", "indefinite");
+                        animateMotion.setAttribute("begin", `${Math.random() * 8}s`);
+                        
+                        const motionPath = document.createElementNS("http://www.w3.org/2000/svg", "mpath");
+                        motionPath.setAttributeNS("http://www.w3.org/1999/xlink", "href", `#path-${revealDelay}`);
+                        
+                        line.setAttribute("id", `path-${revealDelay}`);
+                        animateMotion.appendChild(motionPath);
+                        particle.appendChild(animateMotion);
+                        svg.appendChild(particle);
+                    }
+                    
+                    revealDelay++;
                 });
             });
         }
 
         function showModal(m) {
-            document.getElementById('modalImg').src = m.img;
+            const modal = document.getElementById('profileModal');
+            const modalCard = modal.querySelector('.modal-card');
+            
             document.getElementById('modalName').textContent = m.name;
             document.getElementById('modalRole').textContent = m.role;
             document.getElementById('modalDetails').textContent = m.bio;
-            document.getElementById('profileModal').style.display = 'flex';
+            
+            // Show modal with animation
+            modal.style.display = 'flex';
+            setTimeout(() => modal.classList.add('show'), 10);
+            
+            // Sound and haptic feedback
+            playSound(1000, 200, 'triangle');
+            vibrateDevice([50, 50, 100]);
+            
+            // Prevent body scroll on mobile when modal is open
+            document.body.style.overflow = 'hidden';
+            
+            // Enhanced touch support for modal closing
+            modal.addEventListener('touchstart', handleModalClose);
+            modal.addEventListener('click', handleModalClose);
+        }
+        
+        function handleModalClose(e) {
+            const modal = document.getElementById('profileModal');
+            if (e.target === modal) {
+                closeModal();
+            }
         }
 
         function closeModal() {
-            document.getElementById('profileModal').style.display = 'none';
+            const modal = document.getElementById('profileModal');
+            
+            // Sound feedback
+            playSound(600, 100, 'sine');
+            vibrateDevice([30]);
+            
+            // Animate out
+            modal.classList.remove('show');
+            setTimeout(() => {
+                modal.style.display = 'none';
+                // Restore body scroll
+                document.body.style.overflow = '';
+            }, 400);
+            
+            // Remove event listeners
+            modal.removeEventListener('touchstart', handleModalClose);
+            modal.removeEventListener('click', handleModalClose);
         }
 
         // Adicionado um comentário para o aviso do Tailwind CSS
         // AVISO: Para produção, instale o Tailwind CSS como um plugin PostCSS ou use o Tailwind CLI.
         // Consulte: https://tailwindcss.com/docs/installation
 
-        // Particle System
+        // Enhanced Particle System
         const canvas = document.getElementById('canvas-particles');
         const ctx = canvas.getContext('2d');
         let particles = [];
+        let animationId;
+        let mousePos = { x: 0, y: 0 };
+        
+        // Track mouse for particle interactions
+        document.addEventListener('mousemove', (e) => {
+            mousePos.x = e.clientX;
+            mousePos.y = e.clientY;
+        });
         
         function initParticles() {
             canvas.width = window.innerWidth;
             canvas.height = window.innerHeight;
-            particles = Array.from({ length: 50 }, () => ({
+            
+            // Reduce particle count on mobile devices for better performance
+            const isMobile = window.innerWidth <= 768;
+            const particleCount = isMobile ? 30 : 80;
+            
+            particles = Array.from({ length: particleCount }, (_, i) => ({
                 x: Math.random() * canvas.width,
                 y: Math.random() * canvas.height,
-                vx: (Math.random() - 0.5) * 0.2,
-                vy: (Math.random() - 0.5) * 0.2,
-                s: Math.random() * 2
+                vx: (Math.random() - 0.5) * (isMobile ? 0.15 : 0.3),
+                vy: (Math.random() - 0.5) * (isMobile ? 0.15 : 0.3),
+                s: Math.random() * (isMobile ? 2 : 3) + 0.5,
+                opacity: Math.random() * 0.8 + 0.2,
+                color: i % 3 === 0 ? 'rgba(0, 242, 255, ' : 
+                       i % 3 === 1 ? 'rgba(168, 85, 247, ' : 'rgba(245, 158, 11, ',
+                life: Math.random() * 0.02 + 0.005,
+                maxLife: Math.random() * 0.02 + 0.005
             }));
         }
 
         function animate() {
+            if (!isPageVisible) return;
+            
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = "rgba(0, 242, 255, 0.4)";
-            particles.forEach(p => {
-                p.x += p.vx; p.y += p.vy;
-                if(p.x < 0 || p.x > canvas.width) p.vx *= -1;
-                if(p.y < 0 || p.y > canvas.height) p.vy *= -1;
+            
+            particles.forEach((p, index) => {
+                // Mouse interaction
+                const dx = mousePos.x - p.x;
+                const dy = mousePos.y - p.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                
+                if (distance < 100) {
+                    const force = (100 - distance) / 100;
+                    p.vx += (dx / distance) * force * 0.01;
+                    p.vy += (dy / distance) * force * 0.01;
+                    p.s = Math.min(p.s * 1.02, 5);
+                    p.opacity = Math.min(p.opacity * 1.1, 1);
+                } else {
+                    p.s = Math.max(p.s * 0.99, 0.5);
+                    p.opacity = Math.max(p.opacity * 0.995, 0.2);
+                }
+                
+                // Update position
+                p.x += p.vx;
+                p.y += p.vy;
+                
+                // Bounce off edges
+                if (p.x < 0 || p.x > canvas.width) p.vx *= -0.8;
+                if (p.y < 0 || p.y > canvas.height) p.vy *= -0.8;
+                
+                // Keep particles in bounds
+                p.x = Math.max(0, Math.min(canvas.width, p.x));
+                p.y = Math.max(0, Math.min(canvas.height, p.y));
+                
+                // Apply velocity damping
+                p.vx *= 0.995;
+                p.vy *= 0.995;
+                
+                // Draw particle
+                ctx.globalAlpha = p.opacity;
+                ctx.fillStyle = p.color + p.opacity + ')';
                 ctx.beginPath();
-                ctx.arc(p.x, p.y, p.s, 0, Math.PI*2);
+                ctx.arc(p.x, p.y, p.s, 0, Math.PI * 2);
                 ctx.fill();
+                
+                // Draw connections to nearby particles
+                particles.slice(index + 1).forEach(p2 => {
+                    const dx2 = p.x - p2.x;
+                    const dy2 = p.y - p2.y;
+                    const distance2 = Math.sqrt(dx2 * dx2 + dy2 * dy2);
+                    
+                    if (distance2 < 120) {
+                        const opacity = (120 - distance2) / 120 * 0.3;
+                        ctx.globalAlpha = opacity;
+                        ctx.strokeStyle = `rgba(0, 242, 255, ${opacity})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.beginPath();
+                        ctx.moveTo(p.x, p.y);
+                        ctx.lineTo(p2.x, p2.y);
+                        ctx.stroke();
+                    }
+                });
             });
-            requestAnimationFrame(animate);
+            
+            ctx.globalAlpha = 1;
+            animationId = requestAnimationFrame(animate);
         }
 
-        window.onload = () => { render(); initParticles(); animate(); };
-        window.onresize = () => { render(); initParticles(); };
+        // Debounce function for performance
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // Optimized resize handler with enhanced features
+        const handleResize = debounce(() => {
+            render();
+            initParticles();
+            
+            // Adjust audio context for mobile
+            if (window.innerWidth <= 768 && audioCtx.state === 'running') {
+                audioCtx.suspend();
+            }
+        }, 250);
+
+        // Enhanced page visibility management
+        let isPageVisible = true;
+        
+        document.addEventListener('visibilitychange', () => {
+            isPageVisible = !document.hidden;
+            if (isPageVisible) {
+                if (audioCtx.state === 'suspended' && window.innerWidth > 768) {
+                    audioCtx.resume();
+                }
+                animate();
+                // Resume background animations
+                document.body.style.animationPlayState = 'running';
+            } else {
+                if (animationId) {
+                    cancelAnimationFrame(animationId);
+                }
+                // Pause background animations
+                document.body.style.animationPlayState = 'paused';
+            }
+        });
+
+        // Initialize everything
+        window.onload = () => { 
+            render(); 
+            initParticles(); 
+            animate(); 
+            
+            // Add initial sound trigger
+            document.addEventListener('click', () => {
+                if (audioCtx.state === 'suspended') {
+                    audioCtx.resume();
+                }
+            }, { once: true });
+            
+            // Accessibility: Add keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape') {
+                    const modal = document.getElementById('profileModal');
+                    if (modal.style.display === 'flex') {
+                        closeModal();
+                    }
+                }
+            });
+        };
+        
+        window.onresize = handleResize;
+        
+        // Handle orientation change with delay
+        window.addEventListener('orientationchange', () => {
+            setTimeout(() => {
+                render();
+                initParticles();
+            }, 300);
+        });
+
+        // Prevent context menu on long press for better mobile experience
+        document.addEventListener('contextmenu', (e) => {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+            }
+        });
+        
+        // Performance monitoring
+        let frameCount = 0;
+        let lastTime = performance.now();
+        
+        function monitorPerformance() {
+            frameCount++;
+            const now = performance.now();
+            
+            if (now - lastTime >= 5000) { // Every 5 seconds
+                const fps = Math.round((frameCount * 1000) / (now - lastTime));
+                
+                // Adjust particle count based on performance
+                if (fps < 30 && particles.length > 20) {
+                    particles = particles.slice(0, Math.floor(particles.length * 0.8));
+                } else if (fps > 50 && particles.length < 80 && window.innerWidth > 768) {
+                    // Add more particles if performance is good
+                    for (let i = 0; i < 5; i++) {
+                        particles.push({
+                            x: Math.random() * canvas.width,
+                            y: Math.random() * canvas.height,
+                            vx: (Math.random() - 0.5) * 0.3,
+                            vy: (Math.random() - 0.5) * 0.3,
+                            s: Math.random() * 3 + 0.5,
+                            opacity: Math.random() * 0.8 + 0.2,
+                            color: 'rgba(0, 242, 255, ',
+                            life: Math.random() * 0.02 + 0.005,
+                            maxLife: Math.random() * 0.02 + 0.005
+                        });
+                    }
+                }
+                
+                frameCount = 0;
+                lastTime = now;
+            }
+            
+            if (isPageVisible) {
+                requestAnimationFrame(monitorPerformance);
+            }
+        }
+        
+        // Start performance monitoring
+        requestAnimationFrame(monitorPerformance);
     </script>
 </body>
 </html>
